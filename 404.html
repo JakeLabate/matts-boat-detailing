@@ -34,7 +34,8 @@
 :root{
   --ink:#12202e; --paper:#ffffff; --muted:#51606e;
   --brand:#0b2c4d; --brand-ink:#ffffff; --accent:#c0812f;
-  --sand:#deb887; --mist:#eef3f7; --sandtint:#f7efe2; --line:#8d949b;
+  --sand:#deb887; --mist:#eef3f7; --sandtint:#f7efe2; --line:#7c838b;
+  --accent-ink:#8f5e1c;
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;display:flex;flex-direction:column;min-height:100vh}
@@ -46,22 +47,24 @@ header.site{background:var(--paper);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:74px}
 .brandmark{display:flex;flex-direction:column;line-height:1;text-decoration:none}
 .brandmark .name{font-family:"Fraunces",serif;font-weight:600;font-size:1.32rem;color:var(--brand)}
-.brandmark .name em{font-style:italic;color:var(--accent)}
+.brandmark .name em{font-style:italic;color:var(--accent-ink)}
 .brandmark .rule{height:2px;width:100%;background:var(--sand);margin-top:5px;border-radius:2px}
 .menu{display:flex;align-items:center;gap:1.6rem}
-.menu a{font-size:.95rem;font-weight:500;color:var(--ink)}
+.menu a:not(.btn){font-size:.95rem;font-weight:500;color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.7rem 1.25rem;border-radius:999px;text-decoration:none;border:1.5px solid transparent}
 .btn-primary{background:var(--brand);color:var(--brand-ink)}
-.btn-ghost{background:transparent;color:var(--brand);border-color:var(--line)}
+.btn-ghost{background:transparent;color:var(--brand);border-color:var(--muted)}
 .hero404{flex:1;display:flex;align-items:center;text-align:center;background:var(--mist);padding:4rem 0}
-.hero404 .num{font-family:"Fraunces",serif;font-size:clamp(4rem,16vw,9rem);color:var(--sand);line-height:1;font-weight:600}
+.hero404 .num{font-family:"Fraunces",serif;font-size:clamp(4rem,16vw,9rem);color:var(--accent-ink);line-height:1;font-weight:600}
 .hero404 h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:.4rem 0 1rem}
 .hero404 p{max-width:52ch;margin:0 auto 1.6rem;color:var(--muted)}
 .row{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap}
 footer.site{background:var(--brand);color:var(--brand-ink);padding:2rem 0}
 footer.site a{color:var(--brand-ink)}
 .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.82rem;opacity:.85}
-:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:4px}
+.pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--sand)}
+.ctaband :focus-visible,.cta-band :focus-visible{outline-color:var(--brand)}
 @media(max-width:620px){.menu a:not(.btn){display:none}}
 </style>
 </head>
