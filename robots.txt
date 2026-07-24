@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jakelabate.github.io/matts-boat-detailing/sitemap.xml
