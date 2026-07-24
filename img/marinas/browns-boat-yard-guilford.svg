@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" role="img">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef3f7"/>
+</linearGradient>
+<linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#14456f"/><stop offset="1" stop-color="#1d5480"/>
+</linearGradient>
+</defs>
+<rect width="800" height="196" fill="url(#sky)"/><path d="M0 196 L0 138 Q 176 112 352 150 T 800 132 L800 196 Z" fill="#0b2c4d"/><path d="M0 196 L0 138 Q 96 156 240 196 Z" fill="#123a61"/><path d="M800 196 L800 135 Q 704 160 576 196 Z" fill="#123a61"/><rect y="196" width="800" height="254" fill="url(#water)"/><rect x="86" y="222" width="48" height="2.5" rx="1.25" fill="#ffffff" opacity="0.10"/><rect x="361" y="259" width="91" height="2.5" rx="1.25" fill="#ffffff" opacity="0.12"/><rect x="368" y="297" width="121" height="2.5" rx="1.25" fill="#ffffff" opacity="0.14"/><rect x="554" y="334" width="162" height="2.5" rx="1.25" fill="#ffffff" opacity="0.10"/><rect x="581" y="371" width="153" height="2.5" rx="1.25" fill="#ffffff" opacity="0.12"/><rect x="196" y="409" width="186" height="2.5" rx="1.25" fill="#ffffff" opacity="0.14"/><rect x="40" y="246" width="720" height="10" rx="4" fill="#deb887"/><rect x="40" y="256" width="720" height="4" rx="2" fill="#c0812f" opacity=".75"/><rect x="70" y="258" width="8" height="74" rx="4" fill="#deb887" opacity=".95"/><circle cx="74" cy="274" r="3" fill="#c0812f"/><circle cx="74" cy="318" r="3" fill="#c0812f"/><rect x="730" y="258" width="8" height="74" rx="4" fill="#deb887" opacity=".95"/><circle cx="734" cy="274" r="3" fill="#c0812f"/><circle cx="734" cy="318" r="3" fill="#c0812f"/><g transform="translate(404.0,293.0)"><path d="M-15.0 -8.2 h23.1 l-3.2 -8.8 h-16.3 Z" fill="#ffffff" opacity=".92"/><path d="M-27.2 -7.2 h54.4 l-7.2 13.7 h-40.0 Z" fill="#ffffff"/><path d="M-27.2 -4.8 h54.4 l-1.2 2.6 h-52.0 Z" fill="#deb887" opacity=".85"/></g><g transform="translate(566.1,386.0)"><path d="M-18.4 -9.9 h28.5 l-3.9 -10.8 h-20.1 Z" fill="#ffffff" opacity=".92"/><path d="M-33.5 -8.9 h67.0 l-8.9 16.8 h-49.3 Z" fill="#ffffff"/><path d="M-33.5 -5.9 h67.0 l-1.5 3.2 h-64.0 Z" fill="#deb887" opacity=".85"/></g>
+</svg>
