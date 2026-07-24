@@ -120,17 +120,13 @@ header.site{position:sticky;top:0;z-index:40;background:var(--paper);border-bott
 .pagehead .crumb a{color:var(--sand)}
 section{padding:clamp(2.8rem,6vw,4.4rem) 0}
 .bg-sandtint{background:var(--sandtint)}
-.faq{border:1px solid var(--line);border-radius:14px;background:var(--paper);margin-bottom:1rem;overflow:hidden}
-.faq summary{
-  list-style:none;cursor:pointer;padding:1.25rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  font-family:"Fraunces",serif;font-size:1.2rem;font-weight:600;color:var(--brand);
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .plus{flex:0 0 auto;color:var(--accent);transition:transform .2s ease}
-.faq[open] summary .plus{transform:rotate(45deg)}
-.faq .body{padding:0 1.4rem 1.3rem;color:var(--ink)}
-.faq .body p{margin:0;max-width:70ch}
-.faq[open]{border-color:var(--sand)}
+.qa{border-top:1px solid var(--line);padding:2.2rem 0}
+.qa:first-child{border-top:none;padding-top:0}
+.qa:last-child{padding-bottom:0}
+.qa .n{font-family:"Inter",sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.22em;color:var(--accent-ink);display:block;margin-bottom:.6rem}
+.qa h2{font-size:clamp(1.3rem,2.3vw,1.65rem);margin-bottom:.8rem;max-width:30ch}
+.qa p{margin:0;max-width:68ch;color:var(--ink)}
+.qa .rule{height:2px;width:44px;background:var(--sand);border-radius:2px;margin:0 0 1rem}
 .cta-band{background:var(--sand)}
 .cta-band .inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}
 .cta-band h2{color:var(--brand);max-width:20ch}
@@ -189,25 +185,33 @@ footer.site a{color:var(--brand-ink)}
 
   <section>
     <div class="wrap narrow">
-      <details class="faq" open>
-        <summary>How often should I detail my boat?<span class="plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="body"><p>Proper care is essential to maintaining the appearance, performance, and long-term value of your vessel. For most owners, a comprehensive maintenance schedule includes detailing once per season, complemented by routine maintenance washes every few weeks. Vessels exposed to saltwater, intense sun, or frequent use may require more consistent attention to prevent oxidation and surface degradation. Following a well-maintained schedule ensures your boat remains in exceptional condition year-round.</p></div>
-      </details>
+      <div class="qa">
+        <span class="n">01</span>
+        <div class="rule" aria-hidden="true"></div>
+        <h2>How often should I detail my boat?</h2>
+        <p>Proper care is essential to maintaining the appearance, performance, and long-term value of your vessel. For most owners, a comprehensive maintenance schedule includes detailing once per season, complemented by routine maintenance washes every few weeks. Vessels exposed to saltwater, intense sun, or frequent use may require more consistent attention to prevent oxidation and surface degradation. Following a well-maintained schedule ensures your boat remains in exceptional condition year-round.</p>
+      </div>
 
-      <details class="faq">
-        <summary>Is ceramic coating worth it?<span class="plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="body"><p>Ceramic coating is a high-performance protective treatment designed to preserve and enhance your vessel's finish. It forms a durable, hydrophobic barrier that shields against UV exposure, salt, and environmental contaminants while delivering a deep, lasting gloss. In addition to elevating your boat's appearance, it significantly reduces ongoing maintenance. For owners seeking long-term protection and a consistently refined finish, ceramic coating is a worthwhile investment.</p></div>
-      </details>
+      <div class="qa">
+        <span class="n">02</span>
+        <div class="rule" aria-hidden="true"></div>
+        <h2>Is ceramic coating worth it?</h2>
+        <p>Ceramic coating is a high-performance protective treatment designed to preserve and enhance your vessel's finish. It forms a durable, hydrophobic barrier that shields against UV exposure, salt, and environmental contaminants while delivering a deep, lasting gloss. In addition to elevating your boat's appearance, it significantly reduces ongoing maintenance. For owners seeking long-term protection and a consistently refined finish, ceramic coating is a worthwhile investment.</p>
+      </div>
 
-      <details class="faq">
-        <summary>How long does a detail take?<span class="plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="body"><p>Each detailing service is tailored to the specific condition and size of the vessel. A standard wash and protection service may be completed within several hours, while a full correction and protection detail can take one to two days. More extensive restoration work may require additional time to achieve the highest standard of results. An accurate time frame is provided following an initial assessment.</p></div>
-      </details>
+      <div class="qa">
+        <span class="n">03</span>
+        <div class="rule" aria-hidden="true"></div>
+        <h2>How long does a detail take?</h2>
+        <p>Each detailing service is tailored to the specific condition and size of the vessel. A standard wash and protection service may be completed within several hours, while a full correction and protection detail can take one to two days. More extensive restoration work may require additional time to achieve the highest standard of results. An accurate time frame is provided following an initial assessment.</p>
+      </div>
 
-      <details class="faq">
-        <summary>Do you come to my marina?<span class="plus" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="body"><p>Yes, we offer fully mobile boat detailing services for your convenience. We service marinas, private docks, and waterfront properties throughout the Connecticut shoreline, allowing you to enjoy a seamless, hassle-free experience. Our team arrives fully equipped to deliver professional results on-site, with minimal disruption to your schedule.</p></div>
-      </details>
+      <div class="qa">
+        <span class="n">04</span>
+        <div class="rule" aria-hidden="true"></div>
+        <h2>Do you come to my marina?</h2>
+        <p>Yes, we offer fully mobile boat detailing services for your convenience. We service marinas, private docks, and waterfront properties throughout the Connecticut shoreline, allowing you to enjoy a seamless, hassle-free experience. Our team arrives fully equipped to deliver professional results on-site, with minimal disruption to your schedule.</p>
+      </div>
     </div>
   </section>
 
