@@ -119,9 +119,6 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
-.spot.has-thumb{grid-template-columns:118px 1fr;align-items:center;gap:1.15rem}
-.spot .thumb{width:118px;height:66px;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
-@media(max-width:560px){.spot.has-thumb{grid-template-columns:1fr}.spot .thumb{width:100%;height:150px}}
 .spot strong{display:block;color:var(--brand);font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;margin-bottom:.15rem}
 .spot span{color:var(--muted);font-size:.96rem}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
@@ -224,10 +221,10 @@ footer.site a{color:var(--brand-ink)}
       <h2>Marinas, docks, and yards in Stratford.</h2>
       <p class="lead muted">The Housatonic's west bank holds a cluster of yards within a few minutes of each other, so we can often service several boats in one trip:</p>
       <div class="spotlist">
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/boardwalk-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/boardwalk-marina.html">Boardwalk Marina</a></strong><span>165 floating slips and over 1,000 feet of riverfront dockage, a half mile off I-95.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/safe-harbor-stratford.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/safe-harbor-stratford.html">Safe Harbor Stratford</a></strong><span>About 1.5 miles upriver on a site where shipyards have operated since the 1700s, roughly 200 slips.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/browns-marina-stratford.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/browns-marina-stratford.html">Brown&#x27;s Marina</a></strong><span>Seasonal slips and winter storage on the west bank for vessels up to 50 feet.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/housatonic-boat-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/housatonic-boat-club.html">Housatonic Boat Club</a></strong><span>A family boat club active in salt water recreation since 1887.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/boardwalk-marina.html">Boardwalk Marina</a></strong><span>165 floating slips and over 1,000 feet of riverfront dockage, a half mile off I-95.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/safe-harbor-stratford.html">Safe Harbor Stratford</a></strong><span>About 1.5 miles upriver on a site where shipyards have operated since the 1700s, roughly 200 slips.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/browns-marina-stratford.html">Brown&#x27;s Marina</a></strong><span>Seasonal slips and winter storage on the west bank for vessels up to 50 feet.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/housatonic-boat-club.html">Housatonic Boat Club</a></strong><span>A family boat club active in salt water recreation since 1887.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Driveways and trailers</strong><span>Plenty of Stratford boats live at home. We detail on the trailer just as readily as in the slip.</span></div></div>
       </div>
     </div>
