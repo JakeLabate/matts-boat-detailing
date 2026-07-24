@@ -82,8 +82,8 @@ header.site{position:sticky;top:0;z-index:40;background:var(--paper);border-bott
 .brandmark .name{font-family:"Fraunces",serif;font-weight:600;font-size:1.32rem;color:var(--brand);letter-spacing:-.01em}
 .brandmark .name em{font-style:italic;color:var(--accent)}
 .brandmark .rule{height:2px;width:100%;background:var(--sand);margin-top:5px;border-radius:2px}
-.menu{display:flex;align-items:center;gap:1.9rem}
-.menu a{font-size:.95rem;font-weight:500;color:var(--ink)}
+.menu{display:flex;align-items:center;gap:1.5rem}
+.menu a{font-size:.94rem;font-weight:500;color:var(--ink)}
 .menu a:hover{color:var(--brand);text-decoration:none}
 .menu a[aria-current="page"]{color:var(--brand);border-bottom:2px solid var(--sand);padding-bottom:2px}
 .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.7rem 1.25rem;border-radius:999px;text-decoration:none;border:1.5px solid transparent;transition:transform .12s ease;white-space:nowrap}
@@ -109,7 +109,8 @@ section{padding:clamp(2.8rem,6vw,4.4rem) 0}
 .ccard p{margin:0;color:var(--muted)}
 .ccard a.big:hover{text-decoration:underline}
 .areas{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.4rem}
-.chip{border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;font-size:.9rem;color:var(--ink);background:var(--paper);font-weight:500}
+.chip{border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;font-size:.9rem;color:var(--ink);background:var(--paper);font-weight:500;text-decoration:none;display:inline-block}
+a.chip:hover{border-color:var(--brand);text-decoration:none}
 .hours-row{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:.55rem 0;font-size:.98rem;max-width:320px}
 .hours-row:last-child{border-bottom:none}
 .hours-row span:last-child{color:var(--muted)}
@@ -125,7 +126,7 @@ footer.site a{color:var(--brand-ink)}
 .waterline{height:3px;width:64px;background:var(--sand);border-radius:2px}
 .foot-bottom{margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid color-mix(in srgb, var(--sand) 40%, transparent);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.82rem;opacity:.82}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
-@media(max-width:780px){
+@media(max-width:860px){
   .menu{display:none}.navtoggle{display:inline-block}
   .menu.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:1rem 1.5rem;gap:1rem;align-items:flex-start}
   .menu.open .btn{width:100%;justify-content:center}
@@ -144,6 +145,7 @@ footer.site a{color:var(--brand-ink)}
     <nav class="menu" id="menu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
+      <a href="service-areas.html">Areas</a>
       <a href="about.html">About</a>
       <a href="faqs.html">FAQs</a>
       <a href="contact.html" aria-current="page">Contact</a>
@@ -199,11 +201,11 @@ footer.site a{color:var(--brand-ink)}
       <h2>Up and down the Connecticut coast.</h2>
       <p class="lead muted">A few of the towns we regularly detail in. Do not see yours? Ask, we cover the whole shoreline.</p>
       <div class="areas">
-        <span class="chip">Milford</span><span class="chip">Branford</span><span class="chip">Guilford</span>
+        <span class="chip">Milford</span><a class="chip" href="branford-boat-detailing.html">Branford</a><a class="chip" href="guilford-boat-detailing.html">Guilford</a>
         <span class="chip">Madison</span><span class="chip">Clinton</span><span class="chip">Westbrook</span>
         <span class="chip">Old Saybrook</span><span class="chip">Essex</span><span class="chip">Deep River</span>
         <span class="chip">Old Lyme</span><span class="chip">Mystic</span><span class="chip">Norwalk</span>
-        <span class="chip">Stamford</span><span class="chip">Bridgeport</span><span class="chip">New Haven</span>
+        <span class="chip">Stamford</span><a class="chip" href="bridgeport-boat-detailing.html">Bridgeport</a><a class="chip" href="new-haven-boat-detailing.html">New Haven</a>
       </div>
       <div style="margin-top:2rem;display:flex;gap:.85rem;flex-wrap:wrap">
         <a class="btn btn-accent" href="tel:+12032588281">Call (203) 258-8281</a>
@@ -226,6 +228,7 @@ footer.site a{color:var(--brand-ink)}
         <div class="foot-links">
           <a href="index.html">Home</a>
           <a href="services.html">Services &amp; pricing</a>
+          <a href="service-areas.html">Service areas</a>
           <a href="about.html">About</a>
           <a href="faqs.html">FAQs</a>
           <a href="contact.html">Contact</a>
