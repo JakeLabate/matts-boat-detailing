@@ -123,7 +123,7 @@ img{max-width:100%;display:block}
 .muted{color:var(--muted)}
 header.site{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:74px}
-.brandmark{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.brandmark{display:flex;flex-direction:column;line-height:1;text-decoration:none;flex:0 0 auto;white-space:nowrap}
 .brandmark:hover{text-decoration:none}
 .brandmark .name{font-family:"Fraunces",serif;font-weight:600;font-size:1.32rem;color:var(--brand);letter-spacing:-.01em}
 .brandmark .name em{font-style:italic;color:var(--accent-ink)}
@@ -191,7 +191,7 @@ footer.site a{color:var(--brand-ink)}
 :focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:4px}
 .pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--sand)}
 .ctaband :focus-visible,.cta-band :focus-visible{outline-color:var(--brand)}
-@media(max-width:860px){
+@media(max-width:1024px){
   .menu{display:none}.navtoggle{display:inline-block}
   .menu.open{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:1rem 1.5rem;gap:1rem;align-items:flex-start}
   .menu.open .btn{width:100%;justify-content:center}
@@ -211,6 +211,7 @@ footer.site a{color:var(--brand-ink)}
       <a href="index.html">Home</a>
       <a href="services.html" aria-current="page">Services</a>
       <a href="service-areas.html">Areas</a>
+      <a href="marinas/index.html">Marinas</a>
       <a href="about.html">About</a>
       <a href="faqs.html">FAQs</a>
       <a href="contact.html">Contact</a>
