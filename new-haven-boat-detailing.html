@@ -119,6 +119,9 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
+.spot.has-thumb{grid-template-columns:118px 1fr;align-items:center;gap:1.15rem}
+.spot .thumb{width:118px;height:66px;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
+@media(max-width:560px){.spot.has-thumb{grid-template-columns:1fr}.spot .thumb{width:100%;height:150px}}
 .spot strong{display:block;color:var(--brand);font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;margin-bottom:.15rem}
 .spot span{color:var(--muted);font-size:.96rem}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
@@ -221,8 +224,8 @@ footer.site a{color:var(--brand-ink)}
       <h2>Marinas, docks, and yards in New Haven.</h2>
       <p class="lead muted">Where we detail in New Haven:</p>
       <div class="spotlist">
-        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/city-point-yacht-club.html">City Point Yacht Club</a></strong><span>Founded in 1895 on the former Oyster Point peninsula, with 182 berths plus fuel and pump-out.</span></div></div>
-        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/quinnipiac-river-marina.html">Quinnipiac River Marina</a></strong><span>Up the Quinnipiac in Fair Haven, just off I-95, with summer and winter slips and no membership required.</span></div></div>
+        <div class="spot has-thumb"><img class="thumb" src="img/marinas/city-point-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/city-point-yacht-club.html">City Point Yacht Club</a></strong><span>Founded in 1895 on the former Oyster Point peninsula, with 182 berths plus fuel and pump-out.</span></div></div>
+        <div class="spot has-thumb"><img class="thumb" src="img/marinas/quinnipiac-river-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/quinnipiac-river-marina.html">Quinnipiac River Marina</a></strong><span>Up the Quinnipiac in Fair Haven, just off I-95, with summer and winter slips and no membership required.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Pequonnock Yacht Club</strong><span>A private club on the harbor.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Morris Cove</strong><span>Moorings and dockage on the eastern side of the harbor.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Lighthouse Point Park</strong><span>Shoreline and launch access at the harbor mouth.</span></div></div>
