@@ -119,9 +119,6 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
-.spot.has-thumb{grid-template-columns:118px 1fr;align-items:center;gap:1.15rem}
-.spot .thumb{width:118px;height:66px;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
-@media(max-width:560px){.spot.has-thumb{grid-template-columns:1fr}.spot .thumb{width:100%;height:150px}}
 .spot strong{display:block;color:var(--brand);font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;margin-bottom:.15rem}
 .spot span{color:var(--muted);font-size:.96rem}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
@@ -224,11 +221,11 @@ footer.site a{color:var(--brand-ink)}
       <h2>Marinas, docks, and yards in Branford.</h2>
       <p class="lead muted">Where we work in Branford:</p>
       <div class="spotlist">
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/safe-harbor-bruce-johnsons.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/safe-harbor-bruce-johnsons.html">Safe Harbor Bruce &amp; Johnson&#x27;s</a></strong><span>A large full-service marina on Goodsell Point Road with over 500 slips, fuel, and a ship&#x27;s store.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/dutch-wharf-boat-yard.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/dutch-wharf-boat-yard.html">Dutch Wharf Boat Yard &amp; Marina</a></strong><span>Full-service yard on the Branford River with direct access to the Sound.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/safe-harbor-bruce-johnsons.html">Safe Harbor Bruce &amp; Johnson&#x27;s</a></strong><span>A large full-service marina on Goodsell Point Road with over 500 slips, fuel, and a ship&#x27;s store.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/dutch-wharf-boat-yard.html">Dutch Wharf Boat Yard &amp; Marina</a></strong><span>Full-service yard on the Branford River with direct access to the Sound.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Stony Creek</strong><span>The harbor and town dock serving the Thimble Islands.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/branford-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/branford-yacht-club.html">Branford Yacht Club</a></strong><span>Member-owned club on the river.</span></div></div>
-        <div class="spot has-thumb"><img class="thumb" src="img/marinas/pine-orchard-yacht-country-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/pine-orchard-yacht-country-club.html">Pine Orchard Yacht and Country Club</a></strong><span>Club facility on the Branford shoreline.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/branford-yacht-club.html">Branford Yacht Club</a></strong><span>Member-owned club on the river.</span></div></div>
+        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/pine-orchard-yacht-country-club.html">Pine Orchard Yacht and Country Club</a></strong><span>Club facility on the Branford shoreline.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Branford River state boat launch</strong><span>Public launch off Goodsell Point Road.</span></div></div>
       </div>
     </div>
