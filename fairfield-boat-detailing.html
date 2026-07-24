@@ -119,6 +119,9 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
+.spot.has-thumb{grid-template-columns:118px 1fr;align-items:center;gap:1.15rem}
+.spot .thumb{width:118px;height:66px;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
+@media(max-width:560px){.spot.has-thumb{grid-template-columns:1fr}.spot .thumb{width:100%;height:150px}}
 .spot strong{display:block;color:var(--brand);font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;margin-bottom:.15rem}
 .spot span{color:var(--muted);font-size:.96rem}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
@@ -221,8 +224,8 @@ footer.site a{color:var(--brand-ink)}
       <h2>Marinas, docks, and yards in Fairfield.</h2>
       <p class="lead muted">Where we typically work in Fairfield:</p>
       <div class="spotlist">
-        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/south-benson-marina.html">South Benson Marina</a></strong><span>Roughly 600 boats from about 14 to 36 feet on Turney Road, with a launch ramp, fishing pier, and bait shack.</span></div></div>
-        <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong><a href="marinas/ye-yacht-yard.html">Ye Yacht Yard</a></strong><span>Historic yard on Southport Harbor handling small boats, launch service, and access to harbor moorings.</span></div></div>
+        <div class="spot has-thumb"><img class="thumb" src="img/marinas/south-benson-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/south-benson-marina.html">South Benson Marina</a></strong><span>Roughly 600 boats from about 14 to 36 feet on Turney Road, with a launch ramp, fishing pier, and bait shack.</span></div></div>
+        <div class="spot has-thumb"><img class="thumb" src="img/marinas/ye-yacht-yard.svg" alt="" width="800" height="450" loading="lazy" decoding="async"><div><strong><a href="marinas/ye-yacht-yard.html">Ye Yacht Yard</a></strong><span>Historic yard on Southport Harbor handling small boats, launch service, and access to harbor moorings.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Southport Harbor moorings</strong><span>We can arrange detailing for moored boats brought to the dock.</span></div></div>
         <div class="spot"><span class="dot" aria-hidden="true"></span><div><strong>Jennings and Penfield beach areas</strong><span>Trailer and driveway details throughout the shoreline neighborhoods.</span></div></div>
       </div>
