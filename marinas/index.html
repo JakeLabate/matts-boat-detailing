@@ -126,6 +126,9 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
+.spot.has-thumb{grid-template-columns:118px 1fr;align-items:center;gap:1.15rem}
+.spot .thumb{width:118px;height:66px;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
+@media(max-width:560px){.spot.has-thumb{grid-template-columns:1fr}.spot .thumb{width:100%;height:150px}}
 .spot strong{display:block;color:var(--brand);font-family:"Fraunces",serif;font-size:1.06rem;font-weight:600;margin-bottom:.15rem}
 .spot span{color:var(--muted);font-size:.96rem}
 .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
@@ -180,11 +183,16 @@ footer.site a{color:var(--brand-ink)}
 .meta div:last-child{border-bottom:none;padding-bottom:0}
 .meta dt,.meta .l{color:var(--muted)}
 .meta .r{color:var(--ink);font-weight:500;text-align:right}
+.shot{margin:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--mist)}
+.shot img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.shot figcaption{font-size:.82rem;color:var(--muted);padding:.75rem 1.1rem;background:var(--paper);border-top:1px solid var(--line)}
+.shotwrap{padding-top:clamp(1.6rem,3vw,2.4rem);padding-bottom:0}
 .note{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;margin:1.4rem 0 0;color:var(--muted);font-size:.96rem}
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.6rem}
 @media(max-width:900px){.mgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.mgrid{grid-template-columns:1fr}}
-.mcard{border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.35rem;background:var(--paper);display:block;text-decoration:none;transition:transform .12s ease}
+.mcard .mthumb{display:block;width:calc(100% + 2.7rem);margin:-1.4rem -1.35rem 1.1rem;aspect-ratio:16/9;object-fit:cover;border-radius:15px 15px 0 0}
+.mcard{border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.35rem;overflow:hidden;background:var(--paper);display:block;text-decoration:none;transition:transform .12s ease}
 .mcard:hover{border-color:var(--brand);transform:translateY(-2px);text-decoration:none}
 .mcard .kind{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);font-weight:600}
 .mcard h3{margin:.3rem 0 .2rem;font-size:1.08rem}
@@ -243,24 +251,28 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="boardwalk-marina.html">
+            <img class="mthumb" src="../img/marinas/boardwalk-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Full-service marina</span>
             <h3>Boardwalk Marina</h3>
             <p>165 floating slips on the Housatonic, about a half mile off I-95.</p>
             <span class="w">Housatonic River</span>
           </a>
           <a class="mcard" href="safe-harbor-stratford.html">
+            <img class="mthumb" src="../img/marinas/safe-harbor-stratford.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Full-service marina</span>
             <h3>Safe Harbor Stratford</h3>
             <p>About 1.5 miles up the Housatonic on a site with shipyards dating to the 1700s.</p>
             <span class="w">Housatonic River</span>
           </a>
           <a class="mcard" href="browns-marina-stratford.html">
+            <img class="mthumb" src="../img/marinas/browns-marina-stratford.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Marina and winter storage</span>
             <h3>Brown&#x27;s Marina</h3>
             <p>Seasonal slips and winter storage on the west bank, for vessels up to 50 feet.</p>
             <span class="w">Housatonic River</span>
           </a>
           <a class="mcard" href="housatonic-boat-club.html">
+            <img class="mthumb" src="../img/marinas/housatonic-boat-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Private boat club</span>
             <h3>Housatonic Boat Club</h3>
             <p>A family boat club on the Housatonic, active in salt water recreation since 1887.</p>
@@ -275,12 +287,14 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="cedar-marina.html">
+            <img class="mthumb" src="../img/marinas/cedar-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Family-owned full-service marina</span>
             <h3>Cedar Marina</h3>
             <p>140 slips tucked into the left bank of Cedar Creek, family run since 1956.</p>
             <span class="w">Cedar Creek, Black Rock Harbor</span>
           </a>
           <a class="mcard" href="captains-cove-seaport.html">
+            <img class="mthumb" src="../img/marinas/captains-cove-seaport.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Full-service marina and seaport</span>
             <h3>Captain&#x27;s Cove Seaport</h3>
             <p>A 350-slip seaport complex on Black Rock Harbor, taking boats up to 200 feet.</p>
@@ -295,12 +309,14 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="south-benson-marina.html">
+            <img class="mthumb" src="../img/marinas/south-benson-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Municipal marina</span>
             <h3>South Benson Marina</h3>
             <p>Fairfield&#x27;s main municipal marina, holding roughly 600 boats from 14 to 36 feet.</p>
             <span class="w">Black Rock Harbor, Ash Creek</span>
           </a>
           <a class="mcard" href="ye-yacht-yard.html">
+            <img class="mthumb" src="../img/marinas/ye-yacht-yard.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Municipal small-boat yard</span>
             <h3>Ye Yacht Yard</h3>
             <p>Historic town yard on Southport Harbor, handling small craft and harbor moorings.</p>
@@ -315,12 +331,14 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="er-strait-marina.html">
+            <img class="mthumb" src="../img/marinas/er-strait-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Town marina</span>
             <h3>E.R. Strait Marina</h3>
             <p>Westport&#x27;s town marina at Longshore Club Park on the Saugatuck.</p>
             <span class="w">Saugatuck River</span>
           </a>
           <a class="mcard" href="ned-dimes-marina.html">
+            <img class="mthumb" src="../img/marinas/ned-dimes-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Town marina</span>
             <h3>Ned Dimes Marina</h3>
             <p>Westport&#x27;s town marina at Compo Beach, right at the open Sound.</p>
@@ -335,12 +353,14 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="city-point-yacht-club.html">
+            <img class="mthumb" src="../img/marinas/city-point-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Yacht club</span>
             <h3>City Point Yacht Club</h3>
             <p>Established 1895 on the former Oyster Point peninsula, with 182 berths.</p>
             <span class="w">New Haven Harbor</span>
           </a>
           <a class="mcard" href="quinnipiac-river-marina.html">
+            <img class="mthumb" src="../img/marinas/quinnipiac-river-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Full-service marina</span>
             <h3>Quinnipiac River Marina</h3>
             <p>On the Quinnipiac in Fair Haven, with summer and winter slips and no membership required.</p>
@@ -355,6 +375,7 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="farm-river-state-park.html">
+            <img class="mthumb" src="../img/marinas/farm-river-state-park.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">State park with gated marina</span>
             <h3>Farm River State Park</h3>
             <p>A gated marina on the Farm River estuary, the closest thing East Haven has to a boatyard.</p>
@@ -369,24 +390,28 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="safe-harbor-bruce-johnsons.html">
+            <img class="mthumb" src="../img/marinas/safe-harbor-bruce-johnsons.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Large full-service marina</span>
             <h3>Safe Harbor Bruce &amp; Johnson&#x27;s</h3>
             <p>Over 500 slips on Goodsell Point Road, the largest marina we regularly service.</p>
             <span class="w">Branford River</span>
           </a>
           <a class="mcard" href="dutch-wharf-boat-yard.html">
+            <img class="mthumb" src="../img/marinas/dutch-wharf-boat-yard.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Full-service boat yard</span>
             <h3>Dutch Wharf Boat Yard &amp; Marina</h3>
             <p>65 slips up the Branford River, with over 60 years of yard work behind it.</p>
             <span class="w">Branford River</span>
           </a>
           <a class="mcard" href="branford-yacht-club.html">
+            <img class="mthumb" src="../img/marinas/branford-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Member-owned yacht club</span>
             <h3>Branford Yacht Club</h3>
             <p>Founded 1909 near the mouth of the Branford River, with 257 moorings across two marinas.</p>
             <span class="w">Branford River</span>
           </a>
           <a class="mcard" href="pine-orchard-yacht-country-club.html">
+            <img class="mthumb" src="../img/marinas/pine-orchard-yacht-country-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Private club</span>
             <h3>Pine Orchard Yacht and Country Club</h3>
             <p>A private club founded in 1901, with a 100-slip marina on the Branford shoreline.</p>
@@ -401,24 +426,28 @@ footer.site a{color:var(--brand-ink)}
         </div>
         <div class="mgrid">
           <a class="mcard" href="guilford-yacht-club.html">
+            <img class="mthumb" src="../img/marinas/guilford-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Yacht club and marina</span>
             <h3>Guilford Yacht Club</h3>
             <p>Founded 1954 among the salt marshes of the West River, taking boats up to 60 feet.</p>
             <span class="w">West River, Guilford Harbor</span>
           </a>
           <a class="mcard" href="guilford-town-marina.html">
+            <img class="mthumb" src="../img/marinas/guilford-town-marina.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Town marina</span>
             <h3>Guilford Town Marina</h3>
             <p>The town&#x27;s own marina on Whitfield Street, home port to local fishing and pleasure boats.</p>
             <span class="w">Guilford Harbor</span>
           </a>
           <a class="mcard" href="browns-boat-yard-guilford.html">
+            <img class="mthumb" src="../img/marinas/browns-boat-yard-guilford.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Boat yard and marina</span>
             <h3>Brown&#x27;s Boat Yard</h3>
             <p>A 30-slip yard at the mouth of the West River, operating since the 1940s.</p>
             <span class="w">West River</span>
           </a>
           <a class="mcard" href="sachems-head-yacht-club.html">
+            <img class="mthumb" src="../img/marinas/sachems-head-yacht-club.svg" alt="" width="800" height="450" loading="lazy" decoding="async">
             <span class="kind">Yacht club with mooring fields</span>
             <h3>Sachem&#x27;s Head Yacht Club</h3>
             <p>Founded 1896, with mooring fields in two harbors and launch service to members&#x27; boats.</p>
