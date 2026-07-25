@@ -25,106 +25,633 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#website",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "name": "Matt's Boat Detailing",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Matt's Boat Detailing, mobile marine detailing in Milford, Connecticut"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder",
+      "name": "Matthew Ludden",
+      "jobTitle": "Founder and Owner",
+      "description": "Founder of Matt's Boat Detailing. Grew up in Milford, Connecticut and has detailed professionally for over five years.",
+      "worksFor": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Milford, Connecticut"
+      }
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
+      "name": "Matt's Boat Detailing",
+      "legalName": "Matt's Boat Detailing LLC",
+      "alternateName": "MBD Marine Care",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "telephone": "+1-203-258-8281",
+      "email": "Mattsboatdetailing@gmail.com",
+      "foundingDate": "2021",
+      "founder": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder"
+      },
+      "logo": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "image": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "slogan": "Where quality is key",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milford",
+        "addressRegion": "CT",
+        "postalCode": "06460",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2306,
+        "longitude": -73.064
+      },
+      "knowsAbout": [
+        "Boat detailing",
+        "Gelcoat oxidation removal",
+        "Ceramic coating",
+        "Marine polymer sealants",
+        "Teak restoration",
+        "Shrink wrapping",
+        "Boat winterization"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mattsmobileboatdetailing",
+        "https://www.instagram.com/matts_boat_detailing_llc",
+        "https://www.yelp.com/biz/matts-mobile-detailing-milford",
+        "https://share.google/LTSvaVIhin95bjGk5"
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Connecticut shoreline, Greenwich to Mystic"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Marinas We Service",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html"
+        }
+      ]
+    },
+    {
       "@type": "CollectionPage",
       "@id": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html#webpage",
       "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html",
       "name": "Marinas We Service | Matt's Boat Detailing",
       "description": "The marinas, yacht clubs, and boat yards we detail at across the Connecticut shoreline, from Stratford to Guilford. Call (203) 258-8281.",
-      "isPartOf": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#website" },
-      "about": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#business" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jakelabate.github.io/matts-boat-detailing/" },
-        { "@type": "ListItem", "position": 2, "name": "Marinas We Service", "item": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html" }
-      ]
+      "isPartOf": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#website"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "about": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "author": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html#breadcrumb"
+      }
     },
     {
       "@type": "ItemList",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/marinas/index.html#marinas",
       "name": "Marinas, yacht clubs, and boat yards serviced",
+      "numberOfItems": 81,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Boat detailing at Boardwalk Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/boardwalk-marina.html" },
-        { "@type": "ListItem", "position": 2, "name": "Boat detailing at Safe Harbor Stratford", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-stratford.html" },
-        { "@type": "ListItem", "position": 3, "name": "Boat detailing at Brown&#x27;s Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/browns-marina-stratford.html" },
-        { "@type": "ListItem", "position": 4, "name": "Boat detailing at Housatonic Boat Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/housatonic-boat-club.html" },
-        { "@type": "ListItem", "position": 5, "name": "Boat detailing at Cedar Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cedar-marina.html" },
-        { "@type": "ListItem", "position": 6, "name": "Boat detailing at Captain&#x27;s Cove Seaport", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/captains-cove-seaport.html" },
-        { "@type": "ListItem", "position": 7, "name": "Boat detailing at South Benson Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/south-benson-marina.html" },
-        { "@type": "ListItem", "position": 8, "name": "Boat detailing at Ye Yacht Yard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/ye-yacht-yard.html" },
-        { "@type": "ListItem", "position": 9, "name": "Boat detailing at E.R. Strait Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/er-strait-marina.html" },
-        { "@type": "ListItem", "position": 10, "name": "Boat detailing at Ned Dimes Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/ned-dimes-marina.html" },
-        { "@type": "ListItem", "position": 11, "name": "Boat detailing at City Point Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/city-point-yacht-club.html" },
-        { "@type": "ListItem", "position": 12, "name": "Boat detailing at Quinnipiac River Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/quinnipiac-river-marina.html" },
-        { "@type": "ListItem", "position": 13, "name": "Boat detailing at Farm River State Park", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/farm-river-state-park.html" },
-        { "@type": "ListItem", "position": 14, "name": "Boat detailing at Safe Harbor Bruce &amp; Johnson&#x27;s", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-bruce-johnsons.html" },
-        { "@type": "ListItem", "position": 15, "name": "Boat detailing at Dutch Wharf Boat Yard &amp; Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/dutch-wharf-boat-yard.html" },
-        { "@type": "ListItem", "position": 16, "name": "Boat detailing at Branford Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/branford-yacht-club.html" },
-        { "@type": "ListItem", "position": 17, "name": "Boat detailing at Pine Orchard Yacht and Country Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/pine-orchard-yacht-country-club.html" },
-        { "@type": "ListItem", "position": 18, "name": "Boat detailing at Guilford Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/guilford-yacht-club.html" },
-        { "@type": "ListItem", "position": 19, "name": "Boat detailing at Guilford Town Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/guilford-town-marina.html" },
-        { "@type": "ListItem", "position": 20, "name": "Boat detailing at Brown&#x27;s Boat Yard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/browns-boat-yard-guilford.html" },
-        { "@type": "ListItem", "position": 21, "name": "Boat detailing at Sachem&#x27;s Head Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/sachems-head-yacht-club.html" },
-        { "@type": "ListItem", "position": 22, "name": "Boat detailing at Indian Harbor Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/indian-harbor-yacht-club.html" },
-        { "@type": "ListItem", "position": 23, "name": "Boat detailing at Beacon Point Marine", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/beacon-point-marine.html" },
-        { "@type": "ListItem", "position": 24, "name": "Boat detailing at Cos Cob Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cos-cob-marina.html" },
-        { "@type": "ListItem", "position": 25, "name": "Boat detailing at Byram Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/byram-marina.html" },
-        { "@type": "ListItem", "position": 26, "name": "Boat detailing at Safe Harbor Yacht Haven", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-yacht-haven.html" },
-        { "@type": "ListItem", "position": 27, "name": "Boat detailing at Harbor Point Marinas", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harbor-point-marinas.html" },
-        { "@type": "ListItem", "position": 28, "name": "Boat detailing at Czescik Municipal Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/czescik-municipal-marina.html" },
-        { "@type": "ListItem", "position": 29, "name": "Boat detailing at Stamford Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/stamford-yacht-club.html" },
-        { "@type": "ListItem", "position": 30, "name": "Boat detailing at Noroton Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noroton-yacht-club.html" },
-        { "@type": "ListItem", "position": 31, "name": "Boat detailing at Norwalk Cove Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/norwalk-cove-marina.html" },
-        { "@type": "ListItem", "position": 32, "name": "Boat detailing at Rex Marine Center", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/rex-marine-center.html" },
-        { "@type": "ListItem", "position": 33, "name": "Boat detailing at Total Marine of Norwalk", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/total-marine-norwalk.html" },
-        { "@type": "ListItem", "position": 34, "name": "Boat detailing at Rowayton Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/rowayton-yacht-club.html" },
-        { "@type": "ListItem", "position": 35, "name": "Boat detailing at Milford Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-yacht-club.html" },
-        { "@type": "ListItem", "position": 36, "name": "Boat detailing at Milford Boat Works", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-boat-works.html" },
-        { "@type": "ListItem", "position": 37, "name": "Boat detailing at Spencer&#x27;s Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/spencers-marina.html" },
-        { "@type": "ListItem", "position": 38, "name": "Boat detailing at Safe Harbor Port Milford", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-port-milford.html" },
-        { "@type": "ListItem", "position": 39, "name": "Boat detailing at Caswell Cove Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/caswell-cove-marina.html" },
-        { "@type": "ListItem", "position": 40, "name": "Boat detailing at Milford Landing Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-landing-marina.html" },
-        { "@type": "ListItem", "position": 41, "name": "Boat detailing at Cedar Island Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cedar-island-marina.html" },
-        { "@type": "ListItem", "position": 42, "name": "Boat detailing at Clinton Yacht Haven", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/clinton-yacht-haven.html" },
-        { "@type": "ListItem", "position": 43, "name": "Boat detailing at Petzold&#x27;s Port Clinton Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/petzolds-port-clinton.html" },
-        { "@type": "ListItem", "position": 44, "name": "Boat detailing at Harborside Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harborside-marina-clinton.html" },
-        { "@type": "ListItem", "position": 45, "name": "Boat detailing at Safe Harbor Pilots Point", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-pilots-point.html" },
-        { "@type": "ListItem", "position": 46, "name": "Boat detailing at Westbrook Marine Center", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/westbrook-marine-center.html" },
-        { "@type": "ListItem", "position": 47, "name": "Boat detailing at Harry&#x27;s Marine Repair", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harrys-marine-repair.html" },
-        { "@type": "ListItem", "position": 48, "name": "Boat detailing at Saybrook Point Resort &amp; Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/saybrook-point-marina.html" },
-        { "@type": "ListItem", "position": 49, "name": "Boat detailing at Safe Harbor Ferry Point", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-ferry-point.html" },
-        { "@type": "ListItem", "position": 50, "name": "Boat detailing at Harbor One Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harbor-one-marina.html" },
-        { "@type": "ListItem", "position": 51, "name": "Boat detailing at North Cove Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/north-cove-yacht-club.html" },
-        { "@type": "ListItem", "position": 52, "name": "Boat detailing at Safe Harbor Dauntless Shipyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-dauntless-shipyard.html" },
-        { "@type": "ListItem", "position": 53, "name": "Boat detailing at Essex Boat Works", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-boat-works.html" },
-        { "@type": "ListItem", "position": 54, "name": "Boat detailing at Essex Island Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-island-marina.html" },
-        { "@type": "ListItem", "position": 55, "name": "Boat detailing at Essex Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-yacht-club.html" },
-        { "@type": "ListItem", "position": 56, "name": "Boat detailing at Safe Harbor Deep River", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-deep-river.html" },
-        { "@type": "ListItem", "position": 57, "name": "Boat detailing at Old Lyme Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/old-lyme-marina.html" },
-        { "@type": "ListItem", "position": 58, "name": "Boat detailing at Old Lyme Dock Company", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/old-lyme-dock-company.html" },
-        { "@type": "ListItem", "position": 59, "name": "Boat detailing at Three Belles Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/three-belles-marina.html" },
-        { "@type": "ListItem", "position": 60, "name": "Boat detailing at Port Niantic", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/port-niantic.html" },
-        { "@type": "ListItem", "position": 61, "name": "Boat detailing at Boats Inc.", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/boats-inc-niantic.html" },
-        { "@type": "ListItem", "position": 62, "name": "Boat detailing at Mago Point Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mago-point-marina.html" },
-        { "@type": "ListItem", "position": 63, "name": "Boat detailing at Crocker&#x27;s Boatyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/crockers-boatyard.html" },
-        { "@type": "ListItem", "position": 64, "name": "Boat detailing at Burr&#x27;s Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/burrs-marina.html" },
-        { "@type": "ListItem", "position": 65, "name": "Boat detailing at Thamesport Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/thamesport-marina.html" },
-        { "@type": "ListItem", "position": 66, "name": "Boat detailing at Thames Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/thames-yacht-club.html" },
-        { "@type": "ListItem", "position": 67, "name": "Boat detailing at Noank Shipyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noank-shipyard.html" },
-        { "@type": "ListItem", "position": 68, "name": "Boat detailing at Noank Village Boatyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noank-village-boatyard.html" },
-        { "@type": "ListItem", "position": 69, "name": "Boat detailing at Spicer&#x27;s Noank Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/spicers-noank-marina.html" },
-        { "@type": "ListItem", "position": 70, "name": "Boat detailing at Palmer&#x27;s Cove Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/palmers-cove-marina.html" },
-        { "@type": "ListItem", "position": 71, "name": "Boat detailing at Pine Island Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/pine-island-marina.html" },
-        { "@type": "ListItem", "position": 72, "name": "Boat detailing at Shennecossett Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/shennecossett-yacht-club.html" },
-        { "@type": "ListItem", "position": 73, "name": "Boat detailing at Mystic Shipyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-shipyard.html" },
-        { "@type": "ListItem", "position": 74, "name": "Boat detailing at Seaport Marine", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/seaport-marine.html" },
-        { "@type": "ListItem", "position": 75, "name": "Boat detailing at Safe Harbor Mystic", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-mystic.html" },
-        { "@type": "ListItem", "position": 76, "name": "Boat detailing at Mystic River Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-river-marina.html" },
-        { "@type": "ListItem", "position": 77, "name": "Boat detailing at Mason&#x27;s Island Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/masons-island-marina.html" },
-        { "@type": "ListItem", "position": 78, "name": "Boat detailing at Fort Rachel Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/fort-rachel-marina.html" },
-        { "@type": "ListItem", "position": 79, "name": "Boat detailing at Mystic Seaport Marina", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-seaport-marina.html" },
-        { "@type": "ListItem", "position": 80, "name": "Boat detailing at Dodson Boatyard", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/dodson-boatyard.html" },
-        { "@type": "ListItem", "position": 81, "name": "Boat detailing at Stonington Harbor Yacht Club", "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/stonington-harbor-yacht-club.html" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Boat detailing at Boardwalk Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/boardwalk-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Boat detailing at Safe Harbor Stratford",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-stratford.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Boat detailing at Brown's Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/browns-marina-stratford.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Boat detailing at Housatonic Boat Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/housatonic-boat-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Boat detailing at Cedar Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cedar-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Boat detailing at Captain's Cove Seaport",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/captains-cove-seaport.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Boat detailing at South Benson Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/south-benson-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Boat detailing at Ye Yacht Yard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/ye-yacht-yard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Boat detailing at E.R. Strait Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/er-strait-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Boat detailing at Ned Dimes Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/ned-dimes-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Boat detailing at City Point Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/city-point-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Boat detailing at Quinnipiac River Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/quinnipiac-river-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Boat detailing at Farm River State Park",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/farm-river-state-park.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Boat detailing at Safe Harbor Bruce & Johnson's",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-bruce-johnsons.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Boat detailing at Dutch Wharf Boat Yard & Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/dutch-wharf-boat-yard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Boat detailing at Branford Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/branford-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Boat detailing at Pine Orchard Yacht and Country Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/pine-orchard-yacht-country-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Boat detailing at Guilford Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/guilford-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Boat detailing at Guilford Town Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/guilford-town-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Boat detailing at Brown's Boat Yard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/browns-boat-yard-guilford.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Boat detailing at Sachem's Head Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/sachems-head-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Boat detailing at Indian Harbor Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/indian-harbor-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Boat detailing at Beacon Point Marine",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/beacon-point-marine.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Boat detailing at Cos Cob Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cos-cob-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "Boat detailing at Byram Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/byram-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "Boat detailing at Safe Harbor Yacht Haven",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-yacht-haven.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "Boat detailing at Harbor Point Marinas",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harbor-point-marinas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "Boat detailing at Czescik Municipal Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/czescik-municipal-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "Boat detailing at Stamford Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/stamford-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "name": "Boat detailing at Noroton Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noroton-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "name": "Boat detailing at Norwalk Cove Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/norwalk-cove-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "name": "Boat detailing at Rex Marine Center",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/rex-marine-center.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "name": "Boat detailing at Total Marine of Norwalk",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/total-marine-norwalk.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "name": "Boat detailing at Rowayton Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/rowayton-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "name": "Boat detailing at Milford Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "name": "Boat detailing at Milford Boat Works",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-boat-works.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "name": "Boat detailing at Spencer's Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/spencers-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "name": "Boat detailing at Safe Harbor Port Milford",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-port-milford.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "name": "Boat detailing at Caswell Cove Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/caswell-cove-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "name": "Boat detailing at Milford Landing Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/milford-landing-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "name": "Boat detailing at Cedar Island Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/cedar-island-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 42,
+          "name": "Boat detailing at Clinton Yacht Haven",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/clinton-yacht-haven.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 43,
+          "name": "Boat detailing at Petzold's Port Clinton Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/petzolds-port-clinton.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 44,
+          "name": "Boat detailing at Harborside Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harborside-marina-clinton.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 45,
+          "name": "Boat detailing at Safe Harbor Pilots Point",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-pilots-point.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 46,
+          "name": "Boat detailing at Westbrook Marine Center",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/westbrook-marine-center.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 47,
+          "name": "Boat detailing at Harry's Marine Repair",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harrys-marine-repair.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 48,
+          "name": "Boat detailing at Saybrook Point Resort & Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/saybrook-point-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 49,
+          "name": "Boat detailing at Safe Harbor Ferry Point",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-ferry-point.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 50,
+          "name": "Boat detailing at Harbor One Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/harbor-one-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 51,
+          "name": "Boat detailing at North Cove Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/north-cove-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 52,
+          "name": "Boat detailing at Safe Harbor Dauntless Shipyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-dauntless-shipyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 53,
+          "name": "Boat detailing at Essex Boat Works",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-boat-works.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 54,
+          "name": "Boat detailing at Essex Island Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-island-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 55,
+          "name": "Boat detailing at Essex Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/essex-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 56,
+          "name": "Boat detailing at Safe Harbor Deep River",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-deep-river.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 57,
+          "name": "Boat detailing at Old Lyme Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/old-lyme-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 58,
+          "name": "Boat detailing at Old Lyme Dock Company",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/old-lyme-dock-company.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 59,
+          "name": "Boat detailing at Three Belles Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/three-belles-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 60,
+          "name": "Boat detailing at Port Niantic",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/port-niantic.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 61,
+          "name": "Boat detailing at Boats Inc.",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/boats-inc-niantic.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 62,
+          "name": "Boat detailing at Mago Point Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mago-point-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 63,
+          "name": "Boat detailing at Crocker's Boatyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/crockers-boatyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 64,
+          "name": "Boat detailing at Burr's Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/burrs-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 65,
+          "name": "Boat detailing at Thamesport Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/thamesport-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 66,
+          "name": "Boat detailing at Thames Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/thames-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 67,
+          "name": "Boat detailing at Noank Shipyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noank-shipyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 68,
+          "name": "Boat detailing at Noank Village Boatyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/noank-village-boatyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 69,
+          "name": "Boat detailing at Spicer's Noank Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/spicers-noank-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 70,
+          "name": "Boat detailing at Palmer's Cove Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/palmers-cove-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 71,
+          "name": "Boat detailing at Pine Island Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/pine-island-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 72,
+          "name": "Boat detailing at Shennecossett Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/shennecossett-yacht-club.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 73,
+          "name": "Boat detailing at Mystic Shipyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-shipyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 74,
+          "name": "Boat detailing at Seaport Marine",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/seaport-marine.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 75,
+          "name": "Boat detailing at Safe Harbor Mystic",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/safe-harbor-mystic.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 76,
+          "name": "Boat detailing at Mystic River Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-river-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 77,
+          "name": "Boat detailing at Mason's Island Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/masons-island-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 78,
+          "name": "Boat detailing at Fort Rachel Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/fort-rachel-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 79,
+          "name": "Boat detailing at Mystic Seaport Marina",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/mystic-seaport-marina.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 80,
+          "name": "Boat detailing at Dodson Boatyard",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/dodson-boatyard.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 81,
+          "name": "Boat detailing at Stonington Harbor Yacht Club",
+          "url": "https://jakelabate.github.io/matts-boat-detailing/marinas/stonington-harbor-yacht-club.html"
+        }
       ]
     }
   ]
