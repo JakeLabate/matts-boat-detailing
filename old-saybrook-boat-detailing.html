@@ -25,40 +25,437 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#website",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "name": "Matt's Boat Detailing",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Matt's Boat Detailing, mobile marine detailing in Milford, Connecticut"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder",
+      "name": "Matthew Ludden",
+      "jobTitle": "Founder and Owner",
+      "description": "Founder of Matt's Boat Detailing. Grew up in Milford, Connecticut and has detailed professionally for over five years.",
+      "worksFor": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Milford, Connecticut"
+      }
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
+      "name": "Matt's Boat Detailing",
+      "legalName": "Matt's Boat Detailing LLC",
+      "alternateName": "MBD Marine Care",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "telephone": "+1-203-258-8281",
+      "email": "Mattsboatdetailing@gmail.com",
+      "foundingDate": "2021",
+      "founder": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder"
+      },
+      "logo": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "image": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "slogan": "Where quality is key",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milford",
+        "addressRegion": "CT",
+        "postalCode": "06460",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2306,
+        "longitude": -73.064
+      },
+      "knowsAbout": [
+        "Boat detailing",
+        "Gelcoat oxidation removal",
+        "Ceramic coating",
+        "Marine polymer sealants",
+        "Teak restoration",
+        "Shrink wrapping",
+        "Boat winterization"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mattsmobileboatdetailing",
+        "https://www.instagram.com/matts_boat_detailing_llc",
+        "https://www.yelp.com/biz/matts-mobile-detailing-milford",
+        "https://share.google/LTSvaVIhin95bjGk5"
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Connecticut shoreline, Greenwich to Mystic"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/service-areas.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Old Saybrook",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html"
+        }
+      ]
+    },
+    {
       "@type": "WebPage",
       "@id": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html#webpage",
       "url": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html",
       "name": "Boat Detailing in Old Saybrook, CT | Matt's Boat Detailing",
       "description": "Mobile boat detailing in Old Saybrook, CT. We service Saybrook Point, Ferry Point, and North Cove. Wash, wax, and three-year ceramic coating.",
-      "isPartOf": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#website" },
-      "about": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#business" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jakelabate.github.io/matts-boat-detailing/" },
-        { "@type": "ListItem", "position": 2, "name": "Service Areas", "item": "https://jakelabate.github.io/matts-boat-detailing/service-areas.html" },
-        { "@type": "ListItem", "position": 3, "name": "Old Saybrook", "item": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html" }
+      "isPartOf": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#website"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "about": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "author": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html#breadcrumb"
+      },
+      "significantLink": [
+        "https://jakelabate.github.io/matts-boat-detailing/services.html",
+        "https://jakelabate.github.io/matts-boat-detailing/contact.html"
+      ],
+      "mentions": [
+        {
+          "@type": "Place",
+          "name": "Saybrook Point Resort & Marina",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old Saybrook",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Safe Harbor Ferry Point",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old Saybrook",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Harbor One Marina",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old Saybrook",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "North Cove Yacht Club",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old Saybrook",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Between the Bridges",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Old Saybrook",
+            "addressRegion": "CT",
+            "addressCountry": "US"
+          }
+        }
       ]
     },
     {
       "@type": "Service",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/old-saybrook-boat-detailing.html#service",
       "name": "Boat detailing in Old Saybrook, CT",
       "serviceType": "Mobile marine detailing",
       "description": "Mobile boat detailing in Old Saybrook, CT. We service Saybrook Point, Ferry Point, and North Cove. Wash, wax, and three-year ceramic coating.",
-      "areaServed": { "@type": "City", "name": "Old Saybrook", "addressRegion": "CT", "addressCountry": "US" },
-      "provider": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#business" }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
-      "name": "Matt's Boat Detailing",
-      "legalName": "Matt's Boat Detailing LLC",
-      "url": "https://jakelabate.github.io/matts-boat-detailing/",
-      "telephone": "+1-203-258-8281",
-      "priceRange": "$$",
-      "address": { "@type": "PostalAddress", "addressLocality": "Milford", "addressRegion": "CT", "addressCountry": "US" },
-      "sameAs": [ "https://www.facebook.com/mattsmobileboatdetailing", "https://www.instagram.com/matts_boat_detailing_llc", "https://www.yelp.com/biz/matts-mobile-detailing-milford", "https://share.google/LTSvaVIhin95bjGk5" ]
+      "provider": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Old Saybrook",
+        "addressRegion": "CT",
+        "addressCountry": "US",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Connecticut"
+        }
+      },
+      "category": "Boat detailing",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Boat detailing services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Wash & Wax",
+            "description": "Hand wash, brightwork, window and isinglass cleaning, non-skid, spray wax, and a polymer sealant.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wash & Wax",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 35.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Resurgence Oxidation Removal",
+            "description": "Correction for heavily oxidised boats: one to two step sanding, two-step compounding, one-step polish, and a polymer sealant.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Resurgence Oxidation Removal",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false,
+              "description": "Priced by quote after assessment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Buff & Shine",
+            "description": "Full exterior one-step compound and one-step polish, brightwork, non-skid spray wax, then a polymer sealant.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Buff & Shine",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 65.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Ceramic Coating",
+            "description": "A three-year single-layer ceramic coating creating a sacrificial barrier against UV, salt, oxidation, and hazing.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ceramic Coating",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 100.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              },
+              "minPrice": 100.0,
+              "description": "Starting price per foot"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Weekly Wash Plan",
+            "description": "Recurring weekly wash to keep the vessel looking its best all season.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Weekly Wash Plan",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 8.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Bi-Weekly Wash Plan",
+            "description": "Recurring wash every two weeks through the season.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Bi-Weekly Wash Plan",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 9.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Wash Plan",
+            "description": "Recurring monthly wash through the season.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Wash Plan",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "priceCurrency": "USD",
+              "price": 10.0,
+              "unitCode": "FOT",
+              "unitText": "foot",
+              "referenceQuantity": {
+                "@type": "QuantitativeValue",
+                "value": 1,
+                "unitCode": "FOT",
+                "unitText": "foot"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Teak Restoration",
+            "description": "Restoration of weathered teak and brightwork.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Teak Restoration",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false,
+              "description": "Priced by quote after assessment"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Shrink Wrapping & Winterizing",
+            "description": "Shrink wrapping and winterization to protect the boat through the off-season.",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shrink Wrapping & Winterizing",
+              "serviceType": "Marine detailing"
+            },
+            "availability": "https://schema.org/InStock",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false,
+              "description": "Priced by quote after assessment"
+            }
+          }
+        ]
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "servicePhone": {
+          "@type": "ContactPoint",
+          "telephone": "+1-203-258-8281",
+          "contactType": "customer service",
+          "areaServed": "US",
+          "availableLanguage": "English"
+        },
+        "serviceUrl": "https://jakelabate.github.io/matts-boat-detailing/contact.html"
+      }
     }
   ]
 }
