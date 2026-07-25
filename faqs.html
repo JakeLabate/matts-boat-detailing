@@ -25,18 +25,147 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#website",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "name": "Matt's Boat Detailing",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Matt's Boat Detailing, mobile marine detailing in Milford, Connecticut"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder",
+      "name": "Matthew Ludden",
+      "jobTitle": "Founder and Owner",
+      "description": "Founder of Matt's Boat Detailing. Grew up in Milford, Connecticut and has detailed professionally for over five years.",
+      "worksFor": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Milford, Connecticut"
+      }
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
+      "name": "Matt's Boat Detailing",
+      "legalName": "Matt's Boat Detailing LLC",
+      "alternateName": "MBD Marine Care",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "telephone": "+1-203-258-8281",
+      "email": "Mattsboatdetailing@gmail.com",
+      "foundingDate": "2021",
+      "founder": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder"
+      },
+      "logo": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "image": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "slogan": "Where quality is key",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milford",
+        "addressRegion": "CT",
+        "postalCode": "06460",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2306,
+        "longitude": -73.064
+      },
+      "knowsAbout": [
+        "Boat detailing",
+        "Gelcoat oxidation removal",
+        "Ceramic coating",
+        "Marine polymer sealants",
+        "Teak restoration",
+        "Shrink wrapping",
+        "Boat winterization"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mattsmobileboatdetailing",
+        "https://www.instagram.com/matts_boat_detailing_llc",
+        "https://www.yelp.com/biz/matts-mobile-detailing-milford",
+        "https://share.google/LTSvaVIhin95bjGk5"
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Connecticut shoreline, Greenwich to Mystic"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/faqs.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "FAQs",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/faqs.html"
+        }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://jakelabate.github.io/matts-boat-detailing/faqs.html#webpage",
       "url": "https://jakelabate.github.io/matts-boat-detailing/faqs.html",
-      "name": "Boat Detailing FAQs | Matt's Boat Detailing, Connecticut",
-      "isPartOf": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#website" },
+      "name": "Boat Detailing FAQs | Matt's Boat Detailing",
+      "description": "Answers to common boat detailing questions: how often to detail, is ceramic coating worth it, how long it takes, and mobile marina service in CT.",
+      "isPartOf": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#website"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "about": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "author": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/faqs.html#breadcrumb"
+      },
       "mainEntity": [
         {
           "@type": "Question",
           "name": "How often should I detail my boat?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For most owners, a comprehensive maintenance schedule includes detailing once per season, complemented by routine maintenance washes every few weeks. Vessels exposed to saltwater, intense sun, or frequent use may require more consistent attention to prevent oxidation and surface degradation. A well-maintained schedule keeps your boat in exceptional condition year-round."
+            "text": "Proper care is essential to maintaining the appearance, performance, and long-term value of your vessel. For most owners, a comprehensive maintenance schedule includes detailing once per season, complemented by routine maintenance washes every few weeks. Vessels exposed to saltwater, intense sun, or frequent use may require more consistent attention to prevent oxidation and surface degradation. Following a well-maintained schedule ensures your boat remains in exceptional condition year-round."
           }
         },
         {
@@ -44,7 +173,7 @@
           "name": "Is ceramic coating worth it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ceramic coating forms a durable, hydrophobic barrier that shields against UV exposure, salt, and environmental contaminants while delivering a deep, lasting gloss. Besides elevating your boat's appearance, it significantly reduces ongoing maintenance. For owners seeking long-term protection and a consistently refined finish, ceramic coating is a worthwhile investment."
+            "text": "Ceramic coating is a high-performance protective treatment designed to preserve and enhance your vessel's finish. It forms a durable, hydrophobic barrier that shields against UV exposure, salt, and environmental contaminants while delivering a deep, lasting gloss. In addition to elevating your boat's appearance, it significantly reduces ongoing maintenance. For owners seeking long-term protection and a consistently refined finish, ceramic coating is a worthwhile investment."
           }
         },
         {
@@ -52,7 +181,7 @@
           "name": "How long does a detail take?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each service is tailored to the condition and size of the vessel. A standard wash and protection service may be completed within several hours, while a full correction and protection detail can take one to two days. More extensive restoration work may require additional time. An accurate time frame is provided following an initial assessment."
+            "text": "Each detailing service is tailored to the specific condition and size of the vessel. A standard wash and protection service may be completed within several hours, while a full correction and protection detail can take one to two days. More extensive restoration work may require additional time to achieve the highest standard of results. An accurate time frame is provided following an initial assessment."
           }
         },
         {
@@ -60,16 +189,9 @@
           "name": "Do you come to my marina?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We offer fully mobile boat detailing services and work at marinas, private docks, and waterfront properties throughout the Connecticut shoreline. Our team arrives fully equipped to deliver professional results on-site, with minimal disruption to your schedule."
+            "text": "Yes, we offer fully mobile boat detailing services for your convenience. We service marinas, private docks, and waterfront properties throughout the Connecticut shoreline, allowing you to enjoy a seamless, hassle-free experience. Our team arrives fully equipped to deliver professional results on-site, with minimal disruption to your schedule."
           }
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jakelabate.github.io/matts-boat-detailing/" },
-        { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://jakelabate.github.io/matts-boat-detailing/faqs.html" }
       ]
     }
   ]
