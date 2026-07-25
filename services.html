@@ -25,75 +25,351 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#webpage",
-      "url": "https://jakelabate.github.io/matts-boat-detailing/services.html",
-      "name": "Boat Detailing Services & Pricing | Matt's Boat Detailing",
-      "isPartOf": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#website" },
-      "about": { "@id": "https://jakelabate.github.io/matts-boat-detailing/#business" }
+      "@type": "WebSite",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#website",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "name": "Matt's Boat Detailing",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/img/og.png",
+      "width": 1200,
+      "height": 630,
+      "caption": "Matt's Boat Detailing, mobile marine detailing in Milford, Connecticut"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder",
+      "name": "Matthew Ludden",
+      "jobTitle": "Founder and Owner",
+      "description": "Founder of Matt's Boat Detailing. Grew up in Milford, Connecticut and has detailed professionally for over five years.",
+      "worksFor": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Milford, Connecticut"
+      }
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
+      "name": "Matt's Boat Detailing",
+      "legalName": "Matt's Boat Detailing LLC",
+      "alternateName": "MBD Marine Care",
+      "description": "Fully insured mobile marine detailing serving boat owners, marinas, and yacht brokers across the Connecticut shoreline from Greenwich to Mystic.",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/",
+      "telephone": "+1-203-258-8281",
+      "email": "Mattsboatdetailing@gmail.com",
+      "foundingDate": "2021",
+      "founder": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#founder"
+      },
+      "logo": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "image": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "slogan": "Where quality is key",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milford",
+        "addressRegion": "CT",
+        "postalCode": "06460",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.2306,
+        "longitude": -73.064
+      },
+      "knowsAbout": [
+        "Boat detailing",
+        "Gelcoat oxidation removal",
+        "Ceramic coating",
+        "Marine polymer sealants",
+        "Teak restoration",
+        "Shrink wrapping",
+        "Boat winterization"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/mattsmobileboatdetailing",
+        "https://www.instagram.com/matts_boat_detailing_llc",
+        "https://www.yelp.com/biz/matts-mobile-detailing-milford",
+        "https://share.google/LTSvaVIhin95bjGk5"
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Connecticut shoreline, Greenwich to Mystic"
+      }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jakelabate.github.io/matts-boat-detailing/" },
-        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jakelabate.github.io/matts-boat-detailing/services.html" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services & Pricing",
+          "item": "https://jakelabate.github.io/matts-boat-detailing/services.html"
+        }
       ]
     },
     {
-      "@type": "LocalBusiness",
-      "@id": "https://jakelabate.github.io/matts-boat-detailing/#business",
-      "name": "Matt's Boat Detailing",
-      "url": "https://jakelabate.github.io/matts-boat-detailing/",
-      "telephone": "+1-203-258-8281",
-      "areaServed": { "@type": "AdministrativeArea", "name": "Connecticut shoreline" },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Boat detailing services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Wash & Wax", "description": "Hand wash, brightwork cleaning, window and isinglass cleaning, non-skid cleaning, spray wax, and polymer sealant." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "35", "priceCurrency": "USD", "unitText": "foot" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Buff & Shine", "description": "Brightwork cleaning, non-skid spray wax, one-step compound, one-step polish, and polymer sealant. Full exterior." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "65", "priceCurrency": "USD", "unitText": "foot" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Ceramic Coating", "description": "Light polish and a three-year single-layer ceramic coating from the waterline up." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "100", "priceCurrency": "USD", "unitText": "foot", "minPrice": "100" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Weekly Wash Plan", "description": "Recurring weekly maintenance wash." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "8", "priceCurrency": "USD", "unitText": "foot" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Bi-Weekly Wash Plan", "description": "Recurring bi-weekly maintenance wash." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "9", "priceCurrency": "USD", "unitText": "foot" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Monthly Wash Plan", "description": "Recurring monthly maintenance wash." },
-            "priceSpecification": { "@type": "UnitPriceSpecification", "price": "10", "priceCurrency": "USD", "unitText": "foot" }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Resurgence Oxidation Removal", "description": "Restoration for heavily oxidized boats: hand wash, brightwork, mold and mildew removal, sanding, two-step compounding, polish, and polymer sealant." }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Teak Restoration", "description": "Cleaning and restoration of teak surfaces." }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": { "@type": "Service", "name": "Shrink Wrapping & Winterization", "description": "Seasonal shrink wrapping and winterizing services." }
-          }
-        ]
+      "@type": "WebPage",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#webpage",
+      "url": "https://jakelabate.github.io/matts-boat-detailing/services.html",
+      "name": "Services & Pricing | Matt's Boat Detailing",
+      "description": "Per-foot boat detailing pricing in CT: wash and wax $35/ft, buff and shine $65/ft, ceramic coating from $100/ft, plus oxidation removal, teak, and shrink wrap.",
+      "isPartOf": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#website"
+      },
+      "inLanguage": "en-US",
+      "primaryImageOfPage": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#logo"
+      },
+      "about": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "author": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#catalog"
       }
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/services.html#catalog",
+      "name": "Boat detailing services and per-foot pricing",
+      "numberOfItems": 9,
+      "provider": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Wash & Wax",
+          "description": "Hand wash, brightwork, window and isinglass cleaning, non-skid, spray wax, and a polymer sealant.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Wash & Wax",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 35.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Resurgence Oxidation Removal",
+          "description": "Correction for heavily oxidised boats: one to two step sanding, two-step compounding, one-step polish, and a polymer sealant.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Resurgence Oxidation Removal",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "description": "Priced by quote after assessment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Buff & Shine",
+          "description": "Full exterior one-step compound and one-step polish, brightwork, non-skid spray wax, then a polymer sealant.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Buff & Shine",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 65.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Ceramic Coating",
+          "description": "A three-year single-layer ceramic coating creating a sacrificial barrier against UV, salt, oxidation, and hazing.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ceramic Coating",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 100.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            },
+            "minPrice": 100.0,
+            "description": "Starting price per foot"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Weekly Wash Plan",
+          "description": "Recurring weekly wash to keep the vessel looking its best all season.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Weekly Wash Plan",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 8.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Bi-Weekly Wash Plan",
+          "description": "Recurring wash every two weeks through the season.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Bi-Weekly Wash Plan",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 9.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Wash Plan",
+          "description": "Recurring monthly wash through the season.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monthly Wash Plan",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "priceCurrency": "USD",
+            "price": 10.0,
+            "unitCode": "FOT",
+            "unitText": "foot",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitCode": "FOT",
+              "unitText": "foot"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Teak Restoration",
+          "description": "Restoration of weathered teak and brightwork.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Teak Restoration",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "description": "Priced by quote after assessment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Shrink Wrapping & Winterizing",
+          "description": "Shrink wrapping and winterization to protect the boat through the off-season.",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Shrink Wrapping & Winterizing",
+            "serviceType": "Marine detailing"
+          },
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "description": "Priced by quote after assessment"
+          }
+        }
+      ]
     }
   ]
 }
