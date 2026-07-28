@@ -462,10 +462,10 @@
 </script>
 <style>
 :root{
-  --ink:#12202e; --paper:#ffffff; --muted:#51606e;
-  --brand:#0b2c4d; --brand-ink:#ffffff; --accent:#c0812f;
-  --sand:#deb887; --mist:#eef3f7; --sandtint:#f7efe2; --line:#7c838b;
-  --accent-ink:#8f5e1c;
+  --ink:#f2ede2; --paper:#000000; --muted:#a8a294;
+  --brand:#d8b273; --brand-ink:#000000; --accent:#d8b273;
+  --sand:#d8b273; --mist:#121216; --sandtint:#18120a; --line:#8d6b3e;
+  --accent-ink:#f5ddaf;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -567,14 +567,109 @@ footer.site a{color:var(--brand-ink)}
   .menu.open .btn{width:100%;justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+
+/* ---- black & gold theme ---- */
+html,body{background:var(--paper);color:var(--ink)}
+header.site{background:var(--paper);border-bottom:1px solid var(--line)}
+.navtoggle{color:var(--brand);border-color:var(--line)}
+.menu.open{background:var(--paper);border-bottom-color:var(--line)}
+
+.brandmark{flex-direction:row;align-items:center;gap:.72rem}
+.brandmark .logo{height:44px;width:auto;display:block;flex:0 0 auto}
+.brandmark .txt{display:flex;flex-direction:column;line-height:1}
+.brandmark .rule{background:var(--brand)}
+
+.pagehead{background:var(--paper);border-bottom:1px solid var(--line)}
+.pagehead h1{color:var(--brand)}
+.pagehead .lead{color:var(--ink);opacity:1}
+.pagehead .crumb{color:var(--muted);opacity:1}
+.pagehead .crumb a{color:var(--brand)}
+.fchip{color:var(--ink);border-color:var(--line)}
+
+.bg-brand{background:var(--mist)}
+.bg-brand h2,.bg-brand h3{color:var(--brand)}
+.bg-brand p,.bg-brand li,.bg-brand span,.bg-brand div{color:var(--ink)}
+.bg-mist{background:var(--mist)}
+.bg-sand{background:var(--sandtint)}
+
+.spot,.ccard,.mcard,.towncard,.svc a,.chip,.meta,.card,.value,.qa-card{
+  background:var(--mist);border-color:var(--line)}
+.spot span,.mcard p,.towncard p,.svc span,.ccard p,.card p{color:var(--muted)}
+.meta div{border-bottom-color:var(--line)}
+.meta .r{color:var(--ink)}
+.chip{color:var(--ink)}
+a.chip:hover,.mcard:hover,.towncard:hover,.svc a:hover{border-color:var(--brand)}
+
+.hero{background-color:var(--paper)}
+.hero-bg{background:var(--paper)}
+.hero h1{color:var(--brand)}
+.hero .lead{color:var(--ink);opacity:1}
+.hero-facts{border-top-color:var(--line)}
+.factbar{border-top-color:var(--line)}
+.factbar .k{color:var(--brand)}
+.factbar .v{color:var(--muted);opacity:1}
+
+.ctaband{background:var(--brand)}
+.ctaband h2,.ctaband p{color:var(--brand-ink)}
+.ctaband .btn-primary{background:var(--paper);color:var(--ink)}
+.ctaband .btn-ghost{color:var(--brand-ink);border-color:var(--brand-ink)}
+.ctaband :focus-visible{outline-color:var(--paper)}
+
+.btn-primary{background:var(--brand);color:var(--brand-ink)}
+.btn-accent{background:var(--brand);color:var(--brand-ink)}
+.btn-ghost{color:var(--brand);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--brand)}
+
+footer.site{background:var(--paper);color:var(--ink);border-top:1px solid var(--line)}
+footer.site a{color:var(--ink)}
+.foot-grid h4{color:var(--brand)}
+.foot-grid .name{color:var(--ink)}
+.foot-grid .name em{color:var(--brand)}
+.foot-bottom{border-top-color:var(--line)}
+.foot-logo{display:block;height:56px;width:auto;margin-bottom:.9rem}
+.social a{border-color:var(--line);color:var(--brand)}
+.social a:hover{border-color:var(--brand)}
+.social-lg a{border-color:var(--line);color:var(--brand)}
+.social-lg a:hover{border-color:var(--brand)}
+
+/* sections that were solid navy: colour now inherits from the dark page */
+.hero,.pagehead,.bg-brand,footer.site{color:var(--ink)}
+.bg-brand h3,.hero h3{color:var(--brand)}
+.bg-brand p,.bg-brand .why p{color:var(--muted)}
+.bg-brand .why .item h3{color:var(--brand)}
+.bg-brand .why .item p{color:var(--muted);opacity:1}
+.why .n,.hero-facts .f b{color:var(--brand)}
+.hero-facts .f span{color:var(--muted);opacity:1}
+.eyebrow.on-dark{color:var(--brand)}
+.btn.on-dark.btn-ghost{color:var(--brand);border-color:var(--line)}
+.btn.on-dark.btn-ghost:hover{border-color:var(--brand)}
+
+/* the hyphenated CTA band variant used on the home and services pages */
+.cta-band{background:var(--brand)}
+.cta-band h2,.cta-band p{color:var(--brand-ink)}
+.cta-band .btn-primary{background:var(--paper);color:var(--ink)}
+.cta-band .btn-ghost{color:var(--brand-ink);border-color:var(--brand-ink)}
+.cta-band .btn-accent{background:var(--paper);color:var(--ink)}
+.ctaband .btn-accent{background:var(--paper);color:var(--ink)}
+
+.waterline{background:var(--brand)}
+.qa{border-top-color:var(--line)}
+.hours-row{border-bottom-color:var(--line)}
+.hours-row span:last-child{color:var(--muted)}
+.hero404{background:var(--mist)}
+.note{border-left-color:var(--brand);color:var(--muted)}
+.townblock .th{border-bottom-color:var(--line)}
+.townblock .th a{color:var(--brand)}
+:focus-visible{outline-color:var(--brand)}
+.pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--brand)}
 </style>
 </head>
 <body>
 <header class="site">
   <div class="wrap nav">
     <a class="brandmark" href="index.html" aria-label="Matt's Boat Detailing home">
-      <span class="name">Matt's <em>Boat</em> Detailing</span>
-      <span class="rule" aria-hidden="true"></span>
+      <img class="logo" src="img/logo.png" alt="MBD Marine Care logo" width="290" height="300" decoding="async">
+      <span class="txt"><span class="name">Matt's <em>Boat</em> Detailing</span><span class="rule" aria-hidden="true"></span></span>
     </a>
     <button class="navtoggle" aria-expanded="false" aria-controls="menu" aria-label="Menu">Menu</button>
     <nav class="menu" id="menu">
@@ -717,6 +812,7 @@ footer.site a{color:var(--brand-ink)}
   <div class="wrap">
     <div class="foot-grid">
       <div>
+        <img class="foot-logo" src="img/logo.png" alt="MBD Marine Care logo" width="290" height="300" loading="lazy" decoding="async">
         <span class="name">Matt's <em>Boat</em> Detailing</span>
         <div class="waterline" style="margin:.9rem 0 1rem"></div>
         <p>Fully insured mobile marine detailing across the Connecticut shoreline. Matt's Boat Detailing LLC, Milford, CT.</p>
