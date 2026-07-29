@@ -801,6 +801,15 @@ footer.site a{color:var(--ink)}
 .townblock .th a{color:var(--brand)}
 :focus-visible{outline-color:var(--brand)}
 .pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--brand)}
+
+.revstats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin:1.9rem 0 2.1rem;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.6rem 0}
+@media(max-width:640px){.revstats{grid-template-columns:1fr;gap:1.1rem}}
+.revstats b{font-family:"Fraunces",serif;font-size:2.1rem;color:var(--brand);font-weight:600;display:block;line-height:1;margin-bottom:.3rem}
+.revstats span{font-size:.9rem;color:var(--muted)}
+.testimonial{margin:0;border-left:3px solid var(--brand);padding:.3rem 0 .3rem 1.4rem;max-width:58ch}
+.testimonial p{font-family:"Fraunces",serif;font-size:1.4rem;color:var(--ink);margin:0 0 .65rem;line-height:1.35}
+.testimonial cite{font-style:normal;font-size:.9rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -932,6 +941,29 @@ footer.site a{color:var(--ink)}
     </div>
   </section>
 
+  <section class="bg-mist">
+    <div class="wrap">
+      <span class="eyebrow">What owners say</span>
+      <h2>Our clients say it best.</h2>
+      <div class="revstats">
+        <div><b>96%</b><span>of reviewers recommend us on Facebook</span></div>
+        <div><b>18</b><span>reviews from Connecticut boat owners</span></div>
+        <div><b>750+</b><span>owners following the work</span></div>
+      </div>
+      <blockquote class="testimonial">
+        <p>&ldquo;Matt and his team do excellent work.&rdquo;</p>
+        <cite>H. Richard Talbot, Facebook review</cite>
+      </blockquote>
+      <p class="lead muted" style="margin-top:2rem">Read the rest, or leave one of your own:</p>
+      <div class="chips">
+        <a class="chip" href="https://www.facebook.com/mattsmobileboatdetailing" rel="noopener">Reviews on Facebook</a>
+        <a class="chip" href="https://www.yelp.com/biz/matts-mobile-detailing-milford" rel="noopener">Reviews on Yelp</a>
+        <a class="chip" href="https://share.google/LTSvaVIhin95bjGk5" rel="noopener">Reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+
   <section>
     <div class="wrap">
       <div class="section-head">
@@ -1019,6 +1051,7 @@ footer.site a{color:var(--ink)}
     </div>
     <div class="foot-bottom">
       <span>&copy; 2021&ndash;2026 MBD Marine Care. All rights reserved.</span>
+      <span><a href="https://app.rainchekk.com/v2/preview/hzaUvf6Fc02GFxuxaQF5" rel="noopener">Privacy Policy</a> &middot; <a href="https://app.rainchekk.com/v2/preview/TKTNz5tnPz63Fo9NONVw" rel="noopener">Terms &amp; Conditions</a></span>
       <span>Site by <a href="https://www.jakelabate.com">Jake Labate</a></span>
     </div>
   </div>
