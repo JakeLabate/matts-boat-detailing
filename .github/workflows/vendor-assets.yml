@@ -1,0 +1,87 @@
+name: Vendor brand assets
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download assets
+        run: |
+          set +e
+          mkdir -p "$(dirname 'img/services/wash-and-wax.jpg')"
+          echo 'Fetching img/services/wash-and-wax.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/wash-and-wax.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_1746.jpeg' || echo '  MISS img/services/wash-and-wax.jpg'
+          mkdir -p "$(dirname 'img/services/buff-and-shine-polished-hull.jpg')"
+          echo 'Fetching img/services/buff-and-shine-polished-hull.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/buff-and-shine-polished-hull.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_0846.jpg' || echo '  MISS img/services/buff-and-shine-polished-hull.jpg'
+          mkdir -p "$(dirname 'img/services/resurgence-oxidation-removal.jpg')"
+          echo 'Fetching img/services/resurgence-oxidation-removal.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/resurgence-oxidation-removal.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_2197.jpeg' || echo '  MISS img/services/resurgence-oxidation-removal.jpg'
+          mkdir -p "$(dirname 'img/services/ceramic-coating.jpg')"
+          echo 'Fetching img/services/ceramic-coating.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/ceramic-coating.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4601.jpeg' || echo '  MISS img/services/ceramic-coating.jpg'
+          mkdir -p "$(dirname 'img/services/wash-plans-pursuit-325-offshore.jpg')"
+          echo 'Fetching img/services/wash-plans-pursuit-325-offshore.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/wash-plans-pursuit-325-offshore.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_2511.jpg' || echo '  MISS img/services/wash-plans-pursuit-325-offshore.jpg'
+          mkdir -p "$(dirname 'img/services/teak-restoration-before-after.jpg')"
+          echo 'Fetching img/services/teak-restoration-before-after.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/services/teak-restoration-before-after.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_6152.jpeg' || echo '  MISS img/services/teak-restoration-before-after.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-shrink-wrapped-on-trailer.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-shrink-wrapped-on-trailer.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-shrink-wrapped-on-trailer.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4047.jpeg' || echo '  MISS img/shrink-wrap/boat-shrink-wrapped-on-trailer.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-white-tarp-by-blue-shed.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-white-tarp-by-blue-shed.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-white-tarp-by-blue-shed.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_3949.jpeg' || echo '  MISS img/shrink-wrap/boat-white-tarp-by-blue-shed.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-wrapped-trailer-residential.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-wrapped-trailer-residential.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-wrapped-trailer-residential.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4146.jpeg' || echo '  MISS img/shrink-wrap/boat-wrapped-trailer-residential.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-tarped-trailer-wooded-lot.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-tarped-trailer-wooded-lot.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-tarped-trailer-wooded-lot.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4160.jpeg' || echo '  MISS img/shrink-wrap/boat-tarped-trailer-wooded-lot.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-and-car-at-bruneaus-auto.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-and-car-at-bruneaus-auto.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-and-car-at-bruneaus-auto.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4079.jpeg' || echo '  MISS img/shrink-wrap/boat-and-car-at-bruneaus-auto.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/boat-shrink-wrapped-trailer.jpg')"
+          echo 'Fetching img/shrink-wrap/boat-shrink-wrapped-trailer.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/boat-shrink-wrapped-trailer.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4040.jpeg' || echo '  MISS img/shrink-wrap/boat-shrink-wrapped-trailer.jpg'
+          mkdir -p "$(dirname 'img/shrink-wrap/two-boats-wrapped-wooded-lot.jpg')"
+          echo 'Fetching img/shrink-wrap/two-boats-wrapped-wooded-lot.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/shrink-wrap/two-boats-wrapped-wooded-lot.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_4013.jpeg' || echo '  MISS img/shrink-wrap/two-boats-wrapped-wooded-lot.jpg'
+          mkdir -p "$(dirname 'img/glossy-navy-hull-detailed.png')"
+          echo 'Fetching img/glossy-navy-hull-detailed.png'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/glossy-navy-hull-detailed.png' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/blob-8f4d04c.png' || echo '  MISS img/glossy-navy-hull-detailed.png'
+          mkdir -p "$(dirname 'img/silverton-38-convertible-at-marina.jpg')"
+          echo 'Fetching img/silverton-38-convertible-at-marina.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/silverton-38-convertible-at-marina.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_1840.jpeg' || echo '  MISS img/silverton-38-convertible-at-marina.jpg'
+          mkdir -p "$(dirname 'img/luxury-yacht-polished-topsides.jpg')"
+          echo 'Fetching img/luxury-yacht-polished-topsides.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/luxury-yacht-polished-topsides.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_1812.jpeg' || echo '  MISS img/luxury-yacht-polished-topsides.jpg'
+          mkdir -p "$(dirname 'img/boat-hauled-out-in-marina.jpg')"
+          echo 'Fetching img/boat-hauled-out-in-marina.jpg'
+          curl -fsSL --max-time 30 --max-filesize 10485760 -A 'Mozilla/5.0 (compatible; site-builder)' -o 'img/boat-hauled-out-in-marina.jpg' 'https://img1.wsimg.com/isteam/ip/73c1424e-cfa5-4543-a313-e406f759a016/IMG_5737.jpeg' || echo '  MISS img/boat-hauled-out-in-marina.jpg'
+      - name: Drop anything that is not a real image
+        run: |
+          for f in $(git status --porcelain --untracked-files=all | awk '{print $2}'); do
+            case "$f" in .github/*) continue;; esac
+            if [ -f "$f" ]; then
+              t=$(file -b --mime-type "$f")
+              case "$t" in
+                image/*|font/*|application/font*) : ;;
+                text/xml|application/xml|text/plain)
+                  # SVG is reported inconsistently across `file` versions.
+                  if head -c 1024 "$f" | grep -qi '<svg'; then :; else
+                    echo "  DROP $f ($t, not an svg)"; rm -f "$f"; fi ;;
+                *) echo "  DROP $f ($t)"; rm -f "$f" ;;
+              esac
+            fi
+          done
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --staged --quiet && echo 'nothing vendored' && exit 0
+          git commit -m 'Vendor brand assets'
+          git push
