@@ -484,6 +484,24 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .factbar .v{font-size:.9rem;color:var(--brand-ink);opacity:.9}
 .two{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
+.revs{margin-top:1.6rem;position:relative}
+.revtrack{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:.3rem .2rem 1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.revtrack::-webkit-scrollbar{height:8px}
+.revtrack::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+.revtrack::-webkit-scrollbar-track{background:transparent}
+.revtrack:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:14px}
+.revcard{flex:0 0 clamp(240px,78vw,330px);scroll-snap-align:start;border:1px solid var(--line);
+  border-radius:16px;background:var(--mist);padding:1.25rem 1.3rem;display:flex;flex-direction:column;gap:.7rem}
+.revcard .stars{color:var(--brand);font-size:.95rem;letter-spacing:.12em}
+.revcard blockquote{margin:0;color:var(--ink);font-size:1rem;line-height:1.55}
+.revcard .who{margin-top:auto;font-size:.86rem;color:var(--muted)}
+.revcard .who b{display:block;color:var(--brand);font-weight:600;font-size:.95rem}
+.revcard .more{font-size:.82rem;color:var(--brand)}
+.revhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:.9rem}
+.revhead .score{font-family:"Fraunces",serif;font-size:2rem;color:var(--brand);font-weight:600;line-height:1}
+.revhead .of{font-size:.9rem;color:var(--muted)}
+.revhint{font-size:.8rem;color:var(--muted);margin-top:.2rem}
 .figside{margin:1.4rem 0 0}
 .figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
   border-radius:14px;border:1px solid var(--line)}
@@ -792,6 +810,46 @@ footer.site a{color:var(--ink)}
         <a class="chip" href="../milford-boat-detailing.html">Boat detailing in Milford</a>
         <a class="chip" href="index.html">All marinas we service</a>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-mist">
+    <div class="wrap">
+      <span class="eyebrow">What owners say</span>
+      <h2>Our clients say it best.</h2>
+    <div class="revs">
+      <div class="revhead">
+        <span class="score">5.0</span>
+        <span class="of">average from 20 customer reviews</span>
+      </div>
+      <div class="revtrack" tabindex="0" role="region" aria-label="Customer reviews, scroll horizontally">
+          <article class="revcard">
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Matt was a pleasure to work with and did a great job detailing my 2…&rdquo;</blockquote>
+            <a class="more" href="https://www.facebook.com/mattsmobileboatdetailing" rel="noopener">Read the full review &rarr;</a>
+            <p class="who"><b>David Tuvlin</b>24 July 2026</p>
+          </article>
+          <article class="revcard">
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Matt and team compounded and waxed my boat today, very plea…&rdquo;</blockquote>
+            <a class="more" href="https://www.facebook.com/mattsmobileboatdetailing" rel="noopener">Read the full review &rarr;</a>
+            <p class="who"><b>Bill Viggiano</b>22 July 2026</p>
+          </article>
+          <article class="revcard">
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Matt and his team did a great job bringing the shine back on my 20…&rdquo;</blockquote>
+            <a class="more" href="https://www.facebook.com/mattsmobileboatdetailing" rel="noopener">Read the full review &rarr;</a>
+            <p class="who"><b>Matt Kemish</b>13 July 2026</p>
+          </article>
+          <article class="revcard">
+            <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <blockquote>&ldquo;Matt and his team do excellent work. He recently waxed my boat and it looks amazing.&rdquo;</blockquote>
+            
+            <p class="who"><b>H. Richard Talbot</b>Facebook review</p>
+          </article>
+      </div>
+      <p class="revhint">Scroll for more, or read them all on <a href="https://www.facebook.com/mattsmobileboatdetailing" rel="noopener">Facebook</a>.</p>
+    </div>
     </div>
   </section>
 
