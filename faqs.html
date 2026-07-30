@@ -376,6 +376,12 @@ footer.site a{color:var(--ink)}
 .townblock .th a{color:var(--brand)}
 :focus-visible{outline-color:var(--brand)}
 .pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--brand)}
+
+.figside{margin:1.4rem 0 0}
+.figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:14px;border:1px solid var(--line)}
+.figside figcaption{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+.figside a{color:var(--brand)}
 </style>
 </head>
 <body>
@@ -404,6 +410,10 @@ footer.site a{color:var(--ink)}
     <div class="wrap">
       <p class="crumb"><a href="index.html">Home</a> / FAQs</p>
       <h1>Questions, answered</h1>
+        <figure class="figside">
+          <img src="img/cards/wash-and-wax.jpg" alt="Hand wash and wax being carried out on a boat" width="800" height="533" loading="lazy" decoding="async">
+          <figcaption>Our core maintenance detail, priced by the foot. <a href="services.html#wash-wax">See the service &rarr;</a></figcaption>
+        </figure>
       <p class="lead">A few of the things boat owners ask us most. Have another question? We are happy to talk it through.</p>
     </div>
   </div>
