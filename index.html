@@ -811,6 +811,16 @@ footer.site a{color:var(--ink)}
 .testimonial{margin:0;border-left:3px solid var(--brand);padding:.3rem 0 .3rem 1.4rem;max-width:58ch}
 .testimonial p{font-family:"Fraunces",serif;font-size:1.4rem;color:var(--ink);margin:0 0 .65rem;line-height:1.35}
 .testimonial cite{font-style:normal;font-size:.9rem;color:var(--muted)}
+
+.hero-bg{background-image:linear-gradient(180deg,color-mix(in srgb,var(--paper) 86%,transparent),var(--paper)),url("img/glossy-navy-hull-detailed.jpg");background-size:cover;background-position:center}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;margin-top:1.9rem}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gal{grid-template-columns:1fr}}
+.gal figure{margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--mist)}
+.gal img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.gal figcaption{font-size:.82rem;color:var(--muted);padding:.6rem .8rem}
+.gal figure:first-child{grid-column:span 2;grid-row:span 2}
+@media(max-width:520px){.gal figure:first-child{grid-column:auto;grid-row:auto}}
 </style>
 </head>
 <body>
@@ -938,6 +948,27 @@ footer.site a{color:var(--ink)}
         <div class="item"><span class="n" aria-hidden="true">02</span><div><h3>Long-lasting protection</h3><p>Professional products and technique for durable results, not a shine that fades in weeks.</p></div></div>
         <div class="item"><span class="n" aria-hidden="true">03</span><div><h3>Fully mobile</h3><p>We service your boat where it sits: your marina, private dock, or storage facility.</p></div></div>
         <div class="item"><span class="n" aria-hidden="true">04</span><div><h3>Every surface, every detail</h3><p>Gelcoat, teak, metal, non-skid, and interiors, each cared for like it is our own boat.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">Shrink wrap gallery</span>
+      <h2>Wrapped, winterized, and put away right.</h2>
+      <p class="lead muted">A boat that goes under wrap clean and sealed comes out in spring ready to use. These are boats we have wrapped across the shoreline.</p>
+      <div class="gal">
+        <figure><img src="img/shrink-wrap/boat-shrink-wrapped-on-trailer.jpg" alt="Boat covered in white shrink wrap on a trailer" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Boat covered in white shrink wrap on a trailer</figcaption></figure>
+        <figure><img src="img/shrink-wrap/boat-white-tarp-by-blue-shed.jpg" alt="Boat covered with a white tarp beside a blue shed" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Boat covered with a white tarp beside a blue shed</figcaption></figure>
+        <figure><img src="img/shrink-wrap/boat-wrapped-trailer-residential.jpg" alt="Boat wrapped in a protective white cover on a trailer in a residential area" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Boat wrapped in a protective white cover on a trailer in a residential area</figcaption></figure>
+        <figure><img src="img/shrink-wrap/boat-tarped-trailer-wooded-lot.jpg" alt="Boat covered with a white tarp on a trailer in a wooded lot" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Boat covered with a white tarp on a trailer in a wooded lot</figcaption></figure>
+        <figure><img src="img/shrink-wrap/boat-shrink-wrapped-trailer.jpg" alt="Boat covered with white shrink wrap on a trailer" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Boat covered with white shrink wrap on a trailer</figcaption></figure>
+        <figure><img src="img/shrink-wrap/two-boats-wrapped-wooded-lot.jpg" alt="Two shrink wrapped boats parked on trailers in a wooded lot" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Two shrink wrapped boats parked on trailers in a wooded lot</figcaption></figure>
+        <figure><img src="img/shrink-wrap/boat-and-car-at-bruneaus-auto.jpg" alt="Shrink wrapped boat and a car outside Bruneau's Auto" width="1050" height="1400" loading="lazy" decoding="async"><figcaption>Shrink wrapped boat and a car outside Bruneau's Auto</figcaption></figure>
+      </div>
+      <div class="chips" style="margin-top:1.6rem">
+        <a class="chip" href="services.html#seasonal">Shrink wrapping &amp; winterizing</a>
+        <a class="chip" href="contact.html">Get a quote</a>
       </div>
     </div>
   </section>
