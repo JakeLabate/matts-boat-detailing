@@ -516,6 +516,11 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .factbar .v{font-size:.9rem;color:var(--brand-ink);opacity:.9}
 .two{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
+.figside{margin:1.4rem 0 0}
+.figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:14px;border:1px solid var(--line)}
+.figside figcaption{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+.figside a{color:var(--brand)}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
@@ -735,6 +740,10 @@ footer.site a{color:var(--ink)}
       <div>
         <span class="eyebrow">Local conditions</span>
         <h2>What the Housatonic does to a hull</h2>
+        <figure class="figside">
+          <img src="img/cards/resurgence-oxidation-removal.jpg" alt="Resurgence, our correction for heavily oxidised gelcoat." width="800" height="533" loading="lazy" decoding="async">
+          <figcaption>Resurgence, our correction for heavily oxidised gelcoat. <a href="services.html#resurgence">See the service &rarr;</a></figcaption>
+        </figure>
       </div>
       <div>
         <p>The Housatonic is a tidal river, so boats kept here sit in brackish water that swings between fresh and salt with every cycle. That mix tends to leave a stubborn stain line right at the waterline, browner and harder to remove than what we see on boats kept out in open salt water.</p>
