@@ -484,6 +484,11 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .factbar .v{font-size:.9rem;color:var(--brand-ink);opacity:.9}
 .two{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
+.figside{margin:1.4rem 0 0}
+.figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:14px;border:1px solid var(--line)}
+.figside figcaption{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+.figside a{color:var(--brand)}
 .spotlist{display:grid;gap:.9rem;margin-top:1.6rem}
 .spot{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.3rem;background:var(--paper)}
 .spot .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);margin-top:.55rem}
@@ -546,6 +551,11 @@ footer.site a{color:var(--brand-ink)}
 .meta div:last-child{border-bottom:none;padding-bottom:0}
 .meta dt,.meta .l{color:var(--muted)}
 .meta .r{color:var(--ink);font-weight:500;text-align:right}
+.figside{margin:1.4rem 0 0}
+.figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:14px;border:1px solid var(--line)}
+.figside figcaption{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+.figside a{color:var(--brand)}
 .note{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;margin:1.4rem 0 0;color:var(--muted);font-size:.96rem}
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.6rem}
 @media(max-width:900px){.mgrid{grid-template-columns:repeat(2,1fr)}}
@@ -717,6 +727,10 @@ footer.site a{color:var(--ink)}
       <div>
         <span class="eyebrow">Detailing here</span>
         <h2>What we watch for at this marina.</h2>
+        <figure class="figside">
+          <img src="../img/cards/boat-wrapped-trailer-residential.jpg" alt="We wrap at the house as readily as at the yard." width="800" height="533" loading="lazy" decoding="async">
+          <figcaption>We wrap at the house as readily as at the yard. <a href="../services.html#seasonal">See the service &rarr;</a></figcaption>
+        </figure>
       </div>
       <div>
         <p>Boats kept right at the inlet sit in the strongest flow on the river. Currents through here can exceed five knots, which means constant movement against lines and fenders and a steady load of suspended material against the hull. Fender rub along the topsides is one of the more common things we correct on Mago Point boats.</p>
