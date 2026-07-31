@@ -726,7 +726,7 @@ footer.site a{color:var(--ink)}
 </script>
 <script>
 (function(){
-  var ENDPOINT = "";
+  var ENDPOINT = "https://formsubmit.co/ajax/Mattsboatdetailing@gmail.com";
   var INBOX = "Mattsboatdetailing@gmail.com";
   var form = document.getElementById('quoteForm');
   if(!form) return;
@@ -769,9 +769,12 @@ footer.site a{color:var(--ink)}
     status.textContent = msg;
   }
 
+  var EXTRA = {"_subject": "New quote request from the MBD Marine Care website", "_template": "table", "_captcha": "false"};
+
   function payload(){
     var d = new FormData(form), o = {};
     d.forEach(function(v,k){ if(k !== 'company') o[k] = v; });
+    for(var k in EXTRA) o[k] = EXTRA[k];
     return o;
   }
 
@@ -811,11 +814,16 @@ footer.site a{color:var(--ink)}
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(o)
     }).then(function(r){
-      if(!r.ok) throw new Error('bad status');
-      form.reset();
-      say('ok', 'Thanks. We have your request and will be in touch shortly, usually the same day.');
+      return r.json().catch(function(){ return {}; }).then(function(j){
+        var ok = r.ok && String(j.success !== undefined ? j.success : true) !== 'false';
+        if(!ok) throw new Error('rejected');
+        form.reset();
+        started = Date.now();
+        say('ok', 'Thanks. We have your request and will be in touch shortly, usually the same day.');
+      });
     }).catch(function(){
-      say('err', 'That did not send. Please call (203) 258-8281 or email ' + INBOX + '.');
+      say('err', 'That did not send, so we have opened an email for you instead.');
+      mailtoFallback(o);
     }).finally(function(){ submit.disabled = false; });
   });
 })();
