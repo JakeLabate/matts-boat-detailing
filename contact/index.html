@@ -851,8 +851,21 @@ footer.site a{color:var(--ink)}
         say('ok', 'Thanks. We have your request and will be in touch shortly, usually the same day.');
       })
       .catch(function(err){
-        var detail = err && (err.serverMessage || err.detail) ? (err.serverMessage || err.detail)
-                   : 'Could not reach the form service.';
+        var raw = (err && (err.serverMessage || err.detail)) || '';
+        // The provider needs a one-time activation click from the business
+        // inbox. A customer must never be shown that setup message.
+        if(/activat/i.test(raw)){
+          console.error('Quote form: endpoint awaiting one-time activation.', raw);
+          status.setAttribute('data-state','err');
+          status.innerHTML = 'We could not send that just now. Please call '
+            + '<a href="tel:+12032588281">(203) 258-8281</a>, or '
+            + '<a href="#" id="qf-mail">send it as an email instead</a>. Sorry for the trouble.';
+          var l0 = document.getElementById('qf-mail');
+          if(l0) l0.addEventListener('click', function(e){ e.preventDefault(); mailtoFallback(o); });
+          submit.disabled = false;
+          return;
+        }
+        var detail = raw ? raw : 'Could not reach the form service.';
         console.error('Quote form submit failed:', err, detail);
         status.setAttribute('data-state','err');
         status.innerHTML = 'That did not send. Please call '
