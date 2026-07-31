@@ -418,6 +418,7 @@ footer.site a{color:var(--ink)}
 .formstatus{margin-top:1.1rem;font-size:.95rem;border-radius:10px;padding:.85rem 1rem;display:none}
 .formstatus[data-state="ok"]{display:block;background:var(--sandtint);color:var(--ink);border:1px solid var(--brand)}
 .formstatus[data-state="err"]{display:block;background:var(--sandtint);color:var(--ink);border:1px solid var(--accent-ink)}
+.formstatus .diag{display:block;margin-top:.5rem;font-size:.8rem;color:var(--muted);word-break:break-word}
 .formstatus[data-state="busy"]{display:block;background:var(--paper);color:var(--muted);border:1px solid var(--line)}
 </style>
 </head>
@@ -810,34 +811,58 @@ footer.site a{color:var(--ink)}
     submit.disabled = true;
     say('busy', 'Sending your request...');
 
-    // URLSearchParams sends application/x-www-form-urlencoded, which is a CORS
-    // "simple request". Setting a JSON content type would trigger a preflight
-    // OPTIONS call that the form endpoint does not answer.
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new URLSearchParams(o)
-    }).then(function(r){
-      return r.text().then(function(t){
-        var j = {};
-        try { j = JSON.parse(t); } catch(e) {}
-        var flag = j.success;
-        var ok = r.ok && (flag === undefined || String(flag) === 'true');
-        if(!ok) throw new Error('rejected: ' + r.status + ' ' + t.slice(0,120));
+    // The endpoint documents a JSON body, but a JSON content type triggers a
+    // CORS preflight that some deployments do not answer. Try JSON first, then
+    // fall back to a form-encoded "simple request". Whatever the server says on
+    // the final attempt is shown verbatim so failures are diagnosable.
+    function attempt(mode){
+      var init = { method: 'POST', headers: { 'Accept': 'application/json' } };
+      if(mode === 'json'){
+        init.headers['Content-Type'] = 'application/json';
+        init.body = JSON.stringify(o);
+      } else {
+        init.body = new URLSearchParams(o);
+      }
+      return fetch(ENDPOINT, init).then(function(r){
+        return r.text().then(function(t){
+          var j = {};
+          try { j = JSON.parse(t); } catch(e) {}
+          var flag = j.success;
+          var ok = r.ok && (flag === undefined || String(flag) === 'true');
+          if(!ok){
+            var e = new Error('rejected');
+            e.detail = 'HTTP ' + r.status + (t ? ' - ' + t.slice(0,200) : '');
+            e.serverMessage = j.message || '';
+            throw e;
+          }
+          return j;
+        });
+      });
+    }
+
+    attempt('json')
+      .catch(function(e1){
+        console.warn('Quote form: JSON attempt failed, retrying form-encoded.', e1.detail || e1);
+        return attempt('form');
+      })
+      .then(function(){
         form.reset();
         started = Date.now();
         say('ok', 'Thanks. We have your request and will be in touch shortly, usually the same day.');
-      });
-    }).catch(function(err){
-      // Do not hijack the browser. Surface the failure and offer the choice.
-      console.error('Quote form submit failed:', err);
-      status.setAttribute('data-state','err');
-      status.innerHTML = 'That did not send. Please call '
-        + '<a href="tel:+12032588281">(203) 258-8281</a>, or '
-        + '<a href="#" id="qf-mail">send it as an email instead</a>.';
-      var link = document.getElementById('qf-mail');
-      if(link) link.addEventListener('click', function(e){ e.preventDefault(); mailtoFallback(o); });
-    }).finally(function(){ submit.disabled = false; });
+      })
+      .catch(function(err){
+        var detail = err && (err.serverMessage || err.detail) ? (err.serverMessage || err.detail)
+                   : 'Could not reach the form service.';
+        console.error('Quote form submit failed:', err, detail);
+        status.setAttribute('data-state','err');
+        status.innerHTML = 'That did not send. Please call '
+          + '<a href="tel:+12032588281">(203) 258-8281</a>, or '
+          + '<a href="#" id="qf-mail">send it as an email instead</a>.'
+          + '<span class="diag">' + String(detail).replace(/[<>]/g,'') + '</span>';
+        var link = document.getElementById('qf-mail');
+        if(link) link.addEventListener('click', function(e){ e.preventDefault(); mailtoFallback(o); });
+      })
+      .then(function(){ submit.disabled = false; });
   });
 })();
 </script>
