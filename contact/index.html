@@ -809,21 +809,34 @@ footer.site a{color:var(--ink)}
 
     submit.disabled = true;
     say('busy', 'Sending your request...');
+
+    // URLSearchParams sends application/x-www-form-urlencoded, which is a CORS
+    // "simple request". Setting a JSON content type would trigger a preflight
+    // OPTIONS call that the form endpoint does not answer.
     fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(o)
+      headers: { 'Accept': 'application/json' },
+      body: new URLSearchParams(o)
     }).then(function(r){
-      return r.json().catch(function(){ return {}; }).then(function(j){
-        var ok = r.ok && String(j.success !== undefined ? j.success : true) !== 'false';
-        if(!ok) throw new Error('rejected');
+      return r.text().then(function(t){
+        var j = {};
+        try { j = JSON.parse(t); } catch(e) {}
+        var flag = j.success;
+        var ok = r.ok && (flag === undefined || String(flag) === 'true');
+        if(!ok) throw new Error('rejected: ' + r.status + ' ' + t.slice(0,120));
         form.reset();
         started = Date.now();
         say('ok', 'Thanks. We have your request and will be in touch shortly, usually the same day.');
       });
-    }).catch(function(){
-      say('err', 'That did not send, so we have opened an email for you instead.');
-      mailtoFallback(o);
+    }).catch(function(err){
+      // Do not hijack the browser. Surface the failure and offer the choice.
+      console.error('Quote form submit failed:', err);
+      status.setAttribute('data-state','err');
+      status.innerHTML = 'That did not send. Please call '
+        + '<a href="tel:+12032588281">(203) 258-8281</a>, or '
+        + '<a href="#" id="qf-mail">send it as an email instead</a>.';
+      var link = document.getElementById('qf-mail');
+      if(link) link.addEventListener('click', function(e){ e.preventDefault(); mailtoFallback(o); });
     }).finally(function(){ submit.disabled = false; });
   });
 })();
