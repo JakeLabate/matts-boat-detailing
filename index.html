@@ -537,6 +537,62 @@
         },
         "serviceUrl": "https://jakelabate.github.io/matts-boat-detailing/contact.html"
       }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#clip-1",
+      "name": "MBD Marine Care detailing clip 1",
+      "description": "Short clip of mobile marine detailing work on the Connecticut shoreline.",
+      "thumbnailUrl": "https://jakelabate.github.io/matts-boat-detailing/img/video/clip-1.jpg",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/video/clip-1.mp4",
+      "uploadDate": "2026-07-31",
+      "duration": "PT6S",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "isFamilyFriendly": true
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#clip-2",
+      "name": "MBD Marine Care detailing clip 2",
+      "description": "Short clip of mobile marine detailing work on the Connecticut shoreline.",
+      "thumbnailUrl": "https://jakelabate.github.io/matts-boat-detailing/img/video/clip-2.jpg",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/video/clip-2.mp4",
+      "uploadDate": "2026-07-31",
+      "duration": "PT9S",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "isFamilyFriendly": true
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#clip-3",
+      "name": "MBD Marine Care detailing clip 3",
+      "description": "Short clip of mobile marine detailing work on the Connecticut shoreline.",
+      "thumbnailUrl": "https://jakelabate.github.io/matts-boat-detailing/img/video/clip-3.jpg",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/video/clip-3.mp4",
+      "uploadDate": "2026-07-31",
+      "duration": "PT8S",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "isFamilyFriendly": true
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://jakelabate.github.io/matts-boat-detailing/#clip-4",
+      "name": "MBD Marine Care detailing clip 4",
+      "description": "Short clip of mobile marine detailing work on the Connecticut shoreline.",
+      "thumbnailUrl": "https://jakelabate.github.io/matts-boat-detailing/img/video/clip-4.jpg",
+      "contentUrl": "https://jakelabate.github.io/matts-boat-detailing/video/clip-4.mp4",
+      "uploadDate": "2026-07-31",
+      "duration": "PT17S",
+      "publisher": {
+        "@id": "https://jakelabate.github.io/matts-boat-detailing/#business"
+      },
+      "isFamilyFriendly": true
     }
   ]
 }
@@ -840,6 +896,18 @@ footer.site a{color:var(--ink)}
 .revhead .score{font-family:"Fraunces",serif;font-size:2rem;color:var(--brand);font-weight:600;line-height:1}
 .revhead .of{font-size:.9rem;color:var(--muted)}
 .revhint{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+
+.vidwrap{margin-top:1.7rem}
+.vidtrack{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:.3rem .2rem 1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.vidtrack::-webkit-scrollbar{height:8px}
+.vidtrack::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
+.vidtrack::-webkit-scrollbar-track{background:transparent}
+.vidtrack:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:14px}
+.vidcard{flex:0 0 clamp(210px,58vw,260px);scroll-snap-align:start;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;background:var(--mist)}
+.vidcard video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--paper)}
+.vidcard figcaption{font-size:.82rem;color:var(--muted);padding:.65rem .85rem}
 </style>
 </head>
 <body>
@@ -967,6 +1035,58 @@ footer.site a{color:var(--ink)}
         <div class="item"><span class="n" aria-hidden="true">02</span><div><h3>Long-lasting protection</h3><p>Professional products and technique for durable results, not a shine that fades in weeks.</p></div></div>
         <div class="item"><span class="n" aria-hidden="true">03</span><div><h3>Fully mobile</h3><p>We service your boat where it sits: your marina, private dock, or storage facility.</p></div></div>
         <div class="item"><span class="n" aria-hidden="true">04</span><div><h3>Every surface, every detail</h3><p>Gelcoat, teak, metal, non-skid, and interiors, each cared for like it is our own boat.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">On the water</span>
+      <h2>See the work.</h2>
+      <p class="lead muted">Short clips from jobs around the shoreline. Tap any one to play.</p>
+      <div class="vidwrap">
+        <div class="vidtrack" tabindex="0" role="region" aria-label="Detailing video clips, scroll horizontally">
+          <figure class="vidcard">
+            <video controls preload="none" playsinline
+                   poster="img/video/clip-1.jpg"
+                   width="720" height="1280"
+                   aria-label="MBD Marine Care detailing clip 1">
+              <source src="video/clip-1.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="video/clip-1.mp4">Download the clip</a>.
+            </video>
+            <figcaption>Detailing work, clip 1 &middot; 5s</figcaption>
+          </figure>
+          <figure class="vidcard">
+            <video controls preload="none" playsinline
+                   poster="img/video/clip-2.jpg"
+                   width="720" height="1280"
+                   aria-label="MBD Marine Care detailing clip 2">
+              <source src="video/clip-2.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="video/clip-2.mp4">Download the clip</a>.
+            </video>
+            <figcaption>Detailing work, clip 2 &middot; 8s</figcaption>
+          </figure>
+          <figure class="vidcard">
+            <video controls preload="none" playsinline
+                   poster="img/video/clip-3.jpg"
+                   width="720" height="1280"
+                   aria-label="MBD Marine Care detailing clip 3">
+              <source src="video/clip-3.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="video/clip-3.mp4">Download the clip</a>.
+            </video>
+            <figcaption>Detailing work, clip 3 &middot; 8s</figcaption>
+          </figure>
+          <figure class="vidcard">
+            <video controls preload="none" playsinline
+                   poster="img/video/clip-4.jpg"
+                   width="720" height="1280"
+                   aria-label="MBD Marine Care detailing clip 4">
+              <source src="video/clip-4.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="video/clip-4.mp4">Download the clip</a>.
+            </video>
+            <figcaption>Detailing work, clip 4 &middot; 16s</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
