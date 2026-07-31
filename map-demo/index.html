@@ -467,8 +467,8 @@ footer.site a{color:var(--brand-ink)}
 
 .mapwrap{border:1px solid var(--line);border-radius:18px;background:var(--mist);
   padding:clamp(.8rem,2vw,1.4rem);overflow:hidden}
-/* Below this width the whole map compresses until the labels collide, so let it
-   scroll sideways at a legible size instead of shrinking it into mush. */
+/* Below this width the state compresses until labels collide, so it scrolls
+   sideways at a legible size instead of shrinking into mush. */
 @media(max-width:1000px){
   .mapwrap{overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
   .mapwrap::-webkit-scrollbar{height:8px}
@@ -478,19 +478,23 @@ footer.site a{color:var(--brand-ink)}
 }
 .maphint{font-size:.82rem;color:var(--muted);margin:.7rem 0 0;display:none}
 @media(max-width:1000px){.maphint{display:block}}
+
 .ctmap{display:block;width:100%;height:auto}
-.ctmap .water{fill:var(--paper);opacity:.75}
-.ctmap .shore{fill:none;stroke:var(--line);stroke-width:2.5;stroke-linecap:round}
+.ctmap .sea-bg{fill:var(--paper)}
+.ctmap .land{fill:var(--sandtint);stroke:var(--line);stroke-width:2;stroke-linejoin:round}
+.ctmap .statelbl{fill:var(--muted);font-family:"Fraunces",serif;font-size:34px;
+  letter-spacing:.3em;opacity:.55}
 .ctmap .sea{fill:var(--muted);font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.32em}
-.ctmap .compass{fill:var(--muted);font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.24em}
 .ctmap .twn{cursor:pointer}
 .ctmap .halo{fill:var(--brand);opacity:0;transition:opacity .15s ease}
-.ctmap .dot{fill:var(--brand);stroke:var(--paper);stroke-width:2;transition:r .15s ease}
-.ctmap .lbl{fill:var(--muted);font-family:"Inter",sans-serif;font-size:11px;
+.ctmap .tick{stroke:var(--line);stroke-width:1.2;opacity:.75}
+.ctmap .dot{fill:var(--brand);stroke:var(--paper);stroke-width:1.8;transition:r .15s ease}
+.ctmap .lbl{fill:var(--muted);font-family:"Inter",sans-serif;font-size:12px;
   transition:fill .15s ease;pointer-events:none}
-.ctmap .twn:hover .halo,.ctmap .twn:focus-visible .halo,.ctmap .twn.on .halo{opacity:.22}
+.ctmap .twn:hover .halo,.ctmap .twn:focus-visible .halo,.ctmap .twn.on .halo{opacity:.25}
 .ctmap .twn:hover .dot,.ctmap .twn:focus-visible .dot,.ctmap .twn.on .dot{r:8}
 .ctmap .twn:hover .lbl,.ctmap .twn:focus-visible .lbl,.ctmap .twn.on .lbl{fill:var(--brand);font-weight:600}
+.ctmap .twn:hover .tick,.ctmap .twn.on .tick{stroke:var(--brand);opacity:1}
 .ctmap .twn:focus-visible{outline:none}
 .ctmap .twn:focus-visible .dot{stroke:var(--brand);stroke-width:3}
 
@@ -630,175 +634,201 @@ footer.site a{color:var(--ink)}
   <section>
     <div class="wrap">
       <div class="mapwrap" tabindex="0" role="region" aria-label="Connecticut shoreline coverage map, scrolls horizontally">
-        <svg class="ctmap" viewBox="0 0 1180 460" role="group"
-     aria-label="Map of the Connecticut shoreline showing the 27 towns served"
+        <svg class="ctmap" viewBox="0 0 1180 890" role="group"
+     aria-label="Map of Connecticut showing the 27 shoreline towns served"
      xmlns="http://www.w3.org/2000/svg">
-      <path class="water" d="M 62.0 352.0 C 71.2 348.5 100.8 337.9 117.1 331.0 C 133.4 324.1 146.6 319.1 160.0 310.7 C 173.4 302.3 186.1 288.4 197.4 280.4 C 208.7 272.3 213.3 265.4 228.0 262.4 C 242.7 259.4 269.0 268.4 285.6 262.4 C 302.2 256.4 314.4 232.3 327.8 226.6 C 341.2 220.9 352.4 233.9 365.8 228.2 C 379.2 222.5 389.1 203.6 408.1 192.4 C 427.1 181.2 465.8 171.2 479.7 161.2 C 493.6 151.2 483.3 133.1 491.4 132.4 C 499.5 131.8 516.6 153.5 528.1 157.3 C 539.6 161.1 541.5 156.7 560.6 155.0 C 579.7 153.3 620.6 147.2 642.7 147.2 C 664.9 147.2 677.9 153.7 693.5 155.0 C 709.1 156.3 720.9 155.5 736.4 155.0 C 751.9 154.5 771.1 153.5 786.6 151.9 C 802.1 150.3 817.9 149.9 829.5 145.6 C 841.1 141.3 840.6 134.4 856.5 126.2 C 872.4 118.0 905.2 100.0 925.1 96.6 C 945.0 93.2 963.6 106.2 975.9 105.9 C 988.1 105.6 992.6 96.0 998.6 95.0 C 1004.6 94.0 998.3 99.4 1012.0 99.7 C 1025.7 100.0 1062.9 94.8 1080.6 96.6 C 1098.3 98.4 1111.8 108.3 1118.0 110.6 L 1118.0 460 L 62.0 460 Z"/>
-      <path class="shore" d="M 62.0 352.0 C 71.2 348.5 100.8 337.9 117.1 331.0 C 133.4 324.1 146.6 319.1 160.0 310.7 C 173.4 302.3 186.1 288.4 197.4 280.4 C 208.7 272.3 213.3 265.4 228.0 262.4 C 242.7 259.4 269.0 268.4 285.6 262.4 C 302.2 256.4 314.4 232.3 327.8 226.6 C 341.2 220.9 352.4 233.9 365.8 228.2 C 379.2 222.5 389.1 203.6 408.1 192.4 C 427.1 181.2 465.8 171.2 479.7 161.2 C 493.6 151.2 483.3 133.1 491.4 132.4 C 499.5 131.8 516.6 153.5 528.1 157.3 C 539.6 161.1 541.5 156.7 560.6 155.0 C 579.7 153.3 620.6 147.2 642.7 147.2 C 664.9 147.2 677.9 153.7 693.5 155.0 C 709.1 156.3 720.9 155.5 736.4 155.0 C 751.9 154.5 771.1 153.5 786.6 151.9 C 802.1 150.3 817.9 149.9 829.5 145.6 C 841.1 141.3 840.6 134.4 856.5 126.2 C 872.4 118.0 905.2 100.0 925.1 96.6 C 945.0 93.2 963.6 106.2 975.9 105.9 C 988.1 105.6 992.6 96.0 998.6 95.0 C 1004.6 94.0 998.3 99.4 1012.0 99.7 C 1025.7 100.0 1062.9 94.8 1080.6 96.6 C 1098.3 98.4 1111.8 108.3 1118.0 110.6"/>
-      <text class="sea" x="590" y="434" text-anchor="middle">LONG ISLAND SOUND</text>
-      <text class="compass" x="62" y="40">WEST</text>
-      <text class="compass" x="1118" y="40" text-anchor="end">EAST</text>
+      <rect class="sea-bg" x="0" y="0" width="1180" height="890"/>
+      <path class="land" d="M 792.7 58.2 L 904.2 59.9 L 939.6 60.5 L 939.6 60.5 L 958.4 61.4 L 982.2 62.7 L 1127.7 65.5 L 1128.5 77.1 L 1129.8 136.7 L 1130.2 154.8 L 1131.3 202.3 L 1131.3 203.1 L 1132.1 226.6 L 1132.1 227.9 L 1133.8 289.6 L 1133.8 289.7 L 1133.9 353.1 L 1134.0 385.4 L 1134.0 385.4 L 1129.3 520.3 L 1129.3 520.5 L 1117.7 518.3 L 1105.8 523.9 L 1104.1 525.6 L 1103.6 528.7 L 1104.4 536.5 L 1109.3 544.6 L 1110.3 554.8 L 1110.5 574.6 L 1109.8 577.1 L 1105.7 582.0 L 1094.6 591.2 L 1089.8 584.8 L 1079.6 580.7 L 1062.5 583.8 L 1059.5 582.1 L 1058.8 581.7 L 1051.5 579.5 L 1046.3 579.6 L 1040.1 585.6 L 1032.1 589.6 L 1027.4 585.5 L 1025.8 585.6 L 1022.4 592.5 L 1003.5 595.4 L 968.4 593.3 L 962.8 597.3 L 959.8 602.7 L 953.0 608.7 L 940.5 608.4 L 925.1 600.3 L 918.2 594.8 L 916.1 591.1 L 912.5 590.0 L 908.6 590.6 L 902.7 596.2 L 901.9 598.1 L 901.3 608.7 L 896.3 614.4 L 889.3 608.7 L 883.6 607.7 L 876.5 608.4 L 874.4 609.0 L 875.2 612.2 L 874.7 615.5 L 869.0 620.8 L 837.4 624.6 L 831.9 624.1 L 828.4 620.8 L 824.1 622.9 L 820.1 624.9 L 820.4 630.7 L 798.8 636.6 L 792.0 624.3 L 788.0 624.2 L 762.1 623.8 L 750.6 630.4 L 743.2 629.8 L 735.4 633.6 L 731.4 637.9 L 724.7 637.0 L 723.2 633.8 L 718.6 634.7 L 716.5 636.0 L 714.5 640.8 L 713.9 641.3 L 708.9 644.9 L 708.7 645.1 L 695.5 632.2 L 695.2 631.9 L 695.2 631.9 L 688.4 629.2 L 687.3 629.5 L 686.9 629.6 L 686.5 629.7 L 685.8 629.9 L 684.7 630.2 L 684.1 630.4 L 680.1 631.5 L 674.6 630.2 L 673.3 629.9 L 669.4 629.0 L 669.2 629.1 L 668.9 629.1 L 661.4 631.2 L 656.0 632.7 L 655.7 632.7 L 655.0 632.8 L 650.6 633.3 L 648.8 633.6 L 648.8 633.6 L 648.3 633.3 L 644.1 631.2 L 643.8 631.1 L 641.3 631.8 L 638.8 632.6 L 638.4 632.7 L 637.3 633.9 L 631.4 639.8 L 631.1 643.5 L 631.0 644.5 L 628.8 647.3 L 628.4 647.8 L 628.3 647.9 L 626.6 648.8 L 625.9 649.2 L 625.4 649.3 L 621.9 649.4 L 619.4 649.5 L 618.9 649.5 L 618.0 649.6 L 617.8 649.6 L 617.7 649.6 L 616.9 649.6 L 616.8 649.4 L 615.2 646.2 L 616.6 644.7 L 615.9 642.3 L 610.3 638.7 L 604.5 642.0 L 592.4 632.8 L 590.6 632.8 L 574.6 634.4 L 556.3 643.8 L 555.9 642.4 L 551.7 640.4 L 539.9 640.5 L 538.6 641.4 L 536.4 647.2 L 532.4 649.0 L 521.1 651.0 L 513.2 650.2 L 510.2 648.5 L 508.2 647.5 L 507.7 646.7 L 509.0 643.4 L 509.1 643.3 L 513.6 640.8 L 513.6 640.8 L 514.1 638.1 L 512.7 635.1 L 508.9 626.9 L 506.1 621.1 L 506.0 620.8 L 501.2 621.5 L 501.1 621.6 L 499.4 622.9 L 499.0 629.3 L 499.0 629.9 L 499.0 631.3 L 492.7 637.2 L 491.8 638.0 L 490.7 639.1 L 478.6 643.3 L 477.2 643.8 L 476.2 644.1 L 475.8 644.3 L 463.6 656.4 L 462.9 657.2 L 462.3 657.8 L 455.7 665.9 L 452.5 671.5 L 450.3 675.3 L 446.9 678.8 L 446.6 679.1 L 446.1 679.7 L 443.2 679.9 L 443.2 679.8 L 443.2 679.7 L 443.2 679.5 L 443.1 679.3 L 443.1 678.2 L 441.9 677.6 L 440.6 677.4 L 428.9 675.7 L 426.0 675.3 L 423.7 676.6 L 421.2 677.9 L 410.9 686.6 L 409.9 687.5 L 403.3 694.8 L 402.9 695.3 L 402.8 695.4 L 396.0 703.1 L 395.3 703.8 L 395.3 703.8 L 393.9 706.4 L 392.5 713.2 L 392.8 715.2 L 393.7 717.7 L 392.1 719.8 L 381.4 722.8 L 362.2 714.0 L 359.0 712.6 L 358.7 709.3 L 354.7 707.9 L 340.7 714.4 L 326.4 726.0 L 322.5 724.9 L 315.3 738.1 L 307.2 744.8 L 293.5 737.0 L 288.1 738.7 L 279.4 745.7 L 268.9 750.4 L 245.5 754.9 L 234.4 767.2 L 229.9 768.2 L 222.3 777.9 L 210.3 790.4 L 201.7 790.1 L 191.7 794.4 L 186.5 805.9 L 177.6 796.8 L 164.4 803.9 L 164.4 810.8 L 161.1 818.4 L 157.6 820.6 L 156.3 816.5 L 156.9 811.3 L 155.5 809.1 L 154.0 809.0 L 145.0 814.7 L 139.1 820.3 L 135.9 824.7 L 134.5 831.7 L 126.7 832.2 L 126.2 825.0 L 120.1 820.9 L 115.5 821.6 L 93.3 831.3 L 89.0 836.5 L 85.6 844.0 L 87.0 824.1 L 86.6 823.3 L 78.2 810.3 L 72.8 801.6 L 68.8 794.9 L 64.8 788.4 L 46.0 757.4 L 95.4 726.8 L 99.7 724.3 L 109.7 718.2 L 165.7 684.2 L 168.5 682.4 L 183.6 673.4 L 145.2 611.4 L 148.8 558.2 L 149.4 550.4 L 152.7 507.6 L 152.8 506.1 L 153.1 502.2 L 153.6 494.6 L 153.7 493.2 L 153.7 491.6 L 153.7 491.3 L 153.8 490.1 L 154.6 476.1 L 154.6 475.7 L 154.6 475.4 L 154.7 474.5 L 154.7 473.8 L 154.8 473.3 L 157.0 437.7 L 161.8 370.8 L 164.0 333.1 L 168.1 264.1 L 171.1 215.3 L 171.1 214.9 L 181.0 46.0 L 289.3 47.9 L 290.0 48.0 L 324.8 49.5 L 325.5 49.5 L 383.1 51.7 L 424.6 53.3 L 449.6 53.6 L 531.0 54.9 L 531.1 54.9 L 559.2 55.8 L 557.4 85.0 L 580.9 81.6 L 585.5 80.9 L 585.8 77.4 L 590.2 67.5 L 590.6 67.5 L 591.6 56.0 L 615.0 55.7 L 625.2 55.6 L 730.0 57.2 L 792.7 58.2 Z"/>
+      <text class="sea" x="614" y="874" text-anchor="middle">LONG ISLAND SOUND</text>
+      <text class="statelbl" x="543" y="303" text-anchor="middle">CONNECTICUT</text>
       <a class="twn" href="../greenwich-boat-detailing/" data-slug="greenwich"
          role="link" aria-label="Boat detailing in Greenwich, Connecticut">
-        <circle class="halo" cx="62.0" cy="352.0" r="15"/>
-        <circle class="dot"  cx="62.0" cy="352.0" r="5.5"/>
-        <text class="lbl" x="62.0" y="335.0" text-anchor="middle">Greenwich</text>
+        <circle class="halo" cx="101.5" cy="813.4" r="14"/>
+        <line class="tick" x1="101.5" y1="813.4" x2="101.5" y2="804.4"/>
+        <circle class="dot"  cx="101.5" cy="813.4" r="5"/>
+        <text class="lbl" x="101.5" y="798.4" text-anchor="middle">Greenwich</text>
       </a>
       <a class="twn" href="../stamford-boat-detailing/" data-slug="stamford"
          role="link" aria-label="Boat detailing in Stamford, Connecticut">
-        <circle class="halo" cx="117.1" cy="331.0" r="15"/>
-        <circle class="dot"  cx="117.1" cy="331.0" r="5.5"/>
-        <text class="lbl" x="117.1" y="356.0" text-anchor="middle">Stamford</text>
+        <circle class="halo" cx="152.0" cy="793.2" r="14"/>
+        <line class="tick" x1="152.0" y1="793.2" x2="152.0" y2="784.2"/>
+        <circle class="dot"  cx="152.0" cy="793.2" r="5"/>
+        <text class="lbl" x="152.0" y="778.2" text-anchor="middle">Stamford</text>
       </a>
       <a class="twn" href="../darien-boat-detailing/" data-slug="darien"
          role="link" aria-label="Boat detailing in Darien, Connecticut">
-        <circle class="halo" cx="160.0" cy="310.7" r="15"/>
-        <circle class="dot"  cx="160.0" cy="310.7" r="5.5"/>
-        <text class="lbl" x="160.0" y="277.7" text-anchor="middle">Darien</text>
+        <circle class="halo" cx="191.3" cy="773.7" r="14"/>
+        <line class="tick" x1="191.3" y1="773.7" x2="191.3" y2="764.7"/>
+        <circle class="dot"  cx="191.3" cy="773.7" r="5"/>
+        <text class="lbl" x="191.3" y="758.7" text-anchor="middle">Darien</text>
       </a>
       <a class="twn" href="../norwalk-boat-detailing/" data-slug="norwalk"
          role="link" aria-label="Boat detailing in Norwalk, Connecticut">
-        <circle class="halo" cx="197.4" cy="280.4" r="15"/>
-        <circle class="dot"  cx="197.4" cy="280.4" r="5.5"/>
-        <text class="lbl" x="197.4" y="263.4" text-anchor="middle">Norwalk</text>
+        <circle class="halo" cx="225.5" cy="744.4" r="14"/>
+        <line class="tick" x1="225.5" y1="744.4" x2="225.5" y2="735.4"/>
+        <circle class="dot"  cx="225.5" cy="744.4" r="5"/>
+        <text class="lbl" x="225.5" y="729.4" text-anchor="middle">Norwalk</text>
       </a>
       <a class="twn" href="../westport-boat-detailing/" data-slug="westport"
          role="link" aria-label="Boat detailing in Westport, Connecticut">
-        <circle class="halo" cx="228.0" cy="262.4" r="15"/>
-        <circle class="dot"  cx="228.0" cy="262.4" r="5.5"/>
-        <text class="lbl" x="228.0" y="287.4" text-anchor="middle">Westport</text>
+        <circle class="halo" cx="253.6" cy="727.2" r="14"/>
+        <line class="tick" x1="253.6" y1="727.2" x2="253.6" y2="702.2"/>
+        <circle class="dot"  cx="253.6" cy="727.2" r="5"/>
+        <text class="lbl" x="253.6" y="696.2" text-anchor="middle">Westport</text>
       </a>
       <a class="twn" href="../fairfield-boat-detailing/" data-slug="fairfield"
          role="link" aria-label="Boat detailing in Fairfield, Connecticut">
-        <circle class="halo" cx="285.6" cy="262.4" r="15"/>
-        <circle class="dot"  cx="285.6" cy="262.4" r="5.5"/>
-        <text class="lbl" x="285.6" y="229.39999999999998" text-anchor="middle">Fairfield</text>
+        <circle class="halo" cx="306.3" cy="727.2" r="14"/>
+        <line class="tick" x1="306.3" y1="727.2" x2="306.3" y2="670.2"/>
+        <circle class="dot"  cx="306.3" cy="727.2" r="5"/>
+        <text class="lbl" x="306.3" y="664.2" text-anchor="middle">Fairfield</text>
       </a>
       <a class="twn" href="../bridgeport-boat-detailing/" data-slug="bridgeport"
          role="link" aria-label="Boat detailing in Bridgeport, Connecticut">
-        <circle class="halo" cx="327.8" cy="226.6" r="15"/>
-        <circle class="dot"  cx="327.8" cy="226.6" r="5.5"/>
-        <text class="lbl" x="327.8" y="209.6" text-anchor="middle">Bridgeport</text>
+        <circle class="halo" cx="345.1" cy="692.7" r="14"/>
+        <line class="tick" x1="345.1" y1="692.7" x2="345.1" y2="635.7"/>
+        <circle class="dot"  cx="345.1" cy="692.7" r="5"/>
+        <text class="lbl" x="345.1" y="629.7" text-anchor="middle">Bridgeport</text>
       </a>
       <a class="twn" href="../stratford-boat-detailing/" data-slug="stratford"
          role="link" aria-label="Boat detailing in Stratford, Connecticut">
-        <circle class="halo" cx="365.8" cy="228.2" r="15"/>
-        <circle class="dot"  cx="365.8" cy="228.2" r="5.5"/>
-        <text class="lbl" x="365.8" y="253.2" text-anchor="middle">Stratford</text>
+        <circle class="halo" cx="379.9" cy="694.2" r="14"/>
+        <line class="tick" x1="379.9" y1="694.2" x2="379.9" y2="605.2"/>
+        <circle class="dot"  cx="379.9" cy="694.2" r="5"/>
+        <text class="lbl" x="379.9" y="599.2" text-anchor="middle">Stratford</text>
       </a>
       <a class="twn" href="../milford-boat-detailing/" data-slug="milford"
          role="link" aria-label="Boat detailing in Milford, Connecticut">
-        <circle class="halo" cx="408.1" cy="192.4" r="15"/>
-        <circle class="dot"  cx="408.1" cy="192.4" r="5.5"/>
-        <text class="lbl" x="408.1" y="159.4" text-anchor="middle">Milford</text>
+        <circle class="halo" cx="418.6" cy="659.7" r="14"/>
+        <line class="tick" x1="418.6" y1="659.7" x2="418.6" y2="570.7"/>
+        <circle class="dot"  cx="418.6" cy="659.7" r="5"/>
+        <text class="lbl" x="418.6" y="564.7" text-anchor="middle">Milford</text>
       </a>
       <a class="twn" href="../west-haven-boat-detailing/" data-slug="west-haven"
          role="link" aria-label="Boat detailing in West Haven, Connecticut">
-        <circle class="halo" cx="479.7" cy="161.2" r="15"/>
-        <circle class="dot"  cx="479.7" cy="161.2" r="5.5"/>
-        <text class="lbl" x="479.7" y="144.2" text-anchor="middle">West Haven</text>
+        <circle class="halo" cx="484.3" cy="629.7" r="14"/>
+        <line class="tick" x1="484.3" y1="629.7" x2="484.3" y2="620.7"/>
+        <circle class="dot"  cx="484.3" cy="629.7" r="5"/>
+        <text class="lbl" x="484.3" y="614.7" text-anchor="middle">West Haven</text>
       </a>
       <a class="twn" href="../new-haven-boat-detailing/" data-slug="new-haven"
          role="link" aria-label="Boat detailing in New Haven, Connecticut">
-        <circle class="halo" cx="491.4" cy="132.4" r="15"/>
-        <circle class="dot"  cx="491.4" cy="132.4" r="5.5"/>
-        <text class="lbl" x="491.4" y="157.4" text-anchor="middle">New Haven</text>
+        <circle class="halo" cx="494.9" cy="602.0" r="14"/>
+        <line class="tick" x1="494.9" y1="602.0" x2="494.9" y2="593.0"/>
+        <circle class="dot"  cx="494.9" cy="602.0" r="5"/>
+        <text class="lbl" x="494.9" y="587.0" text-anchor="middle">New Haven</text>
       </a>
       <a class="twn" href="../east-haven-boat-detailing/" data-slug="east-haven"
          role="link" aria-label="Boat detailing in East Haven, Connecticut">
-        <circle class="halo" cx="528.1" cy="157.3" r="15"/>
-        <circle class="dot"  cx="528.1" cy="157.3" r="5.5"/>
-        <text class="lbl" x="528.1" y="124.30000000000001" text-anchor="middle">East Haven</text>
+        <circle class="halo" cx="528.6" cy="626.0" r="14"/>
+        <line class="tick" x1="528.6" y1="626.0" x2="528.6" y2="569.0"/>
+        <circle class="dot"  cx="528.6" cy="626.0" r="5"/>
+        <text class="lbl" x="528.6" y="563.0" text-anchor="middle">East Haven</text>
       </a>
       <a class="twn" href="../branford-boat-detailing/" data-slug="branford"
          role="link" aria-label="Boat detailing in Branford, Connecticut">
-        <circle class="halo" cx="560.6" cy="155.0" r="15"/>
-        <circle class="dot"  cx="560.6" cy="155.0" r="5.5"/>
-        <text class="lbl" x="560.6" y="138.0" text-anchor="middle">Branford</text>
+        <circle class="halo" cx="558.3" cy="623.7" r="14"/>
+        <line class="tick" x1="558.3" y1="623.7" x2="558.3" y2="534.7"/>
+        <circle class="dot"  cx="558.3" cy="623.7" r="5"/>
+        <text class="lbl" x="558.3" y="528.7" text-anchor="middle">Branford</text>
       </a>
       <a class="twn" href="../guilford-boat-detailing/" data-slug="guilford"
          role="link" aria-label="Boat detailing in Guilford, Connecticut">
-        <circle class="halo" cx="642.7" cy="147.2" r="15"/>
-        <circle class="dot"  cx="642.7" cy="147.2" r="5.5"/>
-        <text class="lbl" x="642.7" y="172.2" text-anchor="middle">Guilford</text>
+        <circle class="halo" cx="633.6" cy="616.2" r="14"/>
+        <line class="tick" x1="633.6" y1="616.2" x2="633.6" y2="607.2"/>
+        <circle class="dot"  cx="633.6" cy="616.2" r="5"/>
+        <text class="lbl" x="633.6" y="601.2" text-anchor="middle">Guilford</text>
       </a>
       <a class="twn" href="../madison-boat-detailing/" data-slug="madison"
          role="link" aria-label="Boat detailing in Madison, Connecticut">
-        <circle class="halo" cx="693.5" cy="155.0" r="15"/>
-        <circle class="dot"  cx="693.5" cy="155.0" r="5.5"/>
-        <text class="lbl" x="693.5" y="122.0" text-anchor="middle">Madison</text>
+        <circle class="halo" cx="680.1" cy="623.7" r="14"/>
+        <line class="tick" x1="680.1" y1="623.7" x2="680.1" y2="582.7"/>
+        <circle class="dot"  cx="680.1" cy="623.7" r="5"/>
+        <text class="lbl" x="680.1" y="576.7" text-anchor="middle">Madison</text>
       </a>
       <a class="twn" href="../clinton-boat-detailing/" data-slug="clinton"
          role="link" aria-label="Boat detailing in Clinton, Connecticut">
-        <circle class="halo" cx="736.4" cy="155.0" r="15"/>
-        <circle class="dot"  cx="736.4" cy="155.0" r="5.5"/>
-        <text class="lbl" x="736.4" y="138.0" text-anchor="middle">Clinton</text>
+        <circle class="halo" cx="719.4" cy="623.7" r="14"/>
+        <line class="tick" x1="719.4" y1="623.7" x2="719.4" y2="614.7"/>
+        <circle class="dot"  cx="719.4" cy="623.7" r="5"/>
+        <text class="lbl" x="719.4" y="608.7" text-anchor="middle">Clinton</text>
       </a>
       <a class="twn" href="../westbrook-boat-detailing/" data-slug="westbrook"
          role="link" aria-label="Boat detailing in Westbrook, Connecticut">
-        <circle class="halo" cx="786.6" cy="151.9" r="15"/>
-        <circle class="dot"  cx="786.6" cy="151.9" r="5.5"/>
-        <text class="lbl" x="786.6" y="176.9" text-anchor="middle">Westbrook</text>
+        <circle class="halo" cx="765.5" cy="620.7" r="14"/>
+        <line class="tick" x1="765.5" y1="620.7" x2="765.5" y2="579.7"/>
+        <circle class="dot"  cx="765.5" cy="620.7" r="5"/>
+        <text class="lbl" x="765.5" y="573.7" text-anchor="middle">Westbrook</text>
       </a>
       <a class="twn" href="../old-saybrook-boat-detailing/" data-slug="old-saybrook"
          role="link" aria-label="Boat detailing in Old Saybrook, Connecticut">
-        <circle class="halo" cx="829.5" cy="145.6" r="15"/>
-        <circle class="dot"  cx="829.5" cy="145.6" r="5.5"/>
-        <text class="lbl" x="829.5" y="112.6" text-anchor="middle">Old Saybrook</text>
+        <circle class="halo" cx="804.7" cy="614.7" r="14"/>
+        <line class="tick" x1="804.7" y1="614.7" x2="804.7" y2="605.7"/>
+        <circle class="dot"  cx="804.7" cy="614.7" r="5"/>
+        <text class="lbl" x="804.7" y="599.7" text-anchor="middle">Old Saybrook</text>
       </a>
       <a class="twn" href="../essex-boat-detailing/" data-slug="essex"
          role="link" aria-label="Boat detailing in Essex, Connecticut">
-        <circle class="halo" cx="820.3" cy="95.8" r="15"/>
-        <circle class="dot"  cx="820.3" cy="95.8" r="5.5"/>
-        <text class="lbl" x="820.3" y="78.8" text-anchor="middle">Essex</text>
+        <circle class="halo" cx="796.3" cy="566.8" r="14"/>
+        <line class="tick" x1="796.3" y1="566.8" x2="796.3" y2="557.8"/>
+        <circle class="dot"  cx="796.3" cy="566.8" r="5"/>
+        <text class="lbl" x="796.3" y="551.8" text-anchor="middle">Essex</text>
       </a>
       <a class="twn" href="../deep-river-boat-detailing/" data-slug="deep-river"
          role="link" aria-label="Boat detailing in Deep River, Connecticut">
-        <circle class="halo" cx="790.9" cy="74.0" r="15"/>
-        <circle class="dot"  cx="790.9" cy="74.0" r="5.5"/>
-        <text class="lbl" x="790.9" y="99.0" text-anchor="middle">Deep River</text>
+        <circle class="halo" cx="769.4" cy="545.8" r="14"/>
+        <line class="tick" x1="769.4" y1="545.8" x2="769.4" y2="536.8"/>
+        <circle class="dot"  cx="769.4" cy="545.8" r="5"/>
+        <text class="lbl" x="769.4" y="530.8" text-anchor="middle">Deep River</text>
       </a>
       <a class="twn" href="../old-lyme-boat-detailing/" data-slug="old-lyme"
          role="link" aria-label="Boat detailing in Old Lyme, Connecticut">
-        <circle class="halo" cx="856.5" cy="126.2" r="15"/>
-        <circle class="dot"  cx="856.5" cy="126.2" r="5.5"/>
-        <text class="lbl" x="856.5" y="93.2" text-anchor="middle">Old Lyme</text>
+        <circle class="halo" cx="829.4" cy="596.0" r="14"/>
+        <line class="tick" x1="829.4" y1="596.0" x2="829.4" y2="507.0"/>
+        <circle class="dot"  cx="829.4" cy="596.0" r="5"/>
+        <text class="lbl" x="829.4" y="501.0" text-anchor="middle">Old Lyme</text>
       </a>
       <a class="twn" href="../east-lyme-boat-detailing/" data-slug="east-lyme"
          role="link" aria-label="Boat detailing in East Lyme, Connecticut">
-        <circle class="halo" cx="925.1" cy="96.6" r="15"/>
-        <circle class="dot"  cx="925.1" cy="96.6" r="5.5"/>
-        <text class="lbl" x="925.1" y="79.6" text-anchor="middle">East Lyme</text>
+        <circle class="halo" cx="892.3" cy="567.5" r="14"/>
+        <line class="tick" x1="892.3" y1="567.5" x2="892.3" y2="558.5"/>
+        <circle class="dot"  cx="892.3" cy="567.5" r="5"/>
+        <text class="lbl" x="892.3" y="552.5" text-anchor="middle">East Lyme</text>
       </a>
       <a class="twn" href="../waterford-boat-detailing/" data-slug="waterford"
          role="link" aria-label="Boat detailing in Waterford, Connecticut">
-        <circle class="halo" cx="975.9" cy="105.9" r="15"/>
-        <circle class="dot"  cx="975.9" cy="105.9" r="5.5"/>
-        <text class="lbl" x="975.9" y="130.9" text-anchor="middle">Waterford</text>
+        <circle class="halo" cx="938.9" cy="576.5" r="14"/>
+        <line class="tick" x1="938.9" y1="576.5" x2="938.9" y2="535.5"/>
+        <circle class="dot"  cx="938.9" cy="576.5" r="5"/>
+        <text class="lbl" x="938.9" y="529.5" text-anchor="middle">Waterford</text>
       </a>
       <a class="twn" href="../new-london-boat-detailing/" data-slug="new-london"
          role="link" aria-label="Boat detailing in New London, Connecticut">
-        <circle class="halo" cx="998.6" cy="95.0" r="15"/>
-        <circle class="dot"  cx="998.6" cy="95.0" r="5.5"/>
-        <text class="lbl" x="998.6" y="62.0" text-anchor="middle">New London</text>
+        <circle class="halo" cx="959.7" cy="566.0" r="14"/>
+        <line class="tick" x1="959.7" y1="566.0" x2="959.7" y2="509.0"/>
+        <circle class="dot"  cx="959.7" cy="566.0" r="5"/>
+        <text class="lbl" x="959.7" y="503.0" text-anchor="middle">New London</text>
       </a>
       <a class="twn" href="../groton-boat-detailing/" data-slug="groton"
          role="link" aria-label="Boat detailing in Groton, Connecticut">
-        <circle class="halo" cx="1012.0" cy="99.7" r="15"/>
-        <circle class="dot"  cx="1012.0" cy="99.7" r="5.5"/>
-        <text class="lbl" x="1012.0" y="82.7" text-anchor="middle">Groton</text>
+        <circle class="halo" cx="972.0" cy="570.5" r="14"/>
+        <line class="tick" x1="972.0" y1="570.5" x2="972.0" y2="561.5"/>
+        <circle class="dot"  cx="972.0" cy="570.5" r="5"/>
+        <text class="lbl" x="972.0" y="555.5" text-anchor="middle">Groton</text>
       </a>
       <a class="twn" href="../mystic-boat-detailing/" data-slug="mystic"
          role="link" aria-label="Boat detailing in Mystic, Connecticut">
-        <circle class="halo" cx="1080.6" cy="96.6" r="15"/>
-        <circle class="dot"  cx="1080.6" cy="96.6" r="5.5"/>
-        <text class="lbl" x="1080.6" y="121.6" text-anchor="middle">Mystic</text>
+        <circle class="halo" cx="1034.9" cy="567.5" r="14"/>
+        <line class="tick" x1="1034.9" y1="567.5" x2="1034.9" y2="558.5"/>
+        <circle class="dot"  cx="1034.9" cy="567.5" r="5"/>
+        <text class="lbl" x="1034.9" y="552.5" text-anchor="middle">Mystic</text>
       </a>
       <a class="twn" href="../stonington-boat-detailing/" data-slug="stonington"
          role="link" aria-label="Boat detailing in Stonington, Connecticut">
-        <circle class="halo" cx="1118.0" cy="110.6" r="15"/>
-        <circle class="dot"  cx="1118.0" cy="110.6" r="5.5"/>
-        <text class="lbl" x="1118.0" y="77.6" text-anchor="middle">Stonington</text>
+        <circle class="halo" cx="1069.1" cy="581.0" r="14"/>
+        <line class="tick" x1="1069.1" y1="581.0" x2="1069.1" y2="524.0"/>
+        <circle class="dot"  cx="1069.1" cy="581.0" r="5"/>
+        <text class="lbl" x="1069.1" y="518.0" text-anchor="middle">Stonington</text>
       </a>
     </svg>
       </div>
@@ -832,9 +862,8 @@ footer.site a{color:var(--ink)}
         <a href="../mystic-boat-detailing/" data-slug="mystic">Mystic</a>
         <a href="../stonington-boat-detailing/" data-slug="stonington">Stonington</a>
       </div>
-      <p class="demonote">The coastline is drawn from the real coordinates of each town, so the
-      order and spacing are geographically accurate. It is a schematic of the shore rather than a
-      survey outline.</p>
+      <p class="demonote">The state outline is real boundary data, and every town is plotted at its actual
+      latitude and longitude with a cosine correction so Connecticut keeps its true proportions.</p>
     </div>
   </section>
 </main>
