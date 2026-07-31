@@ -517,23 +517,21 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .two{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
 @media(max-width:820px){.two{grid-template-columns:1fr}}
 .revs{margin-top:1.6rem;position:relative}
-.revtrack{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:.3rem .2rem 1rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
-.revtrack::-webkit-scrollbar{height:8px}
-.revtrack::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}
-.revtrack::-webkit-scrollbar-track{background:transparent}
-.revtrack:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:14px}
-.revcard{flex:0 0 clamp(240px,78vw,330px);scroll-snap-align:start;border:1px solid var(--line);
-  border-radius:16px;background:var(--mist);padding:1.25rem 1.3rem;display:flex;flex-direction:column;gap:.7rem}
-.revcard .stars{color:var(--brand);font-size:.95rem;letter-spacing:.12em}
-.revcard blockquote{margin:0;color:var(--ink);font-size:1rem;line-height:1.55}
-.revcard .who{margin-top:auto;font-size:.86rem;color:var(--muted)}
-.revcard .who b{display:block;color:var(--brand);font-weight:600;font-size:.95rem}
-.revcard .more{font-size:.82rem;color:var(--brand)}
-.revhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:.9rem}
-.revhead .score{font-family:"Fraunces",serif;font-size:2rem;color:var(--brand);font-weight:600;line-height:1}
-.revhead .of{font-size:.9rem;color:var(--muted)}
-.revhint{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .figside{margin:1.4rem 0 0}
 .figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
   border-radius:14px;border:1px solid var(--line)}
@@ -833,7 +831,8 @@ footer.site a{color:var(--ink)}
         <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding"
            href="https://embedsocial.com/google-reviews-widget/" target="_blank" rel="noopener"
            title="Embed Google reviews">
-          <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
+          <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial"
+               width="120" height="20" loading="lazy" decoding="async">
           <div class="es-widget-branding-text">Embed Google reviews</div>
         </a>
       </div>
