@@ -492,20 +492,21 @@ footer.site a{color:var(--brand-ink)}
 
 /* read-out panel in the empty water at bottom right */
 .mapinfo{position:absolute;right:0;bottom:clamp(.4rem,2vw,1.4rem);
-  width:min(560px,54%);pointer-events:none}
+  width:min(680px,62%);pointer-events:none;text-align:right}
 .mapinfo .mi-fade{transition:opacity .18s ease}
 .mapinfo.swap .mi-fade{opacity:0}
-.mapinfo h3{font-family:"Fraunces",serif;color:var(--brand);font-size:1.35rem;margin:0 0 .3rem;line-height:1.15}
-/* the sentence always occupies two lines so nothing shifts as the town changes */
-.mapinfo .mi-blurb{margin:0;color:var(--ink);font-size:.92rem;line-height:1.45;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  min-height:2.9em}
+.mapinfo h3{font-family:"Fraunces",serif;color:var(--brand);
+  font-size:clamp(1.9rem,3.4vw,2.9rem);margin:0;line-height:1.05;letter-spacing:-.01em}
 /* marinas on one line, trimmed rather than wrapping */
-.mapinfo .mi-marinas{margin:.5rem 0 0;color:var(--muted);font-size:.83rem;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Two fixed lines. At this type size a single row truncated more than half the
+   marinas on the busier towns, and the list is the point of the component. The
+   height is reserved either way so nothing shifts between towns. */
+.mapinfo .mi-marinas{margin:.45rem 0 0;color:var(--ink);font-size:clamp(.95rem,1.35vw,1.15rem);
+  line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:2.8em}
 
 .mapinfo .mi-more{color:var(--muted)}
-.mapinfo .mi-idle{color:var(--muted);font-size:.92rem;margin:0;min-height:2.9em}
+.mapinfo .mi-idle{color:var(--muted);font-size:clamp(.95rem,1.35vw,1.15rem);margin:0;min-height:2.8em}
 @media(max-width:1000px){
   .mapinfo{position:static;width:auto;margin-top:1rem}
   .mapinfo .mi-marinas{white-space:normal}
@@ -1024,7 +1025,6 @@ footer.site a{color:var(--ink)}
       ? esc(d.marinas.join(', '))
       : '<span class="mi-more">Driveways, docks and trailers. We come to the boat.</span>';
     return '<h3>' + esc(d.name) + '</h3>'
-         + '<p class="mi-blurb">' + esc(d.blurb) + '</p>'
          + '<p class="mi-marinas">' + row + '</p>';
   }
 
