@@ -574,6 +574,25 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 
 
 
+/* --- town map inset --- */
+.tmapwrap{position:relative;margin-top:1.8rem}
+.tmap{display:block;width:100%;height:auto}
+.tmap .nbr{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.45}
+.tmap .focus{fill:var(--sandtint);stroke:var(--brand);stroke-width:2}
+.tmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2}
+.tinfo{position:absolute;right:0;bottom:0;width:min(58%,420px);text-align:right;pointer-events:none}
+.tinfo .mi-fade{transition:opacity .18s ease}
+.tinfo.swap .mi-fade{opacity:0}
+.tinfo h3{font-family:"Fraunces",serif;color:var(--brand);font-size:clamp(1.2rem,2.2vw,1.7rem);
+  margin:0;line-height:1.1}
+.tinfo p{margin:.3rem 0 0;color:var(--ink);font-size:.88rem;line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.tspots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.tspots a{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;
+  color:var(--ink);background:var(--mist);text-decoration:none;transition:border-color .15s ease,color .15s ease}
+.tspots a:hover,.tspots a:focus-visible,.tspots a.on{border-color:var(--brand);color:var(--brand);text-decoration:none}
+@media(max-width:700px){.tinfo{position:static;width:auto;text-align:left;margin-top:1rem}}
+
 .figside{margin:1.4rem 0 0}
 .figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
   border-radius:14px;border:1px solid var(--line)}
@@ -794,6 +813,41 @@ footer.site a{color:var(--ink)}
   </section>
 
   <section>
+    <div class="wrap">
+      <span class="eyebrow">On the map</span>
+      <h2>Old Saybrook and the spots we work.</h2>
+      <div class="tmapwrap">
+        <svg class="tmap" viewBox="0 0 620 436" role="img"
+     aria-label="Map showing the boundary of Old Saybrook, Connecticut"
+     xmlns="http://www.w3.org/2000/svg">
+      <g class="nbrs" aria-hidden="true">
+      <path class="nbr" d="M -207.5 189.2 L -205.9 199.6 L -196.0 204.8 L -191.8 210.0 L -183.2 214.9 L -181.9 220.8 L -171.7 229.8 L -166.8 236.7 L -166.8 243.3 L -161.0 244.0 L -155.8 249.6 L -151.6 262.8 L -143.5 266.6 L -139.4 276.3 L -133.6 280.2 L -133.1 286.1 L -126.3 291.3 L -117.4 291.6 L -111.7 287.1 L -103.6 293.7 L -108.6 301.7 L -100.5 309.7 L -99.4 315.9 L -106.2 322.5 L -106.2 331.9 L -104.4 337.1 L -105.7 356.5 L -103.1 361.4 L -77.0 380.8 L -79.8 370.4 L -78.5 364.9 L -71.0 352.7 L -65.5 349.2 L -50.6 344.4 L -53.2 339.5 L -60.3 343.0 L -71.7 345.1 L -80.6 357.9 L -84.5 360.4 L -95.5 360.4 L -98.9 349.6 L -77.5 332.9 L -60.5 330.5 L -46.2 329.8 L -44.3 324.3 L -37.0 326.0 L -36.8 336.1 L -32.1 351.7 L -30.0 361.4 L -27.1 367.0 L -16.7 369.4 L -8.3 373.9 L -1.5 374.2 L -0.2 359.7 L 11.0 342.7 L 33.2 332.2 L 52.8 326.0 L 46.0 302.4 L 29.5 244.7 L 18.3 203.4 L -3.9 118.0 L -14.1 80.5 L -50.1 90.9 L -66.5 97.5 L -75.4 103.4 L -117.2 133.3 L -136.5 148.6 L -158.4 161.7 L -207.5 189.2 Z"/>
+      <path class="nbr" d="M 210.2 -126.1 L 193.7 -128.2 L 190.3 -129.6 L 180.7 -123.0 L 181.2 -117.1 L 174.1 -109.1 L 167.1 -98.7 L 120.9 -76.8 L 135.0 -62.2 L 7.6 -48.0 L -26.1 -42.1 L -35.2 -42.4 L -45.9 -41.0 L -30.5 19.4 L -18.8 62.8 L 21.2 58.6 L 77.3 104.1 L 87.2 105.5 L 97.1 66.6 L 157.7 29.1 L 213.8 -1.4 L 243.6 -33.4 L 276.2 -43.8 L 292.9 -48.0 L 322.9 -62.6 L 319.5 -69.2 L 311.4 -74.7 L 292.1 -79.9 L 272.5 -83.4 L 259.8 -83.7 L 245.4 -87.2 L 235.2 -86.5 L 220.9 -90.7 L 215.1 -96.2 L 210.4 -107.7 L 208.6 -119.5 L 210.2 -126.1 Z"/>
+      <path class="nbr" d="M 689.1 -274.4 L 670.1 -270.9 L 599.6 -263.6 L 597.0 -239.3 L 593.1 -213.6 L 593.1 -199.0 L 590.7 -187.9 L 585.0 -143.5 L 590.5 -94.2 L 592.6 -82.3 L 599.3 -7.0 L 603.8 21.8 L 606.7 32.6 L 617.1 54.1 L 619.7 63.8 L 626.5 77.0 L 633.0 95.1 L 644.0 119.4 L 651.8 134.3 L 647.6 142.0 L 647.4 148.2 L 651.8 157.9 L 653.4 170.4 L 656.5 179.5 L 656.5 189.2 L 660.9 192.0 L 665.9 205.8 L 668.0 215.9 L 671.9 225.6 L 679.7 228.8 L 688.9 222.9 L 709.2 221.5 L 714.5 228.4 L 732.2 219.7 L 740.3 212.8 L 747.3 198.9 L 753.9 198.9 L 755.2 207.6 L 752.6 213.1 L 745.5 221.1 L 743.4 226.7 L 750.0 231.2 L 752.6 222.5 L 760.4 237.8 L 755.7 245.4 L 762.2 246.8 L 766.4 250.6 L 766.4 256.9 L 769.0 264.9 L 773.2 270.1 L 781.8 272.9 L 787.0 269.4 L 792.0 253.4 L 791.7 239.2 L 787.8 228.4 L 787.5 215.6 L 789.4 195.8 L 791.5 184.0 L 788.3 179.8 L 792.0 173.9 L 795.4 163.8 L 800.3 159.3 L 808.2 156.5 L 809.5 151.7 L 822.3 143.0 L 831.9 139.9 L 843.7 138.5 L 858.0 141.3 L 859.3 149.6 L 861.2 141.3 L 852.0 134.3 L 849.9 128.1 L 851.2 112.1 L 853.3 105.5 L 850.7 78.8 L 847.6 71.1 L 833.0 65.6 L 829.8 60.7 L 831.4 54.5 L 828.8 45.8 L 827.0 25.6 L 821.7 -0.4 L 818.1 -7.3 L 817.6 -21.2 L 821.5 -30.3 L 780.8 -106.3 L 748.9 -164.6 L 747.9 -168.1 L 725.2 -210.8 L 696.2 -261.2 L 689.1 -274.4 Z"/>
+      <path class="nbr" d="M 322.9 -62.6 L 292.9 -48.0 L 276.2 -43.8 L 243.6 -33.4 L 213.8 -1.4 L 157.7 29.1 L 97.1 66.6 L 87.2 105.5 L 186.1 116.6 L 194.0 131.9 L 203.9 135.7 L 209.6 139.9 L 223.2 135.7 L 235.0 129.5 L 270.2 114.2 L 324.5 107.6 L 348.5 89.9 L 350.9 79.8 L 357.1 76.3 L 339.6 66.3 L 333.4 58.3 L 330.8 50.3 L 335.4 18.7 L 336.5 -2.8 L 338.3 -15.0 L 342.8 -30.3 L 341.7 -36.9 L 336.2 -45.2 L 326.8 -54.6 L 322.9 -62.6 Z"/>
+      <path class="nbr" d="M 599.6 -263.6 L 574.0 -258.7 L 525.7 -236.9 L 523.9 -249.4 L 451.3 -238.2 L 390.8 -230.3 L 277.8 -214.3 L 269.4 -209.8 L 252.2 -211.5 L 205.2 -204.2 L 189.3 -206.7 L 196.6 -194.2 L 200.0 -185.1 L 208.6 -169.8 L 211.5 -157.0 L 210.9 -128.5 L 210.2 -126.1 L 208.6 -119.5 L 210.4 -107.7 L 215.1 -96.2 L 220.9 -90.7 L 235.2 -86.5 L 245.4 -87.2 L 259.8 -83.7 L 272.5 -83.4 L 292.1 -79.9 L 311.4 -74.7 L 319.5 -69.2 L 322.9 -62.6 L 326.8 -54.6 L 336.2 -45.2 L 341.7 -36.9 L 342.8 -30.3 L 338.3 -15.0 L 336.5 -2.8 L 335.4 18.7 L 330.8 50.3 L 333.4 58.3 L 339.6 66.3 L 357.1 76.3 L 377.2 71.1 L 384.3 65.9 L 395.5 64.2 L 394.7 59.0 L 397.6 49.3 L 435.9 39.2 L 439.9 45.1 L 448.7 31.2 L 469.9 26.0 L 480.6 26.0 L 489.5 21.8 L 516.6 15.6 L 556.5 3.4 L 592.3 -4.9 L 599.3 -7.0 L 592.6 -82.3 L 590.5 -94.2 L 585.0 -143.5 L 590.7 -187.9 L 593.1 -199.0 L 593.1 -213.6 L 597.0 -239.3 L 599.6 -263.6 Z"/>
+      <path class="nbr" d="M -18.8 62.8 L -14.1 80.5 L -3.9 118.0 L 18.3 203.4 L 29.5 244.7 L 46.0 302.4 L 52.8 326.0 L 64.8 324.3 L 83.3 328.4 L 90.9 325.6 L 102.4 333.3 L 103.7 323.2 L 115.4 310.4 L 126.6 302.0 L 137.3 296.5 L 158.5 295.1 L 168.4 297.9 L 190.3 301.3 L 205.7 311.7 L 213.3 312.8 L 221.9 311.4 L 225.3 303.8 L 233.7 297.5 L 221.1 279.8 L 191.4 172.2 L 194.8 165.6 L 207.0 150.3 L 209.6 139.9 L 203.9 135.7 L 194.0 131.9 L 186.1 116.6 L 87.2 105.5 L 77.3 104.1 L 21.2 58.6 L -18.8 62.8 Z"/>
+      <path class="nbr" d="M 357.1 76.3 L 367.0 82.6 L 380.9 93.7 L 389.7 104.1 L 400.7 121.5 L 404.1 131.2 L 411.1 141.6 L 414.5 159.0 L 410.4 183.6 L 419.8 185.0 L 428.6 195.4 L 418.7 196.5 L 432.0 222.2 L 429.4 231.5 L 434.6 248.9 L 444.8 268.7 L 453.7 275.6 L 457.9 287.4 L 462.3 287.8 L 469.4 293.3 L 472.0 297.9 L 487.6 301.0 L 494.4 299.6 L 503.6 300.3 L 520.3 295.1 L 534.1 293.0 L 541.4 294.7 L 558.1 291.3 L 564.6 292.0 L 577.2 289.2 L 593.6 279.1 L 615.8 277.4 L 624.1 274.9 L 627.5 278.8 L 636.9 281.2 L 647.6 269.7 L 653.4 266.6 L 654.9 261.1 L 659.9 255.2 L 669.8 251.7 L 669.8 241.3 L 665.6 229.8 L 671.9 225.6 L 668.0 215.9 L 665.9 205.8 L 660.9 192.0 L 656.5 189.2 L 656.5 179.5 L 653.4 170.4 L 651.8 157.9 L 647.4 148.2 L 647.6 142.0 L 651.8 134.3 L 644.0 119.4 L 633.0 95.1 L 626.5 77.0 L 619.7 63.8 L 617.1 54.1 L 606.7 32.6 L 603.8 21.8 L 599.3 -7.0 L 592.3 -4.9 L 556.5 3.4 L 516.6 15.6 L 489.5 21.8 L 480.6 26.0 L 469.9 26.0 L 448.7 31.2 L 439.9 45.1 L 435.9 39.2 L 397.6 49.3 L 394.7 59.0 L 395.5 64.2 L 384.3 65.9 L 377.2 71.1 L 357.1 76.3 Z"/>
+      </g>
+      <path class="focus" d="M 209.6 139.9 L 207.0 150.3 L 194.8 165.6 L 191.4 172.2 L 221.1 279.8 L 233.7 297.5 L 256.1 303.1 L 266.8 298.9 L 284.0 297.9 L 292.4 301.3 L 285.1 304.8 L 295.8 332.2 L 300.0 338.8 L 308.8 359.7 L 319.5 353.1 L 324.7 352.4 L 333.6 347.2 L 359.2 351.0 L 371.7 344.7 L 384.5 333.6 L 390.8 330.5 L 413.2 328.4 L 424.2 332.2 L 428.6 329.8 L 420.5 319.4 L 419.5 310.0 L 415.1 308.6 L 409.3 313.1 L 393.1 310.7 L 387.1 314.5 L 380.6 322.2 L 374.6 319.4 L 355.3 322.5 L 349.8 316.6 L 349.3 310.4 L 356.9 293.0 L 363.1 288.1 L 367.3 290.9 L 376.2 288.5 L 385.8 292.0 L 407.5 285.0 L 409.3 273.9 L 401.0 263.1 L 396.8 260.7 L 387.4 261.8 L 383.0 263.8 L 371.5 274.3 L 364.2 272.2 L 363.4 257.9 L 366.8 252.7 L 362.3 247.2 L 366.8 242.3 L 379.8 251.0 L 388.2 251.7 L 393.4 220.4 L 395.7 213.8 L 398.1 198.9 L 401.5 187.1 L 410.4 183.6 L 414.5 159.0 L 411.1 141.6 L 404.1 131.2 L 400.7 121.5 L 389.7 104.1 L 380.9 93.7 L 367.0 82.6 L 357.1 76.3 L 350.9 79.8 L 348.5 89.9 L 324.5 107.6 L 270.2 114.2 L 235.0 129.5 L 223.2 135.7 L 209.6 139.9 Z"/>
+    </svg>
+        <div class="tinfo" id="tinfo-old-saybrook" aria-live="polite">
+          <div class="mi-fade" id="tinfo-body-old-saybrook">
+            <h3>Old Saybrook</h3>
+            <p>Where the Connecticut River meets the Sound, and the busiest piece of water on the eastern shoreline.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tspots">
+        <a href="../marinas/saybrook-point-marina/" data-slug="saybrook-point-marina">Saybrook Point Resort &amp; Marina</a>
+        <a href="../marinas/safe-harbor-ferry-point/" data-slug="safe-harbor-ferry-point">Safe Harbor Ferry Point</a>
+        <a href="../marinas/harbor-one-marina/" data-slug="harbor-one-marina">Harbor One Marina</a>
+        <a href="../marinas/north-cove-yacht-club/" data-slug="north-cove-yacht-club">North Cove Yacht Club</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap two">
       <div>
         <span class="eyebrow">Local conditions</span>
@@ -944,6 +998,34 @@ footer.site a{color:var(--ink)}
 (function(){
   var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
   if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var D = {"saybrook-point-marina": {"name": "Saybrook Point Resort & Marina", "blurb": "Deepwater dockage at the mouth of the Connecticut River, geared to larger yachts."}, "safe-harbor-ferry-point": {"name": "Safe Harbor Ferry Point", "blurb": "On Essex Road where the Connecticut River meets the Sound, with the best-protected basin in the area."}, "harbor-one-marina": {"name": "Harbor One Marina", "blurb": "Dockage on the Saybrook Point waterfront at the river mouth."}, "north-cove-yacht-club": {"name": "North Cove Yacht Club", "blurb": "A private club on the quieter cove just upriver from Saybrook Point."}};
+  var box = document.getElementById('tinfo-old-saybrook');
+  var body = document.getElementById('tinfo-body-old-saybrook');
+  var HOME = {"name": "Old Saybrook", "blurb": "Where the Connecticut River meets the Sound, and the busiest piece of water on the eastern shoreline."};
+  var chips = document.querySelectorAll('.tspots a');
+  var cur = null, t = null;
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function render(k){
+    var d = k && D[k];
+    return d ? '<h3>'+esc(d.name)+'</h3><p>'+esc(d.blurb)+'</p>'
+             : '<h3>'+esc(HOME.name)+'</h3><p>'+esc(HOME.blurb)+'</p>';
+  }
+  function show(k){
+    if(k===cur) return; cur=k;
+    box.classList.add('swap'); clearTimeout(t);
+    t=setTimeout(function(){ body.innerHTML=render(k); box.classList.remove('swap'); },170);
+  }
+  chips.forEach(function(c){
+    var k=c.dataset.slug; if(!k) return;
+    c.addEventListener('mouseenter',function(){c.classList.add('on');show(k);});
+    c.addEventListener('mouseleave',function(){c.classList.remove('on');show(null);});
+    c.addEventListener('focus',function(){c.classList.add('on');show(k);});
+    c.addEventListener('blur',function(){c.classList.remove('on');show(null);});
+  });
 })();
 </script>
 </body>
