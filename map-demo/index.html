@@ -507,10 +507,13 @@ footer.site a{color:var(--brand-ink)}
 .ctmap .twn:hover .area,.ctmap .twn:focus-visible .area,.ctmap .twn.on .area{
   fill:var(--brand);stroke:var(--brand);stroke-width:2}
 .ctmap .twn:focus-visible{outline:none}
-.ctmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2.2;transition:r .15s ease}
-/* generous invisible target: the village is a point, not a town-sized shape */
+/* Mystic has no polygon, but a solid dot reads as a business pin. It is styled
+   like a town instead: same fill, same gold outline, same fill-on-hover. */
+.ctmap .vill{fill:var(--sandtint);stroke:var(--brand);stroke-width:1.6;transition:r .15s ease}
+/* generous invisible target: a circle is a smaller hit area than a town shape */
 .ctmap .hit{fill:transparent;stroke:none}
-.ctmap .twn:hover .vill,.ctmap .twn:focus-visible .vill,.ctmap .twn.on .vill{r:12}
+.ctmap .twn:hover .vill,.ctmap .twn:focus-visible .vill,.ctmap .twn.on .vill{
+  fill:var(--brand);stroke:var(--brand);r:12}
 
 /* read-out panel in the empty water at bottom right */
 .mapinfo{position:absolute;right:0;bottom:clamp(.4rem,2vw,1.4rem);
@@ -976,7 +979,7 @@ footer.site a{color:var(--ink)}
         <a href="../mystic-boat-detailing/" data-slug="mystic">Mystic</a>
         <a href="../stonington-boat-detailing/" data-slug="stonington">Stonington</a>
       </div>
-      <p class="demonote">All 169 Connecticut towns are drawn from real municipal boundary data. The 27 we cover are highlighted and clickable. Mystic is a village straddling Groton and Stonington rather than a town, so it appears as a point.</p>
+      <p class="demonote">All 169 Connecticut towns are drawn from real municipal boundary data. The 27 we cover are highlighted and clickable. Mystic is a village straddling Groton and Stonington rather than a town, so it is shown as a small circle rather than a boundary.</p>
     </div>
   </section>
 </main>
