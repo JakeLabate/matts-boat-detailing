@@ -587,6 +587,25 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 
 
 
+/* --- town map inset --- */
+.tmapwrap{position:relative;margin-top:1.8rem}
+.tmap{display:block;width:100%;height:auto}
+.tmap .nbr{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.45}
+.tmap .focus{fill:var(--sandtint);stroke:var(--brand);stroke-width:2}
+.tmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2}
+.tinfo{position:absolute;right:0;bottom:0;width:min(58%,420px);text-align:right;pointer-events:none}
+.tinfo .mi-fade{transition:opacity .18s ease}
+.tinfo.swap .mi-fade{opacity:0}
+.tinfo h3{font-family:"Fraunces",serif;color:var(--brand);font-size:clamp(1.2rem,2.2vw,1.7rem);
+  margin:0;line-height:1.1}
+.tinfo p{margin:.3rem 0 0;color:var(--ink);font-size:.88rem;line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.tspots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.tspots a{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;
+  color:var(--ink);background:var(--mist);text-decoration:none;transition:border-color .15s ease,color .15s ease}
+.tspots a:hover,.tspots a:focus-visible,.tspots a.on{border-color:var(--brand);color:var(--brand);text-decoration:none}
+@media(max-width:700px){.tinfo{position:static;width:auto;text-align:left;margin-top:1rem}}
+
 .figside{margin:1.4rem 0 0}
 .figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
   border-radius:14px;border:1px solid var(--line)}
@@ -808,6 +827,42 @@ footer.site a{color:var(--ink)}
   </section>
 
   <section>
+    <div class="wrap">
+      <span class="eyebrow">On the map</span>
+      <h2>Stamford and the spots we work.</h2>
+      <div class="tmapwrap">
+        <svg class="tmap" viewBox="0 0 620 436" role="img"
+     aria-label="Map showing the boundary of Stamford, Connecticut"
+     xmlns="http://www.w3.org/2000/svg">
+      <g class="nbrs" aria-hidden="true">
+      <path class="nbr" d="M 396.2 190.8 L 390.8 199.5 L 389.4 198.3 L 385.0 201.3 L 384.6 206.4 L 387.0 208.1 L 386.5 211.1 L 383.2 216.9 L 379.7 226.0 L 380.4 229.3 L 378.8 234.4 L 380.0 235.9 L 377.1 248.9 L 375.5 250.6 L 377.0 253.1 L 376.2 256.9 L 381.3 263.2 L 384.8 264.3 L 386.5 268.8 L 386.2 274.3 L 390.0 286.5 L 392.3 289.0 L 392.8 286.2 L 397.3 290.9 L 403.0 289.3 L 405.5 292.8 L 409.4 294.0 L 412.5 296.8 L 411.3 301.9 L 409.2 300.5 L 405.3 302.6 L 410.1 305.9 L 411.4 314.3 L 414.3 318.4 L 417.6 317.8 L 418.3 315.9 L 414.7 313.6 L 420.4 309.3 L 422.4 302.6 L 421.6 297.7 L 425.0 293.7 L 426.3 296.3 L 423.7 307.5 L 423.8 311.0 L 425.8 316.6 L 427.8 319.8 L 430.4 320.1 L 431.6 314.7 L 434.0 310.3 L 431.3 306.3 L 433.6 305.1 L 434.2 301.4 L 439.8 301.7 L 443.9 299.3 L 444.1 295.3 L 438.9 295.1 L 439.8 293.2 L 439.1 289.5 L 441.6 286.5 L 445.1 284.1 L 448.2 287.4 L 454.2 285.5 L 461.4 281.1 L 458.8 288.3 L 452.3 295.4 L 452.6 297.2 L 456.2 298.1 L 461.7 295.6 L 463.4 290.4 L 469.9 288.3 L 470.4 278.1 L 472.8 271.5 L 471.7 267.8 L 469.0 266.2 L 468.4 264.1 L 469.7 257.8 L 469.5 247.1 L 467.8 240.7 L 465.1 239.8 L 464.6 237.0 L 461.0 236.3 L 460.6 231.7 L 457.6 226.8 L 440.5 200.8 L 433.2 190.8 L 413.9 191.5 L 408.4 191.0 L 396.2 190.8 Z"/>
+      <path class="nbr" d="M 655.6 -190.4 L 630.5 -173.0 L 636.8 -161.0 L 639.5 -155.2 L 642.1 -153.1 L 642.5 -149.2 L 644.6 -148.0 L 656.9 -130.2 L 572.8 -90.4 L 592.5 -61.4 L 602.4 -46.5 L 629.3 -6.6 L 627.8 -5.0 L 631.0 -1.0 L 632.2 3.0 L 630.0 5.5 L 629.3 12.8 L 624.7 18.1 L 660.8 18.8 L 663.6 16.8 L 671.0 9.0 L 675.6 5.6 L 678.8 -0.3 L 683.5 -2.8 L 686.7 -9.8 L 689.6 -13.6 L 692.5 -11.3 L 703.6 5.8 L 711.9 19.5 L 716.0 14.2 L 716.3 12.1 L 720.8 7.0 L 721.9 2.0 L 724.7 -4.2 L 726.3 -6.1 L 727.5 -11.9 L 729.7 -14.7 L 731.7 -14.1 L 748.1 -25.5 L 729.9 -53.9 L 696.3 -105.7 L 696.1 -119.8 L 697.0 -123.5 L 692.4 -130.3 L 692.2 -131.6 L 697.1 -137.9 L 700.3 -140.7 L 702.0 -147.7 L 698.1 -167.1 L 655.6 -190.4 Z"/>
+      <path class="nbr" d="M 222.8 139.0 L 166.1 173.5 L 125.4 198.7 L 98.8 214.9 L 128.2 263.8 L 145.5 291.2 L 187.9 358.6 L 194.6 369.6 L 193.8 373.7 L 188.1 390.3 L 189.2 402.5 L 191.2 406.0 L 191.0 409.0 L 193.5 409.7 L 196.4 405.2 L 198.7 397.5 L 201.9 395.7 L 203.0 392.9 L 205.8 391.3 L 207.1 388.7 L 210.4 376.8 L 212.5 375.4 L 214.9 378.0 L 217.8 384.5 L 220.3 386.4 L 224.4 383.3 L 227.2 384.2 L 230.8 387.7 L 235.0 383.5 L 236.6 378.4 L 236.0 374.5 L 241.6 366.5 L 242.0 370.9 L 244.2 372.4 L 245.4 368.8 L 246.6 360.0 L 252.4 356.7 L 252.8 361.4 L 250.3 367.9 L 247.4 371.4 L 250.0 373.5 L 253.2 370.7 L 259.0 368.6 L 262.8 359.7 L 266.6 359.1 L 266.3 355.5 L 267.0 346.5 L 268.4 341.6 L 272.2 342.7 L 278.5 337.4 L 276.7 343.4 L 276.4 346.9 L 277.9 352.7 L 283.3 350.7 L 281.3 357.7 L 275.1 360.2 L 276.5 362.8 L 274.6 366.8 L 277.5 370.5 L 284.1 367.7 L 285.9 364.7 L 290.8 363.7 L 295.2 354.9 L 295.7 361.8 L 297.3 360.7 L 299.5 354.8 L 302.7 353.5 L 304.0 350.9 L 306.4 351.4 L 308.9 349.5 L 309.5 353.9 L 308.0 354.4 L 311.3 361.2 L 308.1 362.3 L 307.8 366.7 L 304.3 377.0 L 299.8 382.2 L 296.6 383.1 L 292.9 381.9 L 289.0 378.6 L 286.8 381.7 L 286.7 385.9 L 290.3 388.9 L 294.5 388.7 L 298.6 387.0 L 305.4 387.1 L 306.4 380.3 L 308.7 371.9 L 312.0 366.0 L 315.2 364.4 L 317.6 361.1 L 321.9 361.1 L 325.0 360.0 L 327.7 352.1 L 327.4 349.2 L 326.0 341.8 L 314.9 318.7 L 309.3 286.9 L 298.2 268.8 L 295.4 263.6 L 269.8 220.0 L 251.1 187.8 L 238.4 165.6 L 224.9 142.0 L 222.8 139.0 Z"/>
+      <path class="nbr" d="M 420.1 20.7 L 383.6 41.7 L 359.2 57.1 L 327.1 76.3 L 328.5 77.4 L 330.5 83.5 L 329.5 86.5 L 331.8 93.5 L 334.2 97.2 L 340.8 102.2 L 343.6 105.4 L 345.6 109.9 L 348.5 111.3 L 352.0 114.8 L 353.2 118.3 L 356.7 120.4 L 355.6 125.3 L 353.9 126.7 L 360.0 148.1 L 366.5 172.2 L 372.0 191.1 L 396.2 190.8 L 408.4 191.0 L 413.9 191.5 L 433.2 190.8 L 444.3 171.0 L 453.6 155.8 L 465.9 128.7 L 467.1 122.5 L 465.5 115.9 L 461.6 111.7 L 459.3 112.7 L 451.9 109.6 L 447.2 108.9 L 445.6 104.0 L 443.4 101.7 L 444.7 93.0 L 445.1 83.2 L 442.8 80.5 L 440.8 80.7 L 439.1 77.9 L 435.6 75.5 L 434.4 72.8 L 436.1 71.4 L 435.2 67.6 L 437.5 63.0 L 437.9 59.2 L 425.9 31.7 L 420.1 20.7 Z"/>
+      <path class="nbr" d="M 467.1 122.5 L 465.9 128.7 L 453.6 155.8 L 444.3 171.0 L 433.2 190.8 L 440.5 200.8 L 457.6 226.8 L 460.6 231.7 L 461.0 236.3 L 464.6 237.0 L 465.1 239.8 L 467.8 240.7 L 469.5 247.1 L 469.7 257.8 L 468.4 264.1 L 469.0 266.2 L 471.7 267.8 L 472.8 271.5 L 470.4 278.1 L 469.9 288.3 L 472.1 287.6 L 477.1 289.7 L 478.1 292.1 L 483.2 290.5 L 489.3 291.9 L 488.2 283.7 L 483.3 284.9 L 482.4 282.0 L 487.8 279.9 L 488.0 277.2 L 491.0 268.1 L 492.8 276.9 L 498.3 275.3 L 500.9 269.7 L 500.9 263.8 L 503.1 262.4 L 504.2 258.9 L 503.3 256.4 L 503.7 250.1 L 506.7 256.6 L 511.6 254.3 L 515.5 264.3 L 518.6 266.2 L 521.0 263.2 L 523.1 256.9 L 521.7 250.1 L 522.4 244.5 L 518.4 239.4 L 518.4 232.6 L 519.6 229.8 L 516.9 227.7 L 516.7 224.7 L 514.4 219.8 L 519.1 221.8 L 522.5 222.3 L 522.9 218.4 L 527.3 223.3 L 528.7 229.1 L 531.4 227.9 L 530.1 235.6 L 531.0 239.1 L 536.5 234.5 L 537.6 237.5 L 534.5 242.9 L 535.1 245.7 L 537.8 246.6 L 543.1 245.6 L 542.7 238.6 L 544.0 235.4 L 549.5 231.2 L 550.6 228.9 L 545.4 225.8 L 548.4 224.4 L 552.9 218.1 L 552.2 210.9 L 553.3 207.2 L 552.2 203.2 L 557.2 175.6 L 554.3 150.7 L 554.2 142.1 L 549.2 136.0 L 546.2 130.4 L 548.7 93.0 L 538.1 90.7 L 506.6 109.8 L 467.1 122.5 Z"/>
+      <path class="nbr" d="M 572.8 -90.4 L 557.5 -83.4 L 495.1 -55.4 L 491.9 -54.0 L 496.3 -46.5 L 517.0 -9.2 L 545.5 42.7 L 559.0 67.8 L 568.7 85.3 L 611.0 51.5 L 612.5 50.6 L 614.5 45.5 L 619.1 43.1 L 619.3 36.4 L 622.3 27.2 L 625.3 23.5 L 623.6 22.6 L 624.7 18.1 L 629.3 12.8 L 630.0 5.5 L 632.2 3.0 L 631.0 -1.0 L 627.8 -5.0 L 629.3 -6.6 L 602.4 -46.5 L 592.5 -61.4 L 572.8 -90.4 Z"/>
+      <path class="nbr" d="M 612.5 50.6 L 611.0 51.5 L 568.7 85.3 L 559.0 67.8 L 548.7 93.0 L 546.2 130.4 L 549.2 136.0 L 554.2 142.1 L 554.3 150.7 L 557.2 175.6 L 552.2 203.2 L 553.3 207.2 L 552.2 210.9 L 552.9 218.1 L 555.9 213.5 L 558.7 212.8 L 563.2 217.2 L 556.2 217.6 L 556.6 219.7 L 561.5 222.1 L 566.2 222.1 L 569.1 223.5 L 574.8 221.9 L 577.4 219.0 L 574.0 216.7 L 569.6 216.0 L 564.5 212.7 L 561.6 209.7 L 555.9 208.6 L 560.7 206.2 L 560.9 202.2 L 562.9 195.0 L 567.3 189.7 L 569.1 192.0 L 571.0 190.1 L 572.9 184.8 L 574.1 185.0 L 572.0 192.2 L 572.2 199.2 L 574.9 201.5 L 580.7 200.6 L 582.8 198.1 L 585.4 197.4 L 586.5 199.9 L 583.4 203.9 L 592.9 203.0 L 590.2 207.6 L 594.5 211.3 L 597.0 205.0 L 601.5 201.6 L 604.4 200.6 L 605.0 197.4 L 604.0 194.8 L 604.6 191.8 L 604.8 184.5 L 607.4 185.9 L 610.8 176.8 L 612.9 178.7 L 617.8 180.8 L 614.6 186.2 L 612.7 188.0 L 609.0 188.7 L 610.7 192.9 L 613.3 194.6 L 622.0 194.5 L 623.5 197.3 L 626.4 193.8 L 630.0 191.0 L 639.2 187.1 L 648.2 187.5 L 653.8 188.9 L 659.4 183.6 L 666.6 180.3 L 667.7 175.6 L 664.5 172.4 L 667.0 170.5 L 666.5 167.9 L 667.7 164.2 L 666.8 160.5 L 668.4 157.0 L 667.7 152.1 L 664.7 144.9 L 665.9 140.9 L 665.1 137.8 L 663.1 136.2 L 659.1 136.0 L 659.0 133.4 L 656.7 128.5 L 657.4 125.3 L 652.9 123.4 L 624.5 72.3 L 612.5 50.6 Z"/>
+      <path class="nbr" d="M 491.9 -54.0 L 480.8 -72.9 L 435.7 -47.2 L 419.2 -37.4 L 396.8 -23.6 L 423.3 18.9 L 420.1 20.7 L 425.9 31.7 L 437.9 59.2 L 437.5 63.0 L 435.2 67.6 L 436.1 71.4 L 434.4 72.8 L 435.6 75.5 L 439.1 77.9 L 440.8 80.7 L 442.8 80.5 L 445.1 83.2 L 444.7 93.0 L 443.4 101.7 L 445.6 104.0 L 447.2 108.9 L 451.9 109.6 L 459.3 112.7 L 461.6 111.7 L 465.5 115.9 L 467.1 122.5 L 506.6 109.8 L 538.1 90.7 L 548.7 93.0 L 559.0 67.8 L 545.5 42.7 L 517.0 -9.2 L 496.3 -46.5 L 491.9 -54.0 Z"/>
+      </g>
+      <path class="focus" d="M 327.1 76.3 L 295.5 95.4 L 265.5 113.3 L 222.8 139.0 L 224.9 142.0 L 238.4 165.6 L 251.1 187.8 L 269.8 220.0 L 295.4 263.6 L 298.2 268.8 L 309.3 286.9 L 314.9 318.7 L 326.0 341.8 L 327.4 349.2 L 327.0 346.0 L 331.2 346.5 L 333.6 344.3 L 334.5 338.3 L 337.0 338.3 L 337.0 341.3 L 335.3 344.4 L 341.3 343.4 L 343.5 337.4 L 341.5 333.1 L 342.5 329.9 L 340.4 329.2 L 339.4 317.5 L 340.8 313.6 L 342.9 318.5 L 341.7 323.4 L 344.5 325.5 L 344.4 329.0 L 347.0 330.3 L 349.7 334.5 L 351.4 327.5 L 357.6 321.7 L 359.7 318.4 L 354.8 307.3 L 357.0 306.8 L 359.8 310.5 L 360.5 313.6 L 363.4 318.7 L 360.5 321.7 L 357.4 328.9 L 360.0 335.9 L 360.5 345.3 L 359.8 350.0 L 361.3 359.3 L 362.7 359.7 L 371.4 353.5 L 375.3 350.2 L 377.2 341.1 L 376.4 338.1 L 372.6 336.7 L 370.5 334.5 L 372.1 323.6 L 372.0 319.1 L 376.1 322.2 L 381.9 322.0 L 387.3 320.6 L 389.4 323.6 L 392.2 317.8 L 394.1 315.7 L 397.2 304.2 L 394.9 299.6 L 395.2 293.7 L 392.3 289.0 L 390.0 286.5 L 386.2 274.3 L 386.5 268.8 L 384.8 264.3 L 381.3 263.2 L 376.2 256.9 L 377.0 253.1 L 375.5 250.6 L 377.1 248.9 L 380.0 235.9 L 378.8 234.4 L 380.4 229.3 L 379.7 226.0 L 383.2 216.9 L 386.5 211.1 L 387.0 208.1 L 384.6 206.4 L 385.0 201.3 L 389.4 198.3 L 390.8 199.5 L 396.2 190.8 L 372.0 191.1 L 366.5 172.2 L 360.0 148.1 L 353.9 126.7 L 355.6 125.3 L 356.7 120.4 L 353.2 118.3 L 352.0 114.8 L 348.5 111.3 L 345.6 109.9 L 343.6 105.4 L 340.8 102.2 L 334.2 97.2 L 331.8 93.5 L 329.5 86.5 L 330.5 83.5 L 328.5 77.4 L 327.1 76.3 Z"/>
+    </svg>
+        <div class="tinfo" id="tinfo-stamford" aria-live="polite">
+          <div class="mi-fade" id="tinfo-body-stamford">
+            <h3>Stamford</h3>
+            <p>A deep, busy harbor behind a hurricane barrier, holding everything from 20-footers to 120-foot yachts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tspots">
+        <a href="../marinas/safe-harbor-yacht-haven/" data-slug="safe-harbor-yacht-haven">Safe Harbor Yacht Haven</a>
+        <a href="../marinas/harbor-point-marinas/" data-slug="harbor-point-marinas">Harbor Point Marinas</a>
+        <a href="../marinas/czescik-municipal-marina/" data-slug="czescik-municipal-marina">Czescik Municipal Marina</a>
+        <a href="../marinas/stamford-yacht-club/" data-slug="stamford-yacht-club">Stamford Yacht Club</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap two">
       <div>
         <span class="eyebrow">Local conditions</span>
@@ -958,6 +1013,34 @@ footer.site a{color:var(--ink)}
 (function(){
   var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
   if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var D = {"safe-harbor-yacht-haven": {"name": "Safe Harbor Yacht Haven", "blurb": "One of the largest marinas on the western Sound, on Stamford Harbor's West Branch."}, "harbor-point-marinas": {"name": "Harbor Point Marinas", "blurb": "Four marinas around the Harbor Point waterfront, taking vessels up to 120 feet."}, "czescik-municipal-marina": {"name": "Czescik Municipal Marina", "blurb": "Stamford's city marina, the most affordable dockage in the harbour and popular with local owners."}, "stamford-yacht-club": {"name": "Stamford Yacht Club", "blurb": "A private club on Stamford Harbor with a long-running racing programme."}};
+  var box = document.getElementById('tinfo-stamford');
+  var body = document.getElementById('tinfo-body-stamford');
+  var HOME = {"name": "Stamford", "blurb": "A deep, busy harbor behind a hurricane barrier, holding everything from 20-footers to 120-foot yachts."};
+  var chips = document.querySelectorAll('.tspots a');
+  var cur = null, t = null;
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function render(k){
+    var d = k && D[k];
+    return d ? '<h3>'+esc(d.name)+'</h3><p>'+esc(d.blurb)+'</p>'
+             : '<h3>'+esc(HOME.name)+'</h3><p>'+esc(HOME.blurb)+'</p>';
+  }
+  function show(k){
+    if(k===cur) return; cur=k;
+    box.classList.add('swap'); clearTimeout(t);
+    t=setTimeout(function(){ body.innerHTML=render(k); box.classList.remove('swap'); },170);
+  }
+  chips.forEach(function(c){
+    var k=c.dataset.slug; if(!k) return;
+    c.addEventListener('mouseenter',function(){c.classList.add('on');show(k);});
+    c.addEventListener('mouseleave',function(){c.classList.remove('on');show(null);});
+    c.addEventListener('focus',function(){c.classList.add('on');show(k);});
+    c.addEventListener('blur',function(){c.classList.remove('on');show(null);});
+  });
 })();
 </script>
 </body>
