@@ -600,6 +600,25 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 
 
 
+/* --- town map inset --- */
+.tmapwrap{position:relative;margin-top:1.8rem}
+.tmap{display:block;width:100%;height:auto}
+.tmap .nbr{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.45}
+.tmap .focus{fill:var(--sandtint);stroke:var(--brand);stroke-width:2}
+.tmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2}
+.tinfo{position:absolute;right:0;bottom:0;width:min(58%,420px);text-align:right;pointer-events:none}
+.tinfo .mi-fade{transition:opacity .18s ease}
+.tinfo.swap .mi-fade{opacity:0}
+.tinfo h3{font-family:"Fraunces",serif;color:var(--brand);font-size:clamp(1.2rem,2.2vw,1.7rem);
+  margin:0;line-height:1.1}
+.tinfo p{margin:.3rem 0 0;color:var(--ink);font-size:.88rem;line-height:1.4;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.8em}
+.tspots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.tspots a{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;
+  color:var(--ink);background:var(--mist);text-decoration:none;transition:border-color .15s ease,color .15s ease}
+.tspots a:hover,.tspots a:focus-visible,.tspots a.on{border-color:var(--brand);color:var(--brand);text-decoration:none}
+@media(max-width:700px){.tinfo{position:static;width:auto;text-align:left;margin-top:1rem}}
+
 .figside{margin:1.4rem 0 0}
 .figside img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
   border-radius:14px;border:1px solid var(--line)}
@@ -822,6 +841,42 @@ footer.site a{color:var(--ink)}
   </section>
 
   <section>
+    <div class="wrap">
+      <span class="eyebrow">On the map</span>
+      <h2>Norwalk and the spots we work.</h2>
+      <div class="tmapwrap">
+        <svg class="tmap" viewBox="0 0 620 436" role="img"
+     aria-label="Map showing the boundary of Norwalk, Connecticut"
+     xmlns="http://www.w3.org/2000/svg">
+      <g class="nbrs" aria-hidden="true">
+      <path class="nbr" d="M 170.8 217.1 L 163.2 229.4 L 161.2 227.7 L 155.0 231.9 L 154.5 239.0 L 157.8 241.5 L 157.1 245.7 L 152.4 253.8 L 147.6 266.6 L 148.5 271.3 L 146.3 278.4 L 148.0 280.6 L 143.9 298.9 L 141.7 301.3 L 143.7 304.8 L 142.6 310.2 L 149.8 319.0 L 154.7 320.5 L 157.1 326.9 L 156.7 334.6 L 162.1 351.8 L 165.2 355.2 L 166.0 351.3 L 172.3 357.9 L 180.3 355.7 L 183.8 360.7 L 189.4 362.4 L 193.6 366.3 L 192.0 373.5 L 189.0 371.5 L 183.6 374.4 L 190.3 379.1 L 192.2 390.9 L 196.2 396.6 L 200.9 395.9 L 201.8 393.1 L 196.8 389.9 L 204.8 383.8 L 207.6 374.4 L 206.4 367.5 L 211.3 361.9 L 213.1 365.6 L 209.4 381.3 L 209.6 386.3 L 212.4 394.1 L 215.2 398.6 L 218.9 399.1 L 220.5 391.4 L 223.9 385.3 L 220.2 379.6 L 223.3 377.9 L 224.3 372.7 L 232.1 373.2 L 237.8 369.8 L 238.2 364.1 L 230.8 363.9 L 232.1 361.1 L 231.1 356.0 L 234.7 351.8 L 239.5 348.3 L 243.9 353.0 L 252.3 350.3 L 262.5 344.2 L 258.8 354.3 L 249.7 364.3 L 250.1 366.8 L 255.1 368.0 L 262.9 364.6 L 265.3 357.2 L 274.4 354.3 L 275.1 340.0 L 278.5 330.6 L 277.0 325.5 L 273.1 323.2 L 272.3 320.3 L 274.2 311.4 L 273.8 296.4 L 271.4 287.3 L 267.7 286.1 L 266.9 282.1 L 261.9 281.1 L 261.4 274.7 L 257.1 267.8 L 233.0 231.2 L 222.8 217.1 L 195.7 218.1 L 187.9 217.4 L 170.8 217.1 Z"/>
+      <path class="nbr" d="M 642.6 -71.1 L 639.8 -71.9 L 636.6 -67.9 L 635.0 -59.8 L 632.7 -57.1 L 628.8 -48.5 L 627.2 -41.3 L 620.9 -34.2 L 620.5 -31.2 L 614.7 -23.9 L 603.0 -43.1 L 587.4 -67.2 L 583.4 -70.4 L 579.3 -65.0 L 574.8 -55.1 L 568.1 -51.7 L 563.7 -43.3 L 557.2 -38.6 L 546.8 -27.5 L 542.9 -24.8 L 492.1 -25.8 L 490.6 -19.4 L 493.0 -18.2 L 488.7 -13.0 L 484.4 0.0 L 484.3 9.4 L 477.8 12.8 L 475.0 20.0 L 491.9 50.5 L 531.8 122.4 L 538.1 125.1 L 537.2 129.5 L 540.3 136.4 L 540.5 140.1 L 546.1 140.3 L 548.8 142.6 L 550.0 147.0 L 548.3 152.6 L 552.6 162.7 L 553.5 169.6 L 551.3 174.6 L 552.6 179.7 L 550.9 184.9 L 551.6 188.6 L 548.1 191.3 L 552.6 195.7 L 553.7 189.8 L 557.8 187.1 L 563.1 185.6 L 567.2 186.6 L 574.3 181.0 L 578.2 172.1 L 587.8 167.2 L 594.3 158.6 L 597.8 159.5 L 593.2 169.6 L 584.7 171.4 L 581.5 174.1 L 577.6 185.4 L 586.5 187.4 L 592.1 193.0 L 595.4 200.6 L 609.3 202.6 L 611.4 205.8 L 616.6 209.5 L 627.7 200.6 L 634.8 191.8 L 643.9 186.6 L 656.3 183.9 L 660.0 170.9 L 659.5 165.2 L 662.1 158.6 L 669.8 146.7 L 666.5 140.3 L 671.5 134.4 L 670.2 125.3 L 665.2 123.6 L 662.6 118.9 L 663.7 115.7 L 678.4 101.7 L 681.0 95.5 L 686.6 90.4 L 686.2 88.4 L 690.4 83.2 L 688.0 80.0 L 681.0 83.0 L 681.4 77.3 L 687.5 70.4 L 689.1 65.0 L 696.2 58.4 L 695.6 52.2 L 699.0 49.0 L 694.7 37.7 L 696.4 12.8 L 676.7 -18.7 L 650.0 -59.3 L 642.6 -71.1 Z"/>
+      <path class="nbr" d="M -73.0 144.3 L -152.8 192.8 L -210.0 228.2 L -247.5 251.1 L -206.1 319.8 L -181.8 358.4 L -122.2 453.2 L -112.8 468.7 L -113.9 474.4 L -121.9 497.8 L -120.4 515.0 L -117.6 519.9 L -117.8 524.1 L -114.2 525.1 L -110.2 518.7 L -107.0 507.9 L -102.6 505.4 L -100.9 501.5 L -97.0 499.2 L -95.1 495.5 L -90.5 478.8 L -87.5 476.8 L -84.2 480.5 L -80.1 489.6 L -76.6 492.3 L -70.8 487.9 L -66.9 489.1 L -61.9 494.1 L -56.0 488.2 L -53.7 481.0 L -54.5 475.6 L -46.7 464.3 L -46.1 470.4 L -43.0 472.7 L -41.3 467.5 L -39.6 455.2 L -31.5 450.5 L -30.9 457.1 L -34.4 466.3 L -38.5 471.2 L -34.8 474.1 L -30.4 470.2 L -22.2 467.2 L -16.8 454.7 L -11.4 453.9 L -12.0 448.8 L -10.9 436.2 L -9.0 429.3 L -3.6 430.8 L 5.3 423.4 L 2.7 431.8 L 2.3 436.7 L 4.3 444.8 L 12.0 442.1 L 9.2 452.0 L 0.4 455.4 L 2.5 459.1 L -0.3 464.8 L 3.8 469.9 L 13.1 466.0 L 15.7 461.8 L 22.5 460.3 L 28.7 448.0 L 29.4 457.6 L 31.6 456.2 L 34.8 447.8 L 39.2 446.1 L 41.1 442.4 L 44.4 443.1 L 48.0 440.4 L 48.9 446.6 L 46.7 447.3 L 51.3 456.9 L 46.8 458.4 L 46.5 464.5 L 41.5 479.1 L 35.1 486.4 L 30.7 487.7 L 25.5 485.9 L 19.9 481.3 L 17.0 485.7 L 16.8 491.6 L 21.8 495.8 L 27.7 495.5 L 33.5 493.1 L 43.1 493.3 L 44.4 483.7 L 47.8 471.9 L 52.4 463.5 L 56.9 461.3 L 60.2 456.7 L 66.3 456.7 L 70.6 455.2 L 74.5 444.1 L 73.9 439.9 L 72.1 429.6 L 56.5 397.1 L 48.5 352.3 L 32.9 326.9 L 29.0 319.5 L -7.0 258.2 L -33.3 213.0 L -51.1 181.7 L -70.1 148.5 L -73.0 144.3 Z"/>
+      <path class="nbr" d="M 204.4 -22.1 L 153.0 7.4 L 118.7 29.1 L 73.6 56.1 L 75.6 57.6 L 78.4 66.2 L 76.9 70.4 L 80.2 80.3 L 83.6 85.4 L 92.9 92.6 L 96.8 97.0 L 99.5 103.4 L 103.6 105.4 L 108.6 110.3 L 110.3 115.2 L 115.1 118.2 L 113.7 125.1 L 111.2 127.0 L 119.8 157.1 L 129.1 191.0 L 136.7 217.6 L 170.8 217.1 L 187.9 217.4 L 195.7 218.1 L 222.8 217.1 L 238.4 189.3 L 251.5 167.9 L 268.8 129.8 L 270.5 121.1 L 268.2 111.8 L 262.7 105.9 L 259.5 107.3 L 249.1 102.9 L 242.4 101.9 L 240.2 95.0 L 237.1 91.8 L 238.9 79.5 L 239.5 65.7 L 236.3 62.1 L 233.5 62.3 L 231.1 58.4 L 226.1 54.9 L 224.4 51.2 L 226.9 49.3 L 225.6 43.8 L 228.9 37.4 L 229.5 32.0 L 212.6 -6.6 L 204.4 -22.1 Z"/>
+      <path class="nbr" d="M 73.6 56.1 L 29.2 83.0 L -13.1 108.1 L -73.0 144.3 L -70.1 148.5 L -51.1 181.7 L -33.3 213.0 L -7.0 258.2 L 29.0 319.5 L 32.9 326.9 L 48.5 352.3 L 56.5 397.1 L 72.1 429.6 L 73.9 439.9 L 73.4 435.5 L 79.3 436.2 L 82.7 433.0 L 84.0 424.7 L 87.5 424.7 L 87.5 428.8 L 85.1 433.3 L 93.6 431.8 L 96.6 423.4 L 93.8 417.3 L 95.3 412.8 L 92.3 411.9 L 90.8 395.4 L 92.9 389.9 L 95.8 396.8 L 94.2 403.7 L 98.1 406.7 L 97.9 411.6 L 101.6 413.3 L 105.3 419.2 L 107.7 409.4 L 116.4 401.3 L 119.4 396.6 L 112.5 381.1 L 115.7 380.3 L 119.6 385.5 L 120.5 389.9 L 124.6 397.1 L 120.5 401.3 L 116.2 411.4 L 119.8 421.2 L 120.5 434.5 L 119.6 441.1 L 121.6 454.2 L 123.7 454.7 L 135.9 446.1 L 141.3 441.4 L 144.1 428.6 L 143.0 424.4 L 137.6 422.4 L 134.6 419.2 L 136.8 404.0 L 136.7 397.6 L 142.4 402.0 L 150.6 401.8 L 158.2 399.8 L 161.2 404.0 L 165.1 395.9 L 167.8 392.9 L 172.1 376.7 L 169.0 370.3 L 169.3 361.9 L 165.2 355.2 L 162.1 351.8 L 156.7 334.6 L 157.1 326.9 L 154.7 320.5 L 149.8 319.0 L 142.6 310.2 L 143.7 304.8 L 141.7 301.3 L 143.9 298.9 L 148.0 280.6 L 146.3 278.4 L 148.5 271.3 L 147.6 266.6 L 152.4 253.8 L 157.1 245.7 L 157.8 241.5 L 154.5 239.0 L 155.0 231.9 L 161.2 227.7 L 163.2 229.4 L 170.8 217.1 L 136.7 217.6 L 129.1 191.0 L 119.8 157.1 L 111.2 127.0 L 113.7 125.1 L 115.1 118.2 L 110.3 115.2 L 108.6 110.3 L 103.6 105.4 L 99.5 103.4 L 96.8 97.0 L 92.9 92.6 L 83.6 85.4 L 80.2 80.3 L 76.9 70.4 L 78.4 66.2 L 75.6 57.6 L 73.6 56.1 Z"/>
+      <path class="nbr" d="M 419.1 -178.4 L 397.6 -168.6 L 309.8 -129.2 L 305.4 -127.2 L 311.5 -116.7 L 340.6 -64.2 L 380.7 8.9 L 399.6 44.1 L 413.4 68.7 L 472.8 21.2 L 475.0 20.0 L 477.8 12.8 L 484.3 9.4 L 484.4 0.0 L 488.7 -13.0 L 493.0 -18.2 L 490.6 -19.4 L 492.1 -25.8 L 498.6 -33.2 L 499.5 -43.5 L 502.6 -47.0 L 501.0 -52.7 L 496.5 -58.3 L 498.6 -60.5 L 460.7 -116.7 L 446.8 -137.6 L 419.1 -178.4 Z"/>
+      <path class="nbr" d="M 475.0 20.0 L 472.8 21.2 L 413.4 68.7 L 399.6 44.1 L 385.2 79.5 L 381.6 132.2 L 385.9 140.1 L 393.0 148.7 L 393.1 160.8 L 397.2 195.7 L 390.2 234.6 L 391.7 240.3 L 390.2 245.4 L 391.1 255.5 L 395.4 249.1 L 399.3 248.2 L 405.6 254.3 L 395.7 254.8 L 396.3 257.8 L 403.2 261.2 L 409.8 261.2 L 413.9 263.2 L 421.9 261.0 L 425.6 256.8 L 420.8 253.6 L 414.7 252.6 L 407.4 247.9 L 403.3 243.7 L 395.4 242.2 L 402.0 238.8 L 402.4 233.1 L 405.2 223.0 L 411.3 215.7 L 413.9 218.9 L 416.5 216.2 L 419.3 208.8 L 421.0 209.0 L 418.0 219.1 L 418.2 229.0 L 422.1 232.2 L 430.3 230.9 L 433.2 227.5 L 436.8 226.5 L 438.4 229.9 L 434.0 235.6 L 447.3 234.4 L 443.6 240.8 L 449.6 245.9 L 453.1 237.1 L 459.4 232.4 L 463.5 230.9 L 464.4 226.5 L 462.9 222.8 L 463.8 218.6 L 464.0 208.3 L 467.7 210.2 L 472.6 197.4 L 475.5 200.2 L 482.4 203.1 L 478.0 210.7 L 475.2 213.2 L 470.0 214.2 L 472.4 220.1 L 476.1 222.6 L 488.3 222.3 L 490.4 226.2 L 494.5 221.3 L 499.5 217.4 L 512.5 212.0 L 525.1 212.5 L 533.1 214.4 L 540.9 207.0 L 551.1 202.4 L 552.6 195.7 L 548.1 191.3 L 551.6 188.6 L 550.9 184.9 L 552.6 179.7 L 551.3 174.6 L 553.5 169.6 L 552.6 162.7 L 548.3 152.6 L 550.0 147.0 L 548.8 142.6 L 546.1 140.3 L 540.5 140.1 L 540.3 136.4 L 537.2 129.5 L 538.1 125.1 L 531.8 122.4 L 491.9 50.5 L 475.0 20.0 Z"/>
+      <path class="nbr" d="M 305.4 -127.2 L 289.8 -153.8 L 226.3 -117.6 L 203.1 -103.9 L 171.6 -84.4 L 208.9 -24.6 L 204.4 -22.1 L 212.6 -6.6 L 229.5 32.0 L 228.9 37.4 L 225.6 43.8 L 226.9 49.3 L 224.4 51.2 L 226.1 54.9 L 231.1 58.4 L 233.5 62.3 L 236.3 62.1 L 239.5 65.7 L 238.9 79.5 L 237.1 91.8 L 240.2 95.0 L 242.4 101.9 L 249.1 102.9 L 259.5 107.3 L 262.7 105.9 L 268.2 111.8 L 270.5 121.1 L 326.0 103.2 L 370.3 76.3 L 385.2 79.5 L 399.6 44.1 L 380.7 8.9 L 340.6 -64.2 L 311.5 -116.7 L 305.4 -127.2 Z"/>
+      </g>
+      <path class="focus" d="M 270.5 121.1 L 268.8 129.8 L 251.5 167.9 L 238.4 189.3 L 222.8 217.1 L 233.0 231.2 L 257.1 267.8 L 261.4 274.7 L 261.9 281.1 L 266.9 282.1 L 267.7 286.1 L 271.4 287.3 L 273.8 296.4 L 274.2 311.4 L 272.3 320.3 L 273.1 323.2 L 277.0 325.5 L 278.5 330.6 L 275.1 340.0 L 274.4 354.3 L 277.5 353.3 L 284.6 356.2 L 285.9 359.7 L 293.1 357.5 L 301.6 359.4 L 300.2 347.9 L 293.3 349.6 L 292.0 345.4 L 299.6 342.4 L 299.8 338.7 L 304.1 325.9 L 306.7 338.3 L 314.3 336.0 L 318.0 328.2 L 318.0 319.8 L 321.1 317.8 L 322.6 312.9 L 321.3 309.4 L 321.9 300.6 L 326.1 309.7 L 333.0 306.5 L 338.6 320.5 L 342.8 323.2 L 346.2 319.0 L 349.2 310.2 L 347.3 300.6 L 348.2 292.7 L 342.7 285.6 L 342.7 276.0 L 344.3 272.0 L 340.4 269.1 L 340.3 264.9 L 336.9 258.0 L 343.6 260.7 L 348.4 261.4 L 349.0 256.0 L 355.1 262.9 L 357.1 271.0 L 360.9 269.3 L 359.0 280.2 L 360.3 285.1 L 368.1 278.7 L 369.6 282.9 L 365.3 290.5 L 366.0 294.4 L 369.9 295.7 L 377.4 294.2 L 376.8 284.3 L 378.7 279.9 L 386.3 274.0 L 387.9 270.8 L 380.5 266.4 L 384.8 264.4 L 391.1 255.5 L 390.2 245.4 L 391.7 240.3 L 390.2 234.6 L 397.2 195.7 L 393.1 160.8 L 393.0 148.7 L 385.9 140.1 L 381.6 132.2 L 385.2 79.5 L 370.3 76.3 L 326.0 103.2 L 270.5 121.1 Z"/>
+    </svg>
+        <div class="tinfo" id="tinfo-norwalk" aria-live="polite">
+          <div class="mi-fade" id="tinfo-body-norwalk">
+            <h3>Norwalk</h3>
+            <p>One of the great boating towns on the Sound, with a deep-water harbor and sixteen islands offshore.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tspots">
+        <a href="../marinas/norwalk-cove-marina/" data-slug="norwalk-cove-marina">Norwalk Cove Marina</a>
+        <a href="../marinas/rex-marine-center/" data-slug="rex-marine-center">Rex Marine Center</a>
+        <a href="../marinas/total-marine-norwalk/" data-slug="total-marine-norwalk">Total Marine of Norwalk</a>
+        <a href="../marinas/rowayton-yacht-club/" data-slug="rowayton-yacht-club">Rowayton Yacht Club</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap two">
       <div>
         <span class="eyebrow">Local conditions</span>
@@ -972,6 +1027,34 @@ footer.site a{color:var(--ink)}
 (function(){
   var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
   if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var D = {"norwalk-cove-marina": {"name": "Norwalk Cove Marina", "blurb": "400 slips in a deep-water basin at the mouth of Norwalk Harbor, taking boats up to 180 feet."}, "rex-marine-center": {"name": "Rex Marine Center", "blurb": "Run by the Gardella family since 1936, on the west side of Norwalk Harbor."}, "total-marine-norwalk": {"name": "Total Marine of Norwalk", "blurb": "A working full-service yard on Norwalk Harbor."}, "rowayton-yacht-club": {"name": "Rowayton Yacht Club", "blurb": "Founded 1979 on the Five Mile River, the oldest yacht club in Rowayton."}};
+  var box = document.getElementById('tinfo-norwalk');
+  var body = document.getElementById('tinfo-body-norwalk');
+  var HOME = {"name": "Norwalk", "blurb": "One of the great boating towns on the Sound, with a deep-water harbor and sixteen islands offshore."};
+  var chips = document.querySelectorAll('.tspots a');
+  var cur = null, t = null;
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  function render(k){
+    var d = k && D[k];
+    return d ? '<h3>'+esc(d.name)+'</h3><p>'+esc(d.blurb)+'</p>'
+             : '<h3>'+esc(HOME.name)+'</h3><p>'+esc(HOME.blurb)+'</p>';
+  }
+  function show(k){
+    if(k===cur) return; cur=k;
+    box.classList.add('swap'); clearTimeout(t);
+    t=setTimeout(function(){ body.innerHTML=render(k); box.classList.remove('swap'); },170);
+  }
+  chips.forEach(function(c){
+    var k=c.dataset.slug; if(!k) return;
+    c.addEventListener('mouseenter',function(){c.classList.add('on');show(k);});
+    c.addEventListener('mouseleave',function(){c.classList.remove('on');show(null);});
+    c.addEventListener('focus',function(){c.classList.add('on');show(k);});
+    c.addEventListener('blur',function(){c.classList.remove('on');show(null);});
+  });
 })();
 </script>
 </body>
