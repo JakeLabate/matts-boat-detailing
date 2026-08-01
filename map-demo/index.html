@@ -507,13 +507,12 @@ footer.site a{color:var(--brand-ink)}
 .ctmap .twn:hover .area,.ctmap .twn:focus-visible .area,.ctmap .twn.on .area{
   fill:var(--brand);stroke:var(--brand);stroke-width:2}
 .ctmap .twn:focus-visible{outline:none}
-/* Mystic has no polygon, but a solid dot reads as a business pin. It is styled
-   like a town instead: same fill, same gold outline, same fill-on-hover. */
-.ctmap .vill{fill:var(--sandtint);stroke:var(--brand);stroke-width:1.6;transition:r .15s ease}
+/* Mystic has no polygon. It carries the .area class so fill, stroke colour and
+   stroke weight all come from the town rule; only the radius is its own. */
+.ctmap .vill{transition:r .15s ease}
 /* generous invisible target: a circle is a smaller hit area than a town shape */
 .ctmap .hit{fill:transparent;stroke:none}
-.ctmap .twn:hover .vill,.ctmap .twn:focus-visible .vill,.ctmap .twn.on .vill{
-  fill:var(--brand);stroke:var(--brand);r:12}
+.ctmap .twn:hover .vill,.ctmap .twn:focus-visible .vill,.ctmap .twn.on .vill{r:12}
 
 /* read-out panel in the empty water at bottom right */
 .mapinfo{position:absolute;right:0;bottom:clamp(.4rem,2vw,1.4rem);
