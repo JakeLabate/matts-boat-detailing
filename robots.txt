@@ -1,3 +1,16 @@
+# robots.txt for MBD Marine Care
+# Mobile marine detailing, Greenwich to Mystic, Connecticut
+# https://www.mbdmarinecare.com
+
+# Everything on this site is public: service pages, 27 town pages,
+# 81 marina pages, images and video. Nothing is duplicated, gated or
+# private, so nothing is disallowed.
+#
+# Note for future edits: a crawler obeys only the most specific group
+# that matches it. Adding a named group (Googlebot, Bingbot and so on)
+# means that crawler stops reading the rules below, so keep rules here
+# unless a specific bot genuinely needs different treatment.
+
 User-agent: *
 Allow: /
 
