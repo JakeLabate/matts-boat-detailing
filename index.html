@@ -955,6 +955,12 @@ footer.site a{color:var(--ink)}
   .maphero .mapinfo{position:absolute;right:0;bottom:clamp(.4rem,2vw,1.4rem);
     width:min(680px,62%);pointer-events:none;text-align:right}
 }
+
+.ctmap .vill{transition:r .15s ease}
+.ctmap .hit{fill:transparent;stroke:none}
+.ctmap .twn:hover .area,.ctmap .twn:focus-visible .area,.ctmap .twn.on .area{fill:var(--brand);stroke:var(--brand);stroke-width:2}
+.ctmap .twn:hover .vill,.ctmap .twn:focus-visible .vill,.ctmap .twn.on .vill{r:12}
+.ctmap .twn:focus-visible{outline:none}
 </style>
 </head>
 <body>
