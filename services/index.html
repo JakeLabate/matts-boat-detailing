@@ -677,12 +677,12 @@ input[type=range]:focus-visible{outline:3px solid var(--brand);outline-offset:4p
     <button class="navtoggle" aria-expanded="false" aria-controls="menu" aria-label="Menu">Menu</button>
     <nav class="menu" id="menu">
       <a href="../">Home</a>
-      <a href="../services" aria-current="page">Services</a>
-      <a href="../service-areas">Areas</a>
-      <a href="../marinas">Marinas</a>
-      <a href="../about">About</a>
-      <a href="../faqs">FAQs</a>
-      <a href="../contact">Contact</a>
+      <a href="../services/" aria-current="page">Services</a>
+      <a href="../service-areas/">Areas</a>
+      <a href="../marinas/">Marinas</a>
+      <a href="../about/">About</a>
+      <a href="../faqs/">FAQs</a>
+      <a href="../contact/">Contact</a>
       <a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
     </nav>
   </div>
@@ -832,7 +832,7 @@ input[type=range]:focus-visible{outline:3px solid var(--brand);outline-offset:4p
       </div>
       <div style="display:flex;gap:.85rem;flex-wrap:wrap">
         <a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
-        <a class="btn btn-ghost" href="../contact">Request a quote</a>
+        <a class="btn btn-ghost" href="../contact/">Request a quote</a>
       </div>
     </div>
   </section>
@@ -1004,11 +1004,11 @@ input[type=range]:focus-visible{outline:3px solid var(--brand);outline-offset:4p
         <h4>Explore</h4>
         <div class="foot-links">
           <a href="../">Home</a>
-          <a href="../services">Services &amp; pricing</a>
-          <a href="../service-areas">Service areas</a>
-          <a href="../about">About</a>
-          <a href="../faqs">FAQs</a>
-          <a href="../contact">Contact</a>
+          <a href="../services/">Services &amp; pricing</a>
+          <a href="../service-areas/">Service areas</a>
+          <a href="../about/">About</a>
+          <a href="../faqs/">FAQs</a>
+          <a href="../contact/">Contact</a>
         </div>
       </div>
       <div>
@@ -1053,7 +1053,7 @@ input[type=range]:focus-visible{outline:3px solid var(--brand);outline-offset:4p
     document.querySelectorAll('.presets button').forEach(function(b){
       b.classList.toggle('on', +b.dataset.v===ft);
     });
-    link.setAttribute('href','contact.html#quote');
+    link.setAttribute('href','../contact/?len=' + ft + '#quote');
   }
   r.addEventListener('input',paint);
   document.querySelectorAll('.presets button').forEach(function(b){
