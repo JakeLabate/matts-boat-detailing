@@ -596,6 +596,75 @@ footer.site a{color:var(--ink)}
 
 
 
+.calc{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(1.4rem,3vw,3rem);align-items:start}
+.calc{grid-template-columns:1fr}
+.ftbox{text-align:center;border:1px solid var(--line);border-radius:18px;background:var(--mist);padding:1.6rem 1.4rem}
+.ftbox .n{font-family:"Fraunces",serif;font-size:clamp(3.4rem,9vw,5.6rem);color:var(--brand);line-height:.95}
+.ftbox .u{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.3rem}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;border-radius:99px;
+  background:var(--line);margin:1.6rem 0 .4rem;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+  background:var(--brand);border:3px solid var(--paper);cursor:grab}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--brand);
+  border:3px solid var(--paper);cursor:grab}
+input[type=range]:focus-visible{outline:3px solid var(--brand);outline-offset:4px}
+.ticks{display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted)}
+.presets{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.1rem;justify-content:center}
+.presets button{font:inherit;font-size:.84rem;border:1px solid var(--line);background:var(--paper);
+  color:var(--ink);border-radius:999px;padding:.35rem .8rem;cursor:pointer}
+.presets button:hover,.presets button.on{border-color:var(--brand);color:var(--brand)}
+.prices{display:grid;gap:.7rem}
+.prow{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;
+  border-bottom:1px solid var(--line);padding-bottom:.7rem}
+.prow:last-child{border-bottom:none}
+.prow .nm{font-family:"Fraunces",serif;font-size:1.06rem;color:var(--ink)}
+.prow .rate{display:block;font-size:.76rem;color:var(--muted);font-family:"Inter",sans-serif}
+.prow .amt{font-family:"Fraunces",serif;font-size:1.5rem;color:var(--brand);white-space:nowrap}
+.prow .amt.q{font-size:.95rem;color:var(--muted)}
+.plans{margin-top:1.4rem;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:var(--mist)}
+.plans h3{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 .7rem;font-family:"Inter",sans-serif;font-weight:600}
+.planrow{display:flex;justify-content:space-between;font-size:.95rem;padding:.28rem 0;color:var(--ink)}
+.planrow b{font-family:"Fraunces",serif;color:var(--brand);font-weight:600}
+.cond{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.cond{grid-template-columns:repeat(2,1fr)}
+.cond button{font:inherit;text-align:left;cursor:pointer;padding:0;border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;background:var(--mist);transition:border-color .15s ease,transform .15s ease}
+.cond button:hover,.cond button:focus-visible{border-color:var(--brand);transform:translateY(-2px)}
+.cond button[aria-pressed=true]{border-color:var(--brand);border-width:2px}
+.cond .sw{display:block;width:100%;height:118px}
+.cond .cap{display:block;padding:.75rem .9rem}
+.cond .cap b{display:block;font-family:"Fraunces",serif;color:var(--ink);font-size:1rem;font-weight:600}
+.cond .cap span{display:block;font-size:.79rem;color:var(--muted);margin-top:.25rem;line-height:1.4}
+.verdict{margin-top:1.8rem;border-top:1px solid var(--line);padding-top:1.6rem;
+  display:grid;grid-template-columns:auto 1fr;gap:1.6rem;align-items:start}
+.verdict{grid-template-columns:1fr}
+.verdict .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.verdict h2{color:var(--brand);margin:.3rem 0 .5rem}
+.verdict p{margin:0;color:var(--ink);max-width:62ch}
+.verdict .mi-fade{transition:opacity .18s ease}
+.verdict.swap .mi-fade{opacity:0}
+.cvc{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
+.cvc{grid-template-columns:1fr}
+.chart{width:100%;height:auto;display:block}
+.chart .grid{stroke:var(--line);stroke-width:.8;opacity:.4}
+.chart .axis{stroke:var(--line);stroke-width:1.2}
+.chart .lblx,.chart .lbly{fill:var(--muted);font-family:"Inter",sans-serif;font-size:12px}
+.chart .lineA{fill:none;stroke:var(--muted);stroke-width:2.5;stroke-dasharray:5 4}
+.chart .lineB{fill:none;stroke:var(--brand);stroke-width:3}
+.chart .dot{fill:var(--brand)}
+.chart .dotA{fill:var(--muted)}
+.chart .cross{stroke:var(--brand);stroke-width:1;stroke-dasharray:3 3;opacity:.7}
+.chart .crosslbl{fill:var(--brand);font-family:"Inter",sans-serif;font-size:12px;font-weight:700}
+.ctrl{display:grid;gap:1.1rem}
+.ctrl label{display:block;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.ctrl .val{font-family:"Fraunces",serif;color:var(--brand);font-size:1.7rem;line-height:1}
+.legend{display:grid;gap:.5rem;margin-top:.4rem}
+.legend div{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:var(--ink)}
+.legend i{width:26px;height:0;border-top:3px solid var(--brand);display:inline-block}
+.legend i.a{border-top:3px dashed var(--muted)}
+.sum{border:1px solid var(--line);border-radius:14px;background:var(--mist);padding:1rem 1.1rem;margin-top:.4rem}
+.sum b{font-family:"Fraunces",serif;color:var(--brand);font-size:1.35rem;display:block}
+.sum span{font-size:.85rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -790,6 +859,136 @@ footer.site a{color:var(--ink)}
     </div>
   </section>
 
+<!--c:calculator-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>What will my boat cost?</h2>
+      <p class="lead muted">Pricing is by the foot. Set the length and every service prices itself.</p>
+    </div>
+    <div class="wrap calc">
+      <div>
+        <div class="ftbox">
+          <div class="n" id="ft">32</div>
+          <span class="u">feet overall</span>
+          <input id="len" type="range" min="8" max="200" step="1" value="32"
+                 aria-label="Boat length in feet" aria-valuemin="8" aria-valuemax="200">
+          <div class="ticks"><span>8 ft</span><span>200 ft</span></div>
+          <div class="presets">
+            <button type="button" data-v="18">18 ft</button>
+            <button type="button" data-v="26">26 ft</button>
+            <button type="button" data-v="32" class="on">32 ft</button>
+            <button type="button" data-v="45">45 ft</button>
+            <button type="button" data-v="60">60 ft</button>
+          </div>
+        </div>
+        <p class="dnote" style="margin-top:1.4rem">Every price on this site is per foot, so the
+        length of the boat is nearly all we need to quote it. Restoration and seasonal work is
+        quoted after a look, because condition drives the hours rather than length.</p>
+      </div>
+
+      <div>
+        <div class="prices">
+<div class="prow" data-price="35.0" data-mode="exact"><div class="nm">Wash &amp; Wax<span class="rate">$35 per foot</span></div><div class="amt">&mdash;</div></div>
+<div class="prow" data-price="65.0" data-mode="exact"><div class="nm">Buff &amp; Shine<span class="rate">$65 per foot</span></div><div class="amt">&mdash;</div></div>
+<div class="prow" data-price="100.0" data-mode="from"><div class="nm">Ceramic Coating<span class="rate">$100 per foot and up</span></div><div class="amt">&mdash;</div></div>
+<div class="prow" data-mode="quote"><div class="nm">Resurgence Oxidation Removal<span class="rate">priced after assessment</span></div><div class="amt q">By quote</div></div>
+<div class="prow" data-mode="quote"><div class="nm">Teak Restoration<span class="rate">priced after assessment</span></div><div class="amt q">By quote</div></div>
+<div class="prow" data-mode="quote"><div class="nm">Shrink Wrapping &amp; Winterizing<span class="rate">priced after assessment</span></div><div class="amt q">By quote</div></div>
+        </div>
+        <div class="plans">
+          <h3>Recurring wash plans, per visit</h3>
+<div class="planrow" data-price="8.0"><span>Weekly</span><b>&mdash;</b></div>
+<div class="planrow" data-price="9.0"><span>Bi-Weekly</span><b>&mdash;</b></div>
+<div class="planrow" data-price="10.0"><span>Monthly</span><b>&mdash;</b></div>
+        </div>
+        <p style="margin-top:1.3rem">
+          <a class="btn btn-primary" id="quoteLink" href="../contact/">Get a quote for this boat</a>
+        </p>
+      </div>
+    </div>
+  </section>
+<!--c:diagnostic-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>Not sure which one you need?</h2>
+      <p class="lead muted">Four states of gelcoat, and the honest answer for each.</p>
+    </div>
+    <div class="wrap">
+      <div class="cond">
+        <button type="button" data-k="glossy" aria-pressed="true">
+          <svg class="sw" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="gglossy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity="0.61"/><stop offset="0.32" stop-color="var(--paper)" stop-opacity="1"/><stop offset="1" stop-color="var(--paper)" stop-opacity="1"/></linearGradient></defs><rect width="200" height="120" fill="var(--sandtint)"/><rect width="200" height="120" fill="url(#gglossy)"/><rect y="19" width="200" height="32" fill="var(--brand)" opacity="0.52"/></svg>
+          <span class="cap"><b>Glossy and slick</b><span>Water beads and runs straight off. Reflections are sharp.</span></span>
+        </button>
+        <button type="button" data-k="dull" aria-pressed="false">
+          <svg class="sw" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="gdull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity="0.44"/><stop offset="0.40" stop-color="var(--paper)" stop-opacity="1"/><stop offset="1" stop-color="var(--paper)" stop-opacity="1"/></linearGradient></defs><rect width="200" height="120" fill="var(--sandtint)"/><rect width="200" height="120" fill="url(#gdull)"/><rect y="30" width="200" height="23" fill="var(--brand)" opacity="0.37"/></svg>
+          <span class="cap"><b>Dull but smooth</b><span>Still smooth to the hand, but reflections have gone soft and flat.</span></span>
+        </button>
+        <button type="button" data-k="chalky" aria-pressed="false">
+          <svg class="sw" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="gchalky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity="0.29"/><stop offset="0.46" stop-color="var(--paper)" stop-opacity="1"/><stop offset="1" stop-color="var(--paper)" stop-opacity="1"/></linearGradient></defs><rect width="200" height="120" fill="var(--sandtint)"/><rect width="200" height="120" fill="url(#gchalky)"/><rect y="41" width="200" height="14" fill="var(--brand)" opacity="0.23"/></svg>
+          <span class="cap"><b>Chalky to the touch</b><span>A dry hand comes away with faint colour on it. Gloss is patchy.</span></span>
+        </button>
+        <button type="button" data-k="heavy" aria-pressed="false">
+          <svg class="sw" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="gheavy" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity="0.18"/><stop offset="0.52" stop-color="var(--paper)" stop-opacity="1"/><stop offset="1" stop-color="var(--paper)" stop-opacity="1"/></linearGradient></defs><rect width="200" height="120" fill="var(--sandtint)"/><rect width="200" height="120" fill="url(#gheavy)"/><rect y="49" width="200" height="8" fill="var(--brand)" opacity="0.13"/></svg>
+          <span class="cap"><b>Heavily oxidised</b><span>Colour looks faded and powdery. No reflection left at all.</span></span>
+        </button>
+      </div>
+      <div class="verdict" id="verdict">
+        <div class="mi-fade">
+          <span class="tag">What that needs</span>
+          <h2 id="v-svc">Wash Plans</h2>
+        </div>
+        <p class="mi-fade" id="v-why" style="padding-top:1.4rem">Nothing needs correcting. Keep it that way with a recurring wash so salt never gets a chance to bite.</p>
+      </div>
+      <p style="margin-top:1.6rem"><a class="btn btn-primary" id="v-link" href="#wash-plans">See this service</a></p>
+      <p class="dnote">Judged by hand and eye, the same way we assess a boat on arrival. If it sits
+      between two of these, we quote the lower one and tell you honestly if it needs the next step up.</p>
+    </div>
+  </section>
+<!--c:coating-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>Coat it once, or correct it forever?</h2>
+      <p class="lead muted">The same arithmetic we walk owners through, with the assumptions on the table.</p>
+    </div>
+    <div class="wrap cvc">
+      <div>
+        <svg class="chart" id="chart" viewBox="0 0 620 380" role="img"
+             aria-label="Cumulative cost over five seasons, repeated correction against a single ceramic coating"></svg>
+        <div class="legend">
+          <div><i class="a"></i> Repeated correction, buff and shine each time it hazes</div>
+          <div><i></i> One ceramic coating, then washing only</div>
+        </div>
+      </div>
+      <div class="ctrl">
+        <div>
+          <label for="len2">Boat length</label>
+          <div class="val"><span id="lenv">36</span> ft</div>
+          <input id="len2" type="range" min="16" max="80" step="1" value="36" aria-label="Boat length in feet">
+        </div>
+        <div>
+          <label for="freq">Correction needed every</label>
+          <div class="val"><span id="freqv">2</span> seasons</div>
+          <input id="freq" type="range" min="1" max="3" step="1" value="2" aria-label="Seasons between corrections">
+        </div>
+        <div class="sum">
+          <span class="lblx">After five seasons</span>
+          <b id="delta">&mdash;</b>
+          <span id="deltatxt">&nbsp;</span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="dnote"><b>Assumptions, stated plainly.</b> Buff and shine at $65 per foot, ceramic
+      coating at $100 per foot lasting three years, both from the published rates on this site. The
+      coated line assumes one coating at the start and a second in year four. How often an uncoated
+      hull actually hazes depends on where the boat is kept and how hard it is used, which is why
+      that is a control rather than a fixed number. This is an illustration of the arithmetic, not a
+      quotation.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
@@ -834,6 +1033,114 @@ footer.site a{color:var(--ink)}
 (function(){
   var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
   if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
+<script>
+(function(){
+  var r=document.getElementById('len'), out=document.getElementById('ft');
+  var link=document.getElementById('quoteLink');
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function paint(){
+    var ft=+r.value; out.textContent=ft;
+    r.setAttribute('aria-valuenow', ft);
+    document.querySelectorAll('.prow[data-price]').forEach(function(el){
+      var p=+el.dataset.price, a=el.querySelector('.amt');
+      a.textContent = (el.dataset.mode==='from' ? 'from ' : '') + money(p*ft);
+    });
+    document.querySelectorAll('.planrow[data-price]').forEach(function(el){
+      el.querySelector('b').textContent = money(+el.dataset.price*ft);
+    });
+    document.querySelectorAll('.presets button').forEach(function(b){
+      b.classList.toggle('on', +b.dataset.v===ft);
+    });
+    link.setAttribute('href','contact.html#quote');
+  }
+  r.addEventListener('input',paint);
+  document.querySelectorAll('.presets button').forEach(function(b){
+    b.addEventListener('click',function(){ r.value=b.dataset.v; paint(); });
+  });
+  paint();
+})();
+</script>
+<script>
+(function(){
+  var SVC='';
+  var D={"glossy": {"svc": "Wash Plans", "anchor": "wash-plans", "why": "Nothing needs correcting. Keep it that way with a recurring wash so salt never gets a chance to bite."}, "dull": {"svc": "Wash &amp; Wax", "anchor": "wash-wax", "why": "Surface soiling and spent wax rather than damaged gelcoat. A hand wash and fresh sealant brings most of it back."}, "chalky": {"svc": "Buff &amp; Shine", "anchor": "buff-shine", "why": "Light oxidation has started. A one-step compound and polish cuts it back, then a polymer sealant locks it in."}, "heavy": {"svc": "Resurgence", "anchor": "resurgence", "why": "Oxidation has gone deep into the gelcoat. Sanding, two-step compounding and polish before it can be sealed."}};
+  var box=document.getElementById('verdict');
+  var svc=document.getElementById('v-svc'), why=document.getElementById('v-why'), link=document.getElementById('v-link');
+  var btns=document.querySelectorAll('.cond button');
+  var t=null;
+  function pick(k,el){
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b===el)); });
+    box.classList.add('swap'); clearTimeout(t);
+    t=setTimeout(function(){
+      svc.innerHTML=D[k].svc; why.textContent=D[k].why;
+      link.setAttribute('href', SVC + '#' + D[k].anchor);
+      box.classList.remove('swap');
+    },170);
+  }
+  btns.forEach(function(b){ b.addEventListener('click',function(){ pick(b.dataset.k,b); }); });
+})();
+</script>
+<script>
+(function(){
+  var BUFF=65, CERAMIC=100, YEARS=5;
+  var len=document.getElementById('len2'), freq=document.getElementById('freq');
+  var lv=document.getElementById('lenv'), fv=document.getElementById('freqv');
+  var svg=document.getElementById('chart');
+  var W=620,H=380,L=64,R=18,T=22,B=44;
+
+  function series(ft,every){
+    var a=[],b=[],ca=0,cb=0;
+    for(var y=0;y<=YEARS;y++){
+      if(y>0 && (y-1)%every===0) ca += BUFF*ft;      // correction years
+      if(y===1 || y===4) cb += CERAMIC*ft;            // coat, then recoat at 4
+      a.push(ca); b.push(cb);
+    }
+    return {a:a,b:b};
+  }
+  function money(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+
+  function draw(){
+    var ft=+len.value, every=+freq.value;
+    lv.textContent=ft; fv.textContent=every;
+    var s=series(ft,every);
+    var max=Math.max.apply(null,s.a.concat(s.b))*1.12 || 1;
+    var x=function(i){ return L + i*(W-L-R)/YEARS; };
+    var y=function(v){ return H-B - (v/max)*(H-T-B); };
+
+    var p='';
+    for(var g=0;g<=4;g++){ var gy=T+g*(H-T-B)/4;
+      p+='<line class="grid" x1="'+L+'" y1="'+gy+'" x2="'+(W-R)+'" y2="'+gy+'"/>';
+      p+='<text class="lbly" x="'+(L-10)+'" y="'+(gy+4)+'" text-anchor="end">'+money(max*(1-g/4))+'</text>';
+    }
+    p+='<line class="axis" x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'"/>';
+    for(var i=0;i<=YEARS;i++){
+      p+='<text class="lblx" x="'+x(i)+'" y="'+(H-B+20)+'" text-anchor="middle">'+(i===0?'launch':'yr '+i)+'</text>';
+    }
+    function path(arr){ return arr.map(function(v,i){ return (i?'L':'M')+x(i)+' '+y(v); }).join(' '); }
+    p+='<path class="lineA" d="'+path(s.a)+'"/>';
+    p+='<path class="lineB" d="'+path(s.b)+'"/>';
+    for(var i=0;i<=YEARS;i++){
+      p+='<circle class="dotA" cx="'+x(i)+'" cy="'+y(s.a[i])+'" r="3"/>';
+      p+='<circle class="dot"  cx="'+x(i)+'" cy="'+y(s.b[i])+'" r="3.6"/>';
+    }
+    // first year the coated line comes out cheaper
+    var cross=-1;
+    for(var i=1;i<=YEARS;i++){ if(s.b[i] < s.a[i]){ cross=i; break; } }
+    if(cross>0){
+      p+='<line class="cross" x1="'+x(cross)+'" y1="'+T+'" x2="'+x(cross)+'" y2="'+(H-B)+'"/>';
+      p+='<text class="crosslbl" x="'+(x(cross)+6)+'" y="'+(T+13)+'">coating ahead from year '+cross+'</text>';
+    }
+    svg.innerHTML=p;
+
+    var d=s.a[YEARS]-s.b[YEARS];
+    var el=document.getElementById('delta'), tx=document.getElementById('deltatxt');
+    if(d>0){ el.textContent=money(d)+' less'; tx.textContent='coating this '+ft+' footer instead of correcting it repeatedly'; }
+    else if(d===0){ el.textContent='Line ball'; tx.textContent='at this usage the two come out level over five seasons'; }
+    else { el.textContent=money(-d)+' more'; tx.textContent='at this correction interval, coating costs more over five seasons'; }
+  }
+  len.addEventListener('input',draw); freq.addEventListener('input',draw); draw();
 })();
 </script>
 </body>
