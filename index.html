@@ -905,6 +905,29 @@ footer.site a{color:var(--ink)}
   border-radius:16px;overflow:hidden;background:var(--mist)}
 .vidcard video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--paper)}
 .vidcard figcaption{font-size:.82rem;color:var(--muted);padding:.65rem .85rem}
+.track{display:grid;grid-template-columns:repeat(12,1fr);gap:.35rem;margin-bottom:1.6rem}
+.track button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--mist);
+  color:var(--muted);border-radius:10px;padding:.75rem .2rem .6rem;text-align:center;
+  transition:border-color .15s ease,color .15s ease,background .15s ease}
+.track button .mo{display:block;font-size:.8rem;font-weight:600;letter-spacing:.06em}
+.track button .pip{display:block;height:4px;border-radius:99px;margin:.5rem .3rem 0;background:var(--line)}
+.track button[data-k=prep] .pip{background:color-mix(in srgb, var(--brand) 45%, transparent)}
+.track button[data-k=season] .pip{background:var(--brand)}
+.track button[data-k=haul] .pip{background:color-mix(in srgb, var(--brand) 65%, transparent)}
+.track button:hover{border-color:var(--brand);color:var(--ink)}
+.track button[aria-pressed=true]{border-color:var(--brand);background:var(--brand);color:var(--brand-ink)}
+.track button[aria-pressed=true] .pip{background:var(--brand-ink)}
+.track{grid-template-columns:repeat(6,1fr)}
+.seasonBox{display:grid;grid-template-columns:1fr auto;gap:1.6rem;align-items:start;
+  border-top:1px solid var(--line);padding-top:1.6rem}
+.seasonBox{grid-template-columns:1fr}
+.seasonBox h2{color:var(--brand);margin:.25rem 0 .5rem}
+.seasonBox p{margin:0;color:var(--ink);max-width:60ch}
+.seasonBox .mi-fade{transition:opacity .18s ease}
+.seasonBox.swap .mi-fade{opacity:0}
+.keyrow{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1.4rem;font-size:.8rem;color:var(--muted)}
+.keyrow span{display:flex;align-items:center;gap:.45rem}
+.keyrow i{width:18px;height:4px;border-radius:99px;display:inline-block;background:var(--line)}
 </style>
 </head>
 <body>
@@ -1186,6 +1209,50 @@ footer.site a{color:var(--ink)}
       </div>
     </div>
   </section>
+<!--c:season-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>The boating year, month by month</h2>
+      <p class="lead muted">What a Connecticut boat needs, and when. Hover or tap any month.</p>
+    </div>
+    <div class="wrap">
+      <div class="track" role="group" aria-label="Months of the boating year">
+        <button type="button" data-i="0" data-k="winter" aria-pressed="false"><span class="mo">Jan</span><span class="pip"></span></button>
+        <button type="button" data-i="1" data-k="winter" aria-pressed="false"><span class="mo">Feb</span><span class="pip"></span></button>
+        <button type="button" data-i="2" data-k="prep" aria-pressed="false"><span class="mo">Mar</span><span class="pip"></span></button>
+        <button type="button" data-i="3" data-k="prep" aria-pressed="true"><span class="mo">Apr</span><span class="pip"></span></button>
+        <button type="button" data-i="4" data-k="season" aria-pressed="false"><span class="mo">May</span><span class="pip"></span></button>
+        <button type="button" data-i="5" data-k="season" aria-pressed="false"><span class="mo">Jun</span><span class="pip"></span></button>
+        <button type="button" data-i="6" data-k="season" aria-pressed="false"><span class="mo">Jul</span><span class="pip"></span></button>
+        <button type="button" data-i="7" data-k="season" aria-pressed="false"><span class="mo">Aug</span><span class="pip"></span></button>
+        <button type="button" data-i="8" data-k="season" aria-pressed="false"><span class="mo">Sep</span><span class="pip"></span></button>
+        <button type="button" data-i="9" data-k="haul" aria-pressed="false"><span class="mo">Oct</span><span class="pip"></span></button>
+        <button type="button" data-i="10" data-k="haul" aria-pressed="false"><span class="mo">Nov</span><span class="pip"></span></button>
+        <button type="button" data-i="11" data-k="winter" aria-pressed="false"><span class="mo">Dec</span><span class="pip"></span></button>
+      </div>
+      <div class="seasonBox" id="sbox">
+        <div class="mi-fade">
+          <span class="lblx" id="s-t">Launch prep</span>
+          <h2 id="s-m">April</h2>
+          <p id="s-b">Wrap comes off, correction and sealant go on before she goes in. Town marinas open mid-month.</p>
+        </div>
+        <div class="mi-fade" style="text-align:right">
+          <span class="lblx">What we are doing</span>
+          <p style="margin-top:.4rem"><a class="btn btn-primary" id="s-link" href="services/#buff-shine"><span id="s-s">Buff &amp; Shine</span></a></p>
+        </div>
+      </div>
+      <div class="keyrow">
+        <span><i style="background:color-mix(in srgb, var(--brand) 45%, transparent)"></i> Spring prep</span>
+        <span><i style="background:var(--brand)"></i> In the water</span>
+        <span><i style="background:color-mix(in srgb, var(--brand) 65%, transparent)"></i> Haul-out</span>
+        <span><i></i> Ashore</span>
+      </div>
+      <p class="dnote">Marina opening and closing dates are the real ones from the towns we cover:
+      Fairfield's town marinas open mid-April, Westport runs May to November, Greenwich runs
+      15 April to 15 November.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
@@ -1233,6 +1300,34 @@ footer.site a{color:var(--ink)}
     var open=m.classList.toggle('open');
     t.setAttribute('aria-expanded',open?'true':'false');
   });}
+})();
+</script>
+<script>
+(function(){
+  var SVC='services/';
+  var S=[{"m": "Jan", "k": "winter", "t": "Under wrap", "b": "The boat is put away. Nothing to do but let the cover do its job.", "s": "Shrink Wrapping &amp; Winterizing", "anchor": "seasonal"}, {"m": "Feb", "k": "winter", "t": "Under wrap", "b": "Quiet month. A good time to book spring work before the calendar fills.", "s": "Shrink Wrapping &amp; Winterizing", "anchor": "seasonal"}, {"m": "Mar", "k": "prep", "t": "Booking season", "b": "We book Fairfield and Greenwich heavily now, ahead of the mid-April marina openings.", "s": "Buff &amp; Shine", "anchor": "buff-shine"}, {"m": "Apr", "k": "prep", "t": "Launch prep", "b": "Wrap comes off, correction and sealant go on before she goes in. Town marinas open mid-month.", "s": "Buff &amp; Shine", "anchor": "buff-shine"}, {"m": "May", "k": "season", "t": "In the water", "b": "Season is open. Wash plans start, and coatings are best applied on a clean early-season hull.", "s": "Ceramic Coating", "anchor": "ceramic"}, {"m": "Jun", "k": "season", "t": "Peak use", "b": "Salt spray and UV are building. This is when a fortnightly wash earns its money.", "s": "Wash Plans", "anchor": "wash-plans"}, {"m": "Jul", "k": "season", "t": "Peak use", "b": "Hardest month on a finish. Growth at the waterline comes on fast in the productive harbours.", "s": "Wash Plans", "anchor": "wash-plans"}, {"m": "Aug", "k": "season", "t": "Peak use", "b": "Boats that were washed all summer still look right. Ones that were not are going chalky.", "s": "Wash &amp; Wax", "anchor": "wash-wax"}, {"m": "Sep", "k": "season", "t": "Late season", "b": "Cooler water, quieter docks, and the best light of the year for spotting oxidation.", "s": "Wash &amp; Wax", "anchor": "wash-wax"}, {"m": "Oct", "k": "haul", "t": "Haul-out", "b": "The best-timed detail of the year. Compound and seal before she goes under cover.", "s": "Buff &amp; Shine", "anchor": "buff-shine"}, {"m": "Nov", "k": "haul", "t": "Wrapping", "b": "Westport and Greenwich town marinas close mid-month. Wrapping runs through to first frost.", "s": "Shrink Wrapping &amp; Winterizing", "anchor": "seasonal"}, {"m": "Dec", "k": "winter", "t": "Put away", "b": "Teak and interior work happens now, while the boat is ashore and we have the time.", "s": "Teak Restoration", "anchor": "seasonal"}];
+  var MONTHS={Jan:'January',Feb:'February',Mar:'March',Apr:'April',May:'May',Jun:'June',
+              Jul:'July',Aug:'August',Sep:'September',Oct:'October',Nov:'November',Dec:'December'};
+  var box=document.getElementById('sbox');
+  var t=document.getElementById('s-t'), m=document.getElementById('s-m'),
+      b=document.getElementById('s-b'), s=document.getElementById('s-s'),
+      link=document.getElementById('s-link');
+  var btns=document.querySelectorAll('.track button');
+  var timer=null;
+  function pick(i,el){
+    btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x===el)); });
+    box.classList.add('swap'); clearTimeout(timer);
+    timer=setTimeout(function(){
+      var d=S[i];
+      t.textContent=d.t; m.textContent=MONTHS[d.m]; b.textContent=d.b;
+      s.innerHTML=d.s; link.setAttribute('href', SVC + '#' + d.anchor);
+      box.classList.remove('swap');
+    },170);
+  }
+  btns.forEach(function(el){
+    el.addEventListener('click',function(){ pick(+el.dataset.i, el); });
+    el.addEventListener('mouseenter',function(){ pick(+el.dataset.i, el); });
+  });
 })();
 </script>
 </body>
