@@ -910,7 +910,9 @@ footer.site a{color:var(--ink)}
 .townblock .th a{color:var(--brand)}
 :focus-visible{outline-color:var(--brand)}
 .pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--brand)}
-.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.6rem}
+.filters{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:1rem;margin-bottom:1.6rem;align-items:end}
+.fresetwrap{display:flex;align-items:flex-end}
+#freset{white-space:nowrap}
 .filters{grid-template-columns:1fr}
 .filters label{display:block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);margin-bottom:.45rem}
@@ -921,6 +923,7 @@ footer.site a{color:var(--ink)}
 .fgridm{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .fgridm{grid-template-columns:repeat(2,1fr)}
 .fgridm{grid-template-columns:1fr}
+.fcard[hidden]{display:none!important}
 .fcard{border:1px solid var(--line);border-radius:14px;background:var(--mist);padding:1.05rem 1.15rem;
   display:block;text-decoration:none}
 .fcard:hover{border-color:var(--brand);text-decoration:none}
@@ -1055,6 +1058,7 @@ footer.site a{color:var(--ink)}
           </select></div>
         <div><label for="fq">Search</label>
           <input id="fq" type="search" placeholder="Name or water, e.g. Housatonic"></div>
+        <div class="fresetwrap"><button type="button" id="freset" class="btn btn-ghost" hidden>Clear filters</button></div>
       </div>
       <p class="fcount" id="fcount" aria-live="polite">Showing all 81 spots</p>
       <div class="fgridm" id="fgrid">
@@ -1210,8 +1214,19 @@ footer.site a{color:var(--ink)}
                       : (n+' of '+cards.length+' spots');
     none.hidden = n>0;
   }
-  [town,acc].forEach(function(el){ el.addEventListener('change',apply); });
-  q.addEventListener('input',apply);
+  var reset=document.getElementById('freset');
+  function sync(){
+    apply();
+    var active = !!(town.value || acc.value || q.value.trim());
+    if(reset) reset.hidden = !active;
+  }
+  [town,acc].forEach(function(el){ el.addEventListener('change',sync); });
+  // input covers typing, paste and the search field's clear affordance
+  ['input','search','keyup','change'].forEach(function(ev){ q.addEventListener(ev,sync); });
+  if(reset) reset.addEventListener('click',function(){
+    town.value=''; acc.value=''; q.value=''; sync(); q.focus();
+  });
+  sync();
 })();
 </script>
 </body>
