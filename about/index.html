@@ -389,6 +389,23 @@ footer.site a{color:var(--ink)}
 
 
 
+.tl{position:relative;margin-top:1rem;padding-left:2.6rem}
+.tl:before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tlrow{position:relative;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.tlrow:last-child{border-bottom:none}
+.tlrow:before{content:"";position:absolute;left:-2.6rem;top:1.35rem;width:12px;height:12px;
+  border-radius:50%;background:var(--sandtint);border:2px solid var(--line);
+  transform:translateX(4px);transition:background .15s ease,border-color .15s ease}
+.tlrow:hover:before{background:var(--brand);border-color:var(--brand)}
+.tlrow .yr{font-family:"Fraunces",serif;color:var(--brand);font-size:1.6rem;line-height:1}
+.tlrow h3{font-size:1.02rem;margin:.2rem 0 .12rem;color:var(--ink);font-family:"Fraunces",serif}
+.tlrow p{margin:0;font-size:.86rem;color:var(--muted)}
+.tlrow .tw{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.spanbar{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;
+  border:1px solid var(--line);border-radius:14px;background:var(--mist);padding:1rem 1.2rem;margin-bottom:1.8rem}
+.spanbar .e{font-family:"Fraunces",serif;color:var(--brand);font-size:1.5rem;line-height:1}
+.spanbar .rail{height:4px;border-radius:99px;background:linear-gradient(90deg,
+  color-mix(in srgb, var(--brand) 30%, transparent), var(--brand))}
 </style>
 </head>
 <body>
@@ -514,6 +531,100 @@ footer.site a{color:var(--ink)}
     </div>
   </section>
 
+<!--c:heritage-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>1887 to today</h2>
+      <p class="lead muted">The clubs and yards we work in, and how far back they go.</p>
+    </div>
+    <div class="wrap">
+      <div class="spanbar">
+        <span class="e">1887</span>
+        <span class="rail"></span>
+        <span class="e">today</span>
+      </div>
+      <div class="tl">
+      <div class="tlrow">
+        <div class="yr">1887</div>
+        <h3>Housatonic Boat Club</h3>
+        <span class="tw">Stratford</span>
+        <p>Family boat club, still on the Housatonic</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1889</div>
+        <h3>Indian Harbor Yacht Club</h3>
+        <span class="tw">Greenwich</span>
+        <p>Founded by New York sportsmen in Captain Harbor</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1895</div>
+        <h3>City Point Yacht Club</h3>
+        <span class="tw">New Haven</span>
+        <p>On the old Oyster Point peninsula</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1896</div>
+        <h3>Sachem's Head Yacht Club</h3>
+        <span class="tw">Guilford</span>
+        <p>Mooring fields in two harbours</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1901</div>
+        <h3>Pine Orchard Yacht &amp; Country Club</h3>
+        <span class="tw">Branford</span>
+        <p>Golf first, yachting added around 1917</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1909</div>
+        <h3>Branford Yacht Club</h3>
+        <span class="tw">Branford</span>
+        <p>Near the mouth of the Branford River</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1928</div>
+        <h3>Noroton Yacht Club</h3>
+        <span class="tw">Darien</span>
+        <p>On the tip of Noroton Neck</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1936</div>
+        <h3>Rex Marine Center</h3>
+        <span class="tw">Norwalk</span>
+        <p>Run by the Gardella family ever since</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1954</div>
+        <h3>Guilford Yacht Club</h3>
+        <span class="tw">Guilford</span>
+        <p>Built among the West River salt marshes</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1956</div>
+        <h3>Cedar Marina</h3>
+        <span class="tw">Bridgeport</span>
+        <p>Four generations of the Gulia family</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1979</div>
+        <h3>Rowayton Yacht Club</h3>
+        <span class="tw">Norwalk</span>
+        <p>The oldest club in Rowayton</p>
+      </div>
+      <div class="tlrow">
+        <div class="yr">1982</div>
+        <h3>Captain's Cove Seaport</h3>
+        <span class="tw">Bridgeport</span>
+        <p>A vacant lot on Black Rock Harbor, transformed</p>
+      </div>
+      </div>
+      <p class="dnote">Founding dates taken from the clubs and yards themselves, covering 95 years
+      of the same shoreline. Several older yards are not dated here because they give a decade rather
+      than a year: Safe Harbor Stratford sits on a site with shipyards since the 1700s, Brown's Boat
+      Yard has been in Guilford since the 1940s, and Dutch Wharf has worked the Branford River for
+      more than sixty years.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
@@ -554,6 +665,12 @@ footer.site a{color:var(--ink)}
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
+  if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
 <script>
 (function(){
   var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
