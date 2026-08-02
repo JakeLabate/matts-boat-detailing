@@ -942,6 +942,22 @@ footer.site a{color:var(--ink)}
 .townblock .th a{color:var(--brand)}
 :focus-visible{outline-color:var(--brand)}
 .pagehead :focus-visible,footer.site :focus-visible,.bg-brand :focus-visible{outline-color:var(--brand)}
+.wcols{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.wcols{grid-template-columns:1fr}
+.wcard{border:1px solid var(--line);border-radius:16px;background:var(--mist);overflow:hidden;
+  display:flex;flex-direction:column}
+.wcard .vis{height:96px;display:block;width:100%}
+.wcard .in{padding:1.15rem 1.25rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.wcard h2{font-size:1.5rem;color:var(--brand);margin:0}
+.wcard .sub{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.wcard p{margin:0;font-size:.9rem;color:var(--ink);line-height:1.5}
+.wcard .tell{color:var(--muted);font-size:.86rem;border-left:2px solid var(--line);padding-left:.8rem}
+.wcard .foot{margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line)}
+.wcard .foot .lblx{display:block;margin-bottom:.35rem}
+.wtowns{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.5rem}
+.wtowns a{font-size:.78rem;border:1px solid var(--line);border-radius:99px;padding:.2rem .6rem;
+  color:var(--muted);text-decoration:none}
+.wtowns a:hover{border-color:var(--brand);color:var(--brand);text-decoration:none}
 </style>
 </head>
 <body>
@@ -1192,6 +1208,66 @@ footer.site a{color:var(--ink)}
     </div>
   </section>
 
+<!--c:water-->
+<section>
+    <div class="wrap">
+      <span class="eyebrow"></span>
+      <h2>Salt, brackish, fresh</h2>
+      <p class="lead muted">Three kinds of water on one coast, and three different problems.</p>
+    </div>
+    <div class="wrap">
+      <div class="wcols">
+      <article class="wcard">
+        <svg class="vis" viewBox="0 0 400 96" preserveAspectRatio="none" aria-hidden="true"><rect width="400" height="96" fill="var(--sandtint)"/><path d="M0 30 q40 -9 80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="var(--brand)" stroke-width="2" opacity="0.50"/><path d="M0 48 q40 -9 80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="var(--brand)" stroke-width="2" opacity="0.38"/><path d="M0 66 q40 -9 80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="var(--brand)" stroke-width="2" opacity="0.26"/><path d="M0 84 q40 -9 80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="var(--brand)" stroke-width="2" opacity="0.14"/></svg>
+        <div class="in">
+          <span class="sub">Open Long Island Sound</span>
+          <h2>Salt</h2>
+          <p>Wind-driven spray dries on the topsides and bakes in the sun. Growth arrives at the waterline through midsummer.</p>
+          <p class="tell">An even, all-over dulling rather than a stain line. Chalk on a dry hand by August.</p>
+          <div class="foot">
+            <span class="lblx">What it wants</span>
+            <a class="btn btn-primary" href="../services/#ceramic">Ceramic Coating</a>
+            <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)">A coated hull sheds salt and rinses clean with far less effort. The clearest case for coating anywhere on this coast.</p>
+            <div class="wtowns"><a href="../stonington-boat-detailing/">Stonington</a><a href="../groton-boat-detailing/">Groton</a><a href="../east-lyme-boat-detailing/">East Lyme</a><a href="../westport-boat-detailing/">Westport</a><a href="../branford-boat-detailing/">Branford</a><a href="../madison-boat-detailing/">Madison</a></div>
+          </div>
+        </div>
+      </article>
+      <article class="wcard">
+        <svg class="vis" viewBox="0 0 400 96" preserveAspectRatio="none" aria-hidden="true"><rect width="400" height="96" fill="var(--sandtint)"/><rect y="0" width="400" height="46" fill="var(--brand)" opacity=".16"/><rect y="46" width="400" height="50" fill="var(--brand)" opacity=".34"/><path d="M0 46 h400" stroke="var(--brand)" stroke-width="2.5" opacity=".8"/></svg>
+        <div class="in">
+          <span class="sub">Tidal rivers and harbours</span>
+          <h2>Brackish</h2>
+          <p>Water swings between fresh and salt with every tide, carrying silt and tannin past the hull twice a day.</p>
+          <p class="tell">A distinct brown line right at the waterline, browner and harder than salt growth.</p>
+          <div class="foot">
+            <span class="lblx">What it wants</span>
+            <a class="btn btn-primary" href="../services/#buff-shine">Buff &amp; Shine</a>
+            <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)">The stain sets into the gelcoat rather than sitting on it, so it wants compounding and then sealing.</p>
+            <div class="wtowns"><a href="../stratford-boat-detailing/">Stratford</a><a href="../milford-boat-detailing/">Milford</a><a href="../bridgeport-boat-detailing/">Bridgeport</a><a href="../norwalk-boat-detailing/">Norwalk</a><a href="../old-saybrook-boat-detailing/">Old Saybrook</a><a href="../mystic-boat-detailing/">Mystic</a></div>
+          </div>
+        </div>
+      </article>
+      <article class="wcard">
+        <svg class="vis" viewBox="0 0 400 96" preserveAspectRatio="none" aria-hidden="true"><rect width="400" height="96" fill="var(--sandtint)"/><path d="M-20 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.45"/><path d="M50 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.40"/><path d="M120 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.35"/><path d="M190 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.30"/><path d="M260 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.25"/><path d="M330 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.20"/><path d="M400 96 q30 -40 60 -96" fill="none" stroke="var(--brand)" stroke-width="1.6" opacity="0.15"/></svg>
+        <div class="in">
+          <span class="sub">Upper Connecticut River</span>
+          <h2>Fresh</h2>
+          <p>Almost no salt load and very little marine growth, but heavy silt and tannins coming downstream.</p>
+          <p class="tell">Tannin staining that bonds into the gelcoat. Light washing will not shift it once set.</p>
+          <div class="foot">
+            <span class="lblx">What it wants</span>
+            <a class="btn btn-primary" href="../services/#resurgence">Resurgence</a>
+            <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)">Owners assume fresh water is the easy option. On the finish it is not: set-in tannin needs proper correction.</p>
+            <div class="wtowns"><a href="../deep-river-boat-detailing/">Deep River</a><a href="../essex-boat-detailing/">Essex</a><a href="../old-lyme-boat-detailing/">Old Lyme</a></div>
+          </div>
+        </div>
+      </article>
+      </div>
+      <p class="dnote">Three kinds of water across one 100 mile coast, and they damage a hull in
+      genuinely different ways. This is the distinction most detailers never make, and it is why the
+      same boat needs different work depending on which town it sleeps in.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
@@ -1240,5 +1316,11 @@ footer.site a{color:var(--ink)}
 })();
 </script>
 
+<script>
+(function(){
+  var t=document.querySelector('.navtoggle'),m=document.getElementById('menu');
+  if(t&&m){t.addEventListener('click',function(){var open=m.classList.toggle('open');t.setAttribute('aria-expanded',open?'true':'false');});}
+})();
+</script>
 </body>
 </html>
