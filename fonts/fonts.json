@@ -1,0 +1,42 @@
+{
+  "entries": [
+    {
+      "family": "Inter",
+      "package": "inter",
+      "variable": false,
+      "faces": [
+        {
+          "file": "inter-latin-400-normal.woff2",
+          "weight": "400"
+        },
+        {
+          "file": "inter-latin-500-normal.woff2",
+          "weight": "500"
+        },
+        {
+          "file": "inter-latin-600-normal.woff2",
+          "weight": "600"
+        },
+        {
+          "file": "inter-latin-700-normal.woff2",
+          "weight": "700"
+        }
+      ],
+      "fallback": "arial",
+      "metrics": {
+        "upem": 2048,
+        "ascent": 1984,
+        "descent": -494,
+        "gap": 0,
+        "avg": 963.8
+      },
+      "overrides": {
+        "size-adjust": "107.33%",
+        "ascent-override": "90.26%",
+        "descent-override": "22.47%",
+        "line-gap-override": "0.00%"
+      },
+      "stack": "'Inter', 'Inter Fallback', Arial, sans-serif"
+    }
+  ]
+}
