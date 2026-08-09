@@ -1,0 +1,30 @@
+name: verify-lp
+on: workflow_dispatch
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: probe live urls
+        run: |
+          {
+          for u in / /services/ /milford-boat-detailing/ /robots.txt /sitemap.xml \
+                   /lp/boat-ceramic-coating-stonington-ct/ \
+                   /lp/boat-wash-and-wax-west-haven-ct/ \
+                   /lp/boat-shrink-wrapping-old-lyme-ct/ \
+                   /lp/boat-teak-restoration-essex-ct/ \
+                   /fonts/fonts.css /img/logo-mark.png ; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://www.mbdmarinecare.com$u")
+            echo "$code  $u"
+          done
+          echo "--- robots ---"
+          curl -s https://www.mbdmarinecare.com/robots.txt | grep -i -E 'disallow|allow' || true
+          echo "--- lp head ---"
+          curl -s https://www.mbdmarinecare.com/lp/boat-ceramic-coating-stonington-ct/ | grep -o -E '<title>[^<]*|name="robots" content="[^"]*"|rel="canonical" href="[^"]*"' | head -4
+          echo "--- sitemap contains lp? ---"
+          curl -s https://www.mbdmarinecare.com/sitemap.xml | grep -c '/lp/' || echo "0 none"
+          } > out.txt 2>&1
+          cat out.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out
+          path: out.txt
