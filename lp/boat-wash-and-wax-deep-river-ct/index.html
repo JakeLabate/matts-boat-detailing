@@ -112,7 +112,7 @@ img{max-width:100%;height:auto;display:block}
 .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--brand);color:var(--brand-ink);padding:.6rem 1rem;border-radius:8px}
 header.lp{border-bottom:1px solid var(--line);padding:.9rem 0;position:sticky;top:0;background:var(--paper);z-index:20}
 header.lp .inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-header.lp .mark{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+header.lp .mark{display:flex;align-items:center;gap:.7rem}
 header.lp .mark img{width:44px;height:44px;border-radius:10px;border:1px solid var(--line)}
 header.lp .mkt{display:flex;flex-direction:column;line-height:1.18}
 header.lp .mark .nm{font-family:"Fraunces",Georgia,serif;font-size:1.12rem;font-weight:600;color:var(--brand);line-height:1.15}
@@ -130,32 +130,68 @@ header.lp .btn .lbl{display:none}
 @media(max-width:900px){.herogrid{grid-template-columns:1fr;gap:1.6rem}}
 .hero h1{margin-bottom:.7rem}
 .hero .lead{margin-bottom:1.2rem}
-.trust{list-style:none;padding:0;margin:0 0 1.4rem;display:grid;gap:.5rem}
-.trust li{position:relative;padding-left:1.5rem;font-size:.98rem}
-.trust li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.lp-trust{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:1.5rem 0 1.3rem;
+font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.lp-trust span{display:inline-flex;align-items:center;gap:.5rem}
+.lp-trust span::before{content:"";width:8px;height:8px;background:var(--brand);flex:0 0 auto}
 .callrow{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
 .callrow .tel{font-family:"Fraunces",Georgia,serif;font-size:1.35rem;color:var(--brand);text-decoration:none;font-weight:600}
-.formwrap{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:clamp(1.1rem,2.4vw,1.6rem);box-shadow:0 18px 40px var(--shadow)}
-.formwrap h2{font-size:1.28rem;margin-bottom:.2rem}
-.formwrap .fsub{color:var(--muted);font-size:.9rem;margin:0 0 1.1rem}
+/* On a landing page the form is the page, so it drops the card entirely and the
+   fields sit straight on the hero. No background, border, padding or shadow. */
+.formwrap{background:none;border:0;border-radius:0;padding:0;box-shadow:none}
+.formwrap h3{font-size:1.22rem;color:var(--brand);margin:0 0 1rem}
 .condition{background:var(--mist)}
 .condition .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
 @media(max-width:820px){.condition .wrap{grid-template-columns:1fr}}
-.waters{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;margin:0 0 .8rem}
+.waters{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 1rem}
+.measure{max-width:68ch}
+.measure h2{max-width:22ch}
+.measure .priceband{max-width:none}
 figure.shot{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
 figure.shot figcaption{padding:.7rem .9rem;font-size:.86rem;color:var(--muted);border-top:1px solid var(--line)}
-.inclgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.6rem}
-@media(max-width:700px){.inclgrid{grid-template-columns:1fr}}
-.incl{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:var(--paper)}
-.incl span{display:block;font-size:.97rem}
+.panel{background:var(--mist);border-left:3px solid var(--brand);padding:1.5rem 1.6rem}
+.panel h3{margin:0 0 .7rem}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{position:relative;padding-left:1.9rem;margin-bottom:.65em;font-size:.97rem}
+.checks li:last-child{margin-bottom:0}
+.checks li::before{content:"";position:absolute;left:0;top:.68em;width:14px;height:2px;background:var(--brand)}
+/* owner */
+.cols-owner{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(1.4rem,3vw,2.8rem);align-items:center}
+@media(max-width:820px){.cols-owner{grid-template-columns:1fr}}
+.shot-owner{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.shot-owner img{aspect-ratio:310/580;object-fit:cover;width:100%}
+.pull{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;
+font-size:clamp(1.15rem,1rem+.7vw,1.5rem);line-height:1.25;color:var(--brand);
+border-left:3px solid var(--brand);padding-left:1.2rem;margin:1.5rem 0;max-width:26ch}
+/* town outline */
+.townwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.3rem,3vw,2.4rem);align-items:center}
+@media(max-width:820px){.townwrap{grid-template-columns:1fr}}
+.tmap{display:block;width:100%;height:auto}
+.tmap .nbr{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.45}
+.tmap .focus{fill:var(--sandtint);stroke:var(--brand);stroke-width:2}
+.tmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2}
+.townnote{font-size:.78rem;color:var(--muted);margin-top:1.1rem;line-height:1.5}
+/* Numerals are read digit by digit, so they leave the display serif and get
+   tabular figures. Prices, phone numbers, lengths. */
+.num,.tel,.callbar,.priceband .amt,.btn{font-family:"Inter","Inter Fallback",system-ui,sans-serif;
+font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.callbar{display:none}
+@media(max-width:700px){
+.callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;
+background:var(--brand);color:var(--brand-ink);text-align:center;text-decoration:none;
+font-weight:700;font-size:1rem;padding:.9rem 1rem;border-top:1px solid var(--accent-ink)}
+.callbar:hover{text-decoration:none}
+.hero .callrow{display:none}
+body{padding-bottom:3.6rem}
+}
+@media(max-width:500px){
+.formfoot{flex-direction:column;align-items:stretch;gap:.7rem}
+.formfoot .btn{width:100%;justify-content:center}
+.formnote{text-align:center}
+}
 .priceband{border:1px solid var(--brand);border-radius:16px;padding:1.2rem 1.4rem;margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;background:var(--sandtint)}
 .priceband .amt{font-family:"Fraunces",Georgia,serif;font-size:1.6rem;color:var(--brand);font-weight:600}
 .priceband p{margin:0;color:var(--ink);font-size:.95rem;max-width:52ch}
-.spots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;padding:0;list-style:none}
-.spots li{border:1px solid var(--line);border-radius:999px;padding:.42rem .95rem;font-size:.88rem;color:var(--ink)}
-.ownerband{background:var(--sandtint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ownerband blockquote{margin:0;font-family:"Fraunces",Georgia,serif;font-size:clamp(1.25rem,2.4vw,1.7rem);color:var(--brand);line-height:1.3;max-width:30ch}
-.ownerband .attrib{margin-top:1rem;font-size:.92rem;color:var(--muted)}
 footer.lp{border-top:1px solid var(--line);padding:2rem 0;font-size:.9rem;color:var(--muted)}
 footer.lp a{color:var(--brand)}
 footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between}
@@ -211,10 +247,10 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <a class="skip" href="#quote">Skip to the quote form</a>
 <header class="lp">
 <div class="wrap inner">
-<a class="mark" href="https://www.mbdmarinecare.com/">
+<span class="mark">
 <img src="../../img/logo-mark.png" alt="MBD Marine Care" width="44" height="44">
 <span class="mkt"><span class="nm">MBD Marine Care</span><span class="sub">Mobile marine detailing</span></span>
-</a>
+</span>
 <a class="btn btn-primary" href="tel:+12032588281"><span class="lbl">Call </span>(203) 258-8281</a>
 </div>
 </header>
@@ -224,21 +260,17 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <div class="wrap herogrid">
 <div>
 <span class="eyebrow">Wash &amp; Wax &middot; Deep River, CT</span>
-<h1>Boat wash and wax in Deep River, Connecticut</h1>
-<p class="lead">A full exterior wash followed by a hand-applied wax. Hull sides, topsides, non-skid, rails, and glass. We come to the boat, wherever she is kept in Deep River.</p>
-<ul class="trust">
-<li>Fully insured, and mobile since 2021</li>
-<li>Deep River is about an hour from Milford, well up the Connecticut.</li>
-<li>Priced by the foot, so a 24 footer never subsidizes a 50 footer.</li>
-</ul>
+<h1>Boat wash and wax in Deep River, CT.</h1>
+<p class="lead">A full exterior wash followed by a hand-applied wax. Hull sides, topsides, non-skid, rails, and glass.</p>
+<div class="lp-trust">
+<span>Owner operated</span><span>Fully insured</span><span>Serving Deep River and nearby</span>
+</div>
 <div class="callrow">
-<a class="btn btn-ghost" href="#quote">Get a quote</a>
-<a class="tel" href="tel:+12032588281">(203) 258-8281</a>
+<a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
 </div>
 </div>
 <div class="formwrap" id="quote">
-<h2>Tell us about your boat.</h2>
-<p class="fsub">We usually come back the same day.</p>
+<h3>Request a free quote</h3>
 <form id="quoteForm" novalidate>
 <input type="hidden" name="town" value="Deep River, CT">
 <input type="hidden" name="service" value="Wash &amp; Wax">
@@ -287,7 +319,7 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 </div>
 <div class="formfoot">
 <button class="btn btn-primary" type="submit" id="qf-submit">Get my quote</button>
-<p class="formnote">Or call <a href="tel:+12032588281">(203) 258-8281</a>. We never share your details.</p>
+<p class="formnote">Or call <a class="num" href="tel:+12032588281">(203) 258-8281</a></p>
 </div>
 <div class="formstatus" id="qf-status" role="status" aria-live="polite"></div>
 </form>
@@ -298,40 +330,89 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <section class="condition">
 <div class="wrap">
 <div>
-<p class="waters">the Connecticut River</p>
-<h2>What Deep River water does to a finish.</h2>
-<p>Broad, calm, and effectively fresh water. Boats here are river boats in the full sense.</p>
-<p>Owners often assume a fresh-water boat needs less work than a salt-water one. On the finish, that is not quite true. There is no salt load and very little marine growth, which is a real advantage. But the Connecticut River carries heavy silt and tannins, and tannin staining at the waterline is one of the harder things to remove on this coast. Left alone for a season, a Deep River boat often needs two-step compounding at the waterline.</p>
-<p><strong>Wash &amp; Wax in Deep River:</strong> No salt load means the wax lasts noticeably longer up here than it does on the Sound. What it has to fight instead is tannin at the waterline, which is a slower but more stubborn problem.</p>
+<span class="eyebrow">How we do it</span>
+<h2>Boat wash and wax, done properly.</h2>
+<p>A full exterior wash followed by a hand-applied wax. Hull sides, topsides, non-skid, rails, and glass.</p>
+<p class="muted">Priced by the foot, so a 24 footer never subsidizes a 50 footer.</p>
+<div class="panel">
+<h3>What the job includes</h3>
+<ul class="checks"><li>Full exterior wash, hull sides and topsides</li><li>Hand-applied wax on gelcoat</li><li>Non-skid cleaned, not just rinsed</li><li>Rails, glass, and stainless finished</li></ul>
+</div>
 </div>
 <figure class="shot">
-<img src="../../img/services/wash-and-wax.jpg" alt="A boat hull after a wash and wax by MBD Marine Care" width="900" height="600" loading="lazy">
+<img src="../../img/services/wash-and-wax.jpg" alt="A boat hull after a wash and wax by MBD Marine Care" width="900" height="600" loading="lazy" decoding="async">
 <figcaption>Wash &amp; Wax, as we run it.</figcaption>
 </figure>
 </div>
 </section>
 
 <section>
-<div class="wrap">
-<h2>What boat wash and wax includes.</h2>
-<div class="inclgrid"><div class="incl"><span>Full exterior wash, hull sides and topsides</span></div><div class="incl"><span>Hand-applied wax on gelcoat</span></div><div class="incl"><span>Non-skid cleaned, not just rinsed</span></div><div class="incl"><span>Rails, glass, and stainless finished</span></div></div>
-<div class="priceband">
-<span class="amt">$35 per foot</span>
-<p>Priced by the foot, so a 24 footer never subsidizes a 50 footer. Exposure in Deep River means no salt load at all, which is the genuine upside of being upriver, and we quote with that in mind.</p>
+<div class="wrap cols-owner">
+<figure class="shot-owner">
+<img src="../../img/owner-matt.jpg" srcset="../../img/owner-matt-sm.jpg 155w, ../../img/owner-matt.jpg 310w"
+sizes="(min-width: 820px) 26vw, 90vw" width="310" height="580" loading="lazy" decoding="async"
+alt="Matt Ludden, the owner of MBD Marine Care, standing outside on a gray day.">
+</figure>
+<div>
+<span class="eyebrow">Who you are calling</span>
+<h2>You get Matt, not a call center.</h2>
+<p>MBD Marine Care is owner operated. Matt quotes the boat, Matt turns up, and Matt does the work. When you call about a boat in Deep River, you are talking to the person who will be standing on the dock next to her.</p>
+<p>He grew up in Milford, a street from the beach and around the corner from the Housatonic, and has detailed professionally for over half a decade. Most of the work comes from repeat owners, referrals, marinas, and brokers.</p>
+<p class="pull">I always admired the beauty these vessels can capture. Now I am the one making them glow.</p>
+<div class="callrow">
+<a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
+<a class="btn btn-ghost" href="#quote">Get a free quote</a>
+</div>
 </div>
 </div>
 </section>
 
-<section><div class="wrap">
-<h2>Where we work in Deep River.</h2>
-<p class="lead muted">We are mobile, so we come to the boat wherever she is. These are spots in Deep River we already service.</p>
-<ul class="spots"><li>Safe Harbor Deep River</li></ul>
-</div></section>
+<section class="condition">
+<div class="wrap townwrap">
+<svg class="tmap" viewBox="0 0 620 406" role="img"
+     aria-label="Outline map showing the boundary of Deep River, Connecticut"
+     xmlns="http://www.w3.org/2000/svg">
+      <g class="nbrs" aria-hidden="true">
+      <path class="nbr" d="M 316.3 -51.9 L 178.3 -28.3 L 164.4 -26.0 L 103.9 -17.8 L 61.4 -5.0 L 90.2 111.7 L 104.4 170.6 L 116.4 169.1 L 126.6 169.5 L 164.1 162.9 L 306.1 147.0 L 290.4 130.7 L 341.9 106.3 L 349.7 94.6 L 357.6 85.7 L 357.0 79.1 L 367.8 71.7 L 371.5 73.3 L 389.9 75.6 L 390.7 72.9 L 391.3 41.1 L 388.1 26.8 L 378.5 9.7 L 374.7 -0.4 L 366.6 -14.3 L 361.6 -23.2 L 355.2 -30.2 L 336.6 -42.6 L 316.3 -51.9 Z"/>
+      <path class="nbr" d="M -75.7 427.7 L -73.9 439.3 L -62.9 445.1 L -58.2 451.0 L -48.6 456.4 L -47.1 463.0 L -35.8 473.1 L -30.3 480.8 L -30.3 488.2 L -23.9 489.0 L -18.0 495.2 L -13.4 509.9 L -4.4 514.2 L 0.3 525.0 L 6.7 529.3 L 7.3 535.9 L 14.8 541.7 L 24.7 542.1 L 31.1 537.0 L 40.1 544.4 L 34.6 553.3 L 43.6 562.2 L 44.8 569.2 L 37.2 576.6 L 37.2 587.1 L 39.3 592.9 L 37.8 614.6 L 40.7 620.0 L 69.8 641.7 L 66.6 630.1 L 68.1 623.9 L 76.5 610.3 L 82.6 606.4 L 99.2 601.0 L 96.3 595.6 L 88.4 599.5 L 75.6 601.8 L 65.7 616.1 L 61.4 618.9 L 49.2 618.9 L 45.4 606.8 L 69.2 588.2 L 88.2 585.5 L 104.2 584.7 L 106.2 578.5 L 114.3 580.5 L 114.6 591.7 L 119.9 609.2 L 122.2 620.0 L 125.4 626.2 L 137.0 628.9 L 146.3 634.0 L 153.9 634.4 L 155.4 618.1 L 167.9 599.1 L 192.6 587.4 L 214.4 580.5 L 206.9 554.1 L 188.5 489.7 L 176.0 443.6 L 151.3 348.2 L 139.9 306.3 L 99.8 318.0 L 81.5 325.3 L 71.6 331.9 L 25.0 365.3 L 3.5 382.3 L -21.0 397.1 L -75.7 427.7 Z"/>
+      <path class="nbr" d="M 515.6 146.6 L 482.1 162.9 L 463.5 167.5 L 427.1 179.2 L 393.9 214.8 L 331.4 248.9 L 263.9 290.8 L 252.8 334.3 L 363.1 346.7 L 371.8 363.7 L 382.9 368.0 L 389.3 372.6 L 404.4 368.0 L 417.5 361.0 L 456.8 343.9 L 517.3 336.6 L 544.1 316.8 L 546.7 305.6 L 553.7 301.7 L 534.2 290.4 L 527.2 281.5 L 524.3 272.6 L 529.5 237.3 L 530.7 213.3 L 532.7 199.7 L 537.7 182.6 L 536.5 175.3 L 530.4 166.0 L 519.9 155.5 L 515.6 146.6 Z"/>
+      <path class="nbr" d="M 231.0 -384.2 L 174.9 -374.2 L 14.5 -352.0 L -64.0 -337.3 L -132.1 -323.7 L -215.3 -309.0 L -203.4 -265.6 L -198.4 -252.8 L -218.2 -191.1 L -224.9 -167.9 L -192.9 -136.1 L -140.5 -86.1 L -29.7 22.5 L 61.4 -5.0 L 103.9 -17.8 L 164.4 -26.0 L 178.3 -28.3 L 316.3 -51.9 L 303.7 -61.2 L 299.1 -69.0 L 285.1 -102.3 L 280.8 -115.9 L 273.8 -132.6 L 265.0 -167.9 L 264.5 -183.0 L 255.2 -201.2 L 238.3 -214.4 L 240.9 -233.8 L 240.0 -264.0 L 235.4 -268.7 L 224.0 -268.3 L 216.8 -273.3 L 214.1 -280.7 L 213.3 -291.2 L 209.5 -304.4 L 209.5 -319.9 L 216.5 -329.6 L 220.0 -342.4 L 221.7 -360.6 L 224.9 -379.6 L 231.0 -384.2 Z"/>
+      <path class="nbr" d="M -274.1 -69.8 L -276.1 -61.6 L -269.4 -55.4 L -262.4 -59.3 L -258.1 -57.4 L -261.3 -41.1 L -249.9 -41.1 L -240.6 -34.9 L -259.2 -6.6 L -264.2 4.7 L -257.2 11.7 L -237.1 26.4 L -227.5 31.0 L -212.1 30.3 L -210.9 47.3 L -205.7 53.1 L -206.9 64.8 L -201.1 74.5 L -193.5 78.3 L -190.0 82.6 L -192.6 89.2 L -175.4 109.0 L -171.4 109.7 L -163.8 122.5 L -153.3 132.2 L -157.7 139.2 L -158.3 152.0 L -155.4 163.3 L -144.3 181.9 L -142.0 190.4 L -144.0 193.5 L -140.8 205.1 L -148.1 209.8 L -144.3 213.3 L -144.9 219.9 L -153.0 223.7 L -152.8 238.1 L -154.2 254.4 L -150.7 265.2 L -154.8 271.8 L -151.3 278.4 L -150.1 299.4 L -154.2 302.1 L -154.5 308.7 L -159.4 323.0 L -156.8 326.5 L -160.3 344.7 L -158.3 352.1 L -152.8 352.9 L -149.3 360.2 L -142.6 357.1 L -134.7 358.7 L -124.0 366.0 L -119.0 366.4 L -115.8 360.6 L -108.8 356.0 L -104.7 357.9 L -101.8 365.3 L -95.1 376.1 L -86.1 378.5 L -77.4 372.6 L -74.5 394.0 L -82.1 404.4 L -83.5 420.3 L -75.7 427.7 L -21.0 397.1 L 3.5 382.3 L 25.0 365.3 L 71.6 331.9 L 81.5 325.3 L 99.8 318.0 L 139.9 306.3 L 134.7 286.6 L 121.6 238.1 L 104.4 170.6 L 90.2 111.7 L 61.4 -5.0 L -29.7 22.5 L -140.5 -86.1 L -181.3 -80.2 L -239.5 -73.7 L -274.1 -69.8 Z"/>
+      <path class="nbr" d="M 824.0 -77.9 L 795.4 -72.5 L 741.6 -48.1 L 739.6 -62.0 L 658.7 -49.6 L 591.2 -40.7 L 465.2 -22.9 L 455.9 -17.8 L 436.7 -19.8 L 384.3 -11.6 L 366.6 -14.3 L 374.7 -0.4 L 378.5 9.7 L 388.1 26.8 L 391.3 41.1 L 390.7 72.9 L 389.9 75.6 L 388.1 83.0 L 390.2 96.2 L 395.4 109.0 L 401.8 115.2 L 417.8 119.8 L 429.1 119.1 L 445.1 122.9 L 459.4 123.3 L 481.2 127.2 L 502.8 133.0 L 511.8 139.2 L 515.6 146.6 L 519.9 155.5 L 530.4 166.0 L 536.5 175.3 L 537.7 182.6 L 532.7 199.7 L 530.7 213.3 L 529.5 237.3 L 524.3 272.6 L 527.2 281.5 L 534.2 290.4 L 553.7 301.7 L 576.1 295.9 L 583.9 290.0 L 596.4 288.1 L 595.6 282.3 L 598.8 271.4 L 641.5 260.2 L 645.9 266.8 L 655.8 251.3 L 679.4 245.5 L 691.3 245.5 L 701.2 240.8 L 731.4 233.8 L 776.0 220.3 L 815.8 210.9 L 823.7 208.6 L 816.1 124.5 L 813.8 111.3 L 807.7 56.2 L 814.1 6.6 L 816.7 -5.8 L 816.7 -22.1 L 821.1 -50.8 L 824.0 -77.9 Z"/>
+      <path class="nbr" d="M -346.2 -52.3 L -346.8 -19.0 L -349.4 19.8 L -350.3 62.1 L -349.4 75.6 L -349.7 105.9 L -349.4 137.3 L -350.3 168.7 L -349.1 180.7 L -353.5 209.4 L -345.4 240.0 L -341.0 250.9 L -333.1 281.1 L -309.6 323.4 L -303.5 333.1 L -285.1 351.3 L -278.7 346.3 L -264.5 356.4 L -263.6 363.7 L -241.8 378.1 L -240.0 387.4 L -232.5 395.9 L -228.7 396.7 L -222.0 406.4 L -221.7 416.5 L -217.3 416.8 L -209.8 430.4 L -214.1 441.7 L -215.0 449.4 L -213.9 469.6 L -245.6 500.2 L -249.1 508.3 L -254.3 505.6 L -258.1 509.1 L -251.4 514.9 L -255.2 520.0 L -252.8 528.1 L -246.1 538.6 L -254.9 540.1 L -260.4 545.2 L -256.6 558.8 L -261.6 565.3 L -269.1 564.2 L -275.0 567.3 L -276.4 580.9 L -280.8 583.6 L -275.5 597.9 L -264.2 596.8 L -254.6 599.9 L -245.3 596.8 L -241.8 593.3 L -228.1 593.6 L -208.3 590.2 L -204.0 580.9 L -190.9 576.2 L -174.3 576.6 L -160.6 573.5 L -151.3 575.8 L -140.2 581.6 L -127.2 577.8 L -116.1 584.3 L -112.0 584.7 L -78.3 579.3 L -74.8 573.9 L -68.4 572.7 L -47.1 577.8 L -37.0 582.0 L -15.4 597.5 L 12.2 627.0 L 42.5 658.4 L 49.7 660.7 L 60.2 655.7 L 69.8 641.7 L 40.7 620.0 L 37.8 614.6 L 39.3 592.9 L 37.2 587.1 L 37.2 576.6 L 44.8 569.2 L 43.6 562.2 L 34.6 553.3 L 40.1 544.4 L 31.1 537.0 L 24.7 542.1 L 14.8 541.7 L 7.3 535.9 L 6.7 529.3 L 0.3 525.0 L -4.4 514.2 L -13.4 509.9 L -18.0 495.2 L -23.9 489.0 L -30.3 488.2 L -30.3 480.8 L -35.8 473.1 L -47.1 463.0 L -48.6 456.4 L -58.2 451.0 L -62.9 445.1 L -73.9 439.3 L -75.7 427.7 L -83.5 420.3 L -82.1 404.4 L -74.5 394.0 L -77.4 372.6 L -86.1 378.5 L -95.1 376.1 L -101.8 365.3 L -104.7 357.9 L -108.8 356.0 L -115.8 360.6 L -119.0 366.4 L -124.0 366.0 L -134.7 358.7 L -142.6 357.1 L -149.3 360.2 L -152.8 352.9 L -158.3 352.1 L -160.3 344.7 L -156.8 326.5 L -159.4 323.0 L -154.5 308.7 L -154.2 302.1 L -150.1 299.4 L -151.3 278.4 L -154.8 271.8 L -150.7 265.2 L -154.2 254.4 L -152.8 238.1 L -153.0 223.7 L -144.9 219.9 L -144.3 213.3 L -148.1 209.8 L -140.8 205.1 L -144.0 193.5 L -142.0 190.4 L -144.3 181.9 L -155.4 163.3 L -158.3 152.0 L -157.7 139.2 L -153.3 132.2 L -163.8 122.5 L -171.4 109.7 L -175.4 109.0 L -192.6 89.2 L -190.0 82.6 L -193.5 78.3 L -201.1 74.5 L -206.9 64.8 L -205.7 53.1 L -210.9 47.3 L -212.1 30.3 L -227.5 31.0 L -237.1 26.4 L -257.2 11.7 L -264.2 4.7 L -259.2 -6.6 L -240.6 -34.9 L -249.9 -41.1 L -261.3 -41.1 L -258.1 -57.4 L -262.4 -59.3 L -269.4 -55.4 L -276.1 -61.6 L -274.1 -69.8 L -315.4 -58.9 L -324.7 -58.5 L -346.2 -52.3 Z"/>
+      <path class="nbr" d="M 134.7 286.6 L 139.9 306.3 L 151.3 348.2 L 176.0 443.6 L 188.5 489.7 L 206.9 554.1 L 214.4 580.5 L 227.8 578.5 L 248.5 583.2 L 256.9 580.1 L 269.7 588.6 L 271.2 577.4 L 284.3 563.0 L 296.8 553.7 L 308.7 547.5 L 332.3 546.0 L 343.3 549.1 L 367.8 552.9 L 384.9 564.6 L 393.4 565.7 L 403.0 564.2 L 406.7 555.6 L 416.1 548.7 L 402.1 528.9 L 368.9 408.7 L 372.7 401.3 L 386.4 384.3 L 389.3 372.6 L 382.9 368.0 L 371.8 363.7 L 363.1 346.7 L 252.8 334.3 L 241.8 332.7 L 179.2 281.9 L 134.7 286.6 Z"/>
+      <path class="nbr" d="M 553.7 301.7 L 564.7 308.7 L 580.1 321.1 L 590.0 332.7 L 602.3 352.1 L 606.0 362.9 L 613.9 374.6 L 617.7 394.0 L 613.0 421.5 L 623.5 423.0 L 633.4 434.7 L 622.3 435.8 L 637.2 464.5 L 634.3 475.0 L 640.1 494.4 L 651.4 516.5 L 661.3 524.2 L 666.0 537.4 L 670.9 537.8 L 678.8 544.0 L 681.7 549.1 L 699.1 552.5 L 706.7 551.0 L 716.9 551.8 L 735.5 546.0 L 750.9 543.6 L 759.1 545.6 L 777.7 541.7 L 785.0 542.5 L 798.9 539.4 L 817.3 528.1 L 842.0 526.2 L 851.3 523.5 L 855.1 527.7 L 865.6 530.4 L 877.5 517.7 L 883.9 514.2 L 885.6 508.0 L 891.2 501.4 L 902.2 497.5 L 902.2 485.9 L 897.6 473.1 L 904.6 468.4 L 900.2 457.6 L 897.9 446.3 L 892.3 430.8 L 887.4 427.7 L 887.4 416.8 L 883.9 406.8 L 882.2 392.8 L 877.2 381.9 L 877.5 375.0 L 882.2 366.4 L 873.4 349.8 L 861.2 322.6 L 853.9 302.5 L 846.4 287.7 L 843.5 276.9 L 831.8 252.8 L 828.6 240.8 L 823.7 208.6 L 815.8 210.9 L 776.0 220.3 L 731.4 233.8 L 701.2 240.8 L 691.3 245.5 L 679.4 245.5 L 655.8 251.3 L 645.9 266.8 L 641.5 260.2 L 598.8 271.4 L 595.6 282.3 L 596.4 288.1 L 583.9 290.0 L 576.1 295.9 L 553.7 301.7 Z"/>
+      <path class="nbr" d="M 389.3 372.6 L 386.4 384.3 L 372.7 401.3 L 368.9 408.7 L 402.1 528.9 L 416.1 548.7 L 441.1 554.9 L 453.0 550.2 L 472.2 549.1 L 481.5 552.9 L 473.4 556.8 L 485.3 587.4 L 490.0 594.8 L 499.8 618.1 L 511.8 610.7 L 517.6 609.9 L 527.5 604.1 L 556.0 608.4 L 570.0 601.4 L 584.2 589.0 L 591.2 585.5 L 616.2 583.2 L 628.4 587.4 L 633.4 584.7 L 624.4 573.1 L 623.2 562.6 L 618.3 561.1 L 611.9 566.1 L 593.8 563.4 L 587.1 567.7 L 579.9 576.2 L 573.2 573.1 L 551.6 576.6 L 545.5 570.0 L 544.9 563.0 L 553.4 543.6 L 560.4 538.2 L 565.0 541.3 L 574.9 538.6 L 585.7 542.5 L 609.8 534.7 L 611.9 522.3 L 602.5 510.3 L 597.9 507.6 L 587.4 508.7 L 582.5 511.1 L 569.7 522.7 L 561.5 520.4 L 560.7 504.5 L 564.4 498.7 L 559.5 492.4 L 564.4 487.0 L 579.0 496.7 L 588.3 497.5 L 594.1 462.6 L 596.7 455.2 L 599.3 438.6 L 603.1 425.4 L 613.0 421.5 L 617.7 394.0 L 613.9 374.6 L 606.0 362.9 L 602.3 352.1 L 590.0 332.7 L 580.1 321.1 L 564.7 308.7 L 553.7 301.7 L 546.7 305.6 L 544.1 316.8 L 517.3 336.6 L 456.8 343.9 L 417.5 361.0 L 404.4 368.0 L 389.3 372.6 Z"/>
+      </g>
+      <path class="focus" d="M 389.9 75.6 L 371.5 73.3 L 367.8 71.7 L 357.0 79.1 L 357.6 85.7 L 349.7 94.6 L 341.9 106.3 L 290.4 130.7 L 306.1 147.0 L 164.1 162.9 L 126.6 169.5 L 116.4 169.1 L 104.4 170.6 L 121.6 238.1 L 134.7 286.6 L 179.2 281.9 L 241.8 332.7 L 252.8 334.3 L 263.9 290.8 L 331.4 248.9 L 393.9 214.8 L 427.1 179.2 L 463.5 167.5 L 482.1 162.9 L 515.6 146.6 L 511.8 139.2 L 502.8 133.0 L 481.2 127.2 L 459.4 123.3 L 445.1 122.9 L 429.1 119.1 L 417.8 119.8 L 401.8 115.2 L 395.4 109.0 L 390.2 96.2 L 388.1 83.0 L 389.9 75.6 Z"/>
+    <text x="284.1" y="199.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".12em" fill="none" stroke="var(--paper)" stroke-width="5" stroke-linejoin="round" opacity=".9">DEEP RIVER</text><text x="284.1" y="199.0" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".12em" fill="var(--brand)">DEEP RIVER</text></svg>
+<div>
+<span class="eyebrow">Service area</span>
+<h2>All of Deep River, not just the easy berths.</h2>
+<p>Deep River is about an hour from Milford, well up the Connecticut. We are mobile, so we bring water, power, and everything else to the boat rather than asking you to move her.</p>
+<p class="muted">Spots we already service in Deep River: Safe Harbor Deep River.</p>
+<div class="callrow">
+<a class="btn btn-ghost" href="#quote">Get a free quote</a>
+</div>
+<p class="townnote">Town boundaries from Connecticut open data. Surrounding towns shown for orientation.</p>
+</div>
+</div>
+</section>
 
-<section class="ownerband">
+<section>
 <div class="wrap">
-<blockquote>I always admired the beauty these vessels can capture. Now I am the one making them glow.</blockquote>
-<p class="attrib">Matt Ludden, owner. Grew up in Milford, a street from the beach and around the corner from the Housatonic. Detailing professionally for over half a decade.</p>
+<div class="measure">
+<span class="eyebrow">Why Deep River is like this</span>
+<h2>Local conditions, not a sales pitch.</h2>
+<p class="waters">the Connecticut River</p>
+<p class="lead">Broad, calm, and effectively fresh water. Boats here are river boats in the full sense.</p>
+<p>Owners often assume a fresh-water boat needs less work than a salt-water one. On the finish, that is not quite true. There is no salt load and very little marine growth, which is a real advantage. But the Connecticut River carries heavy silt and tannins, and tannin staining at the waterline is one of the harder things to remove on this coast. Left alone for a season, a Deep River boat often needs two-step compounding at the waterline.</p>
+<p><strong>Wash &amp; Wax in Deep River:</strong> No salt load means the wax lasts noticeably longer up here than it does on the Sound. What it has to fight instead is tannin at the waterline, which is a slower but more stubborn problem.</p>
+</div>
+<div class="priceband">
+<span class="amt num">$35 per foot</span>
+<p>Exposure in Deep River means no salt load at all, which is the genuine upside of being upriver, and we quote with that in mind.</p>
+</div>
 </div>
 </section>
 
@@ -341,12 +422,13 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <p class="lead muted" style="margin:0.8rem auto 1.4rem">Tell us the length and where she is kept, and we will come back with a number.</p>
 <div class="callrow" style="justify-content:center">
 <a class="btn btn-primary" href="#quote">Get my quote</a>
-<a class="tel" href="tel:+12032588281">(203) 258-8281</a>
+<a class="tel num" href="tel:+12032588281">(203) 258-8281</a>
 </div>
 </div>
 </section>
 </main>
 
+<a class="callbar" href="tel:+12032588281">Call (203) 258-8281 for a free quote</a>
 <footer class="lp">
 <div class="wrap frow">
 <span>MBD Marine Care, Milford CT. Fully insured mobile marine detailing.</span>

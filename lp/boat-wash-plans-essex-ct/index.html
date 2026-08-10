@@ -112,7 +112,7 @@ img{max-width:100%;height:auto;display:block}
 .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--brand);color:var(--brand-ink);padding:.6rem 1rem;border-radius:8px}
 header.lp{border-bottom:1px solid var(--line);padding:.9rem 0;position:sticky;top:0;background:var(--paper);z-index:20}
 header.lp .inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-header.lp .mark{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+header.lp .mark{display:flex;align-items:center;gap:.7rem}
 header.lp .mark img{width:44px;height:44px;border-radius:10px;border:1px solid var(--line)}
 header.lp .mkt{display:flex;flex-direction:column;line-height:1.18}
 header.lp .mark .nm{font-family:"Fraunces",Georgia,serif;font-size:1.12rem;font-weight:600;color:var(--brand);line-height:1.15}
@@ -130,32 +130,68 @@ header.lp .btn .lbl{display:none}
 @media(max-width:900px){.herogrid{grid-template-columns:1fr;gap:1.6rem}}
 .hero h1{margin-bottom:.7rem}
 .hero .lead{margin-bottom:1.2rem}
-.trust{list-style:none;padding:0;margin:0 0 1.4rem;display:grid;gap:.5rem}
-.trust li{position:relative;padding-left:1.5rem;font-size:.98rem}
-.trust li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.lp-trust{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:1.5rem 0 1.3rem;
+font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.lp-trust span{display:inline-flex;align-items:center;gap:.5rem}
+.lp-trust span::before{content:"";width:8px;height:8px;background:var(--brand);flex:0 0 auto}
 .callrow{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
 .callrow .tel{font-family:"Fraunces",Georgia,serif;font-size:1.35rem;color:var(--brand);text-decoration:none;font-weight:600}
-.formwrap{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:clamp(1.1rem,2.4vw,1.6rem);box-shadow:0 18px 40px var(--shadow)}
-.formwrap h2{font-size:1.28rem;margin-bottom:.2rem}
-.formwrap .fsub{color:var(--muted);font-size:.9rem;margin:0 0 1.1rem}
+/* On a landing page the form is the page, so it drops the card entirely and the
+   fields sit straight on the hero. No background, border, padding or shadow. */
+.formwrap{background:none;border:0;border-radius:0;padding:0;box-shadow:none}
+.formwrap h3{font-size:1.22rem;color:var(--brand);margin:0 0 1rem}
 .condition{background:var(--mist)}
 .condition .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
 @media(max-width:820px){.condition .wrap{grid-template-columns:1fr}}
-.waters{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:600;margin:0 0 .8rem}
+.waters{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 1rem}
+.measure{max-width:68ch}
+.measure h2{max-width:22ch}
+.measure .priceband{max-width:none}
 figure.shot{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
 figure.shot figcaption{padding:.7rem .9rem;font-size:.86rem;color:var(--muted);border-top:1px solid var(--line)}
-.inclgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.6rem}
-@media(max-width:700px){.inclgrid{grid-template-columns:1fr}}
-.incl{border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:var(--paper)}
-.incl span{display:block;font-size:.97rem}
+.panel{background:var(--mist);border-left:3px solid var(--brand);padding:1.5rem 1.6rem}
+.panel h3{margin:0 0 .7rem}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{position:relative;padding-left:1.9rem;margin-bottom:.65em;font-size:.97rem}
+.checks li:last-child{margin-bottom:0}
+.checks li::before{content:"";position:absolute;left:0;top:.68em;width:14px;height:2px;background:var(--brand)}
+/* owner */
+.cols-owner{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(1.4rem,3vw,2.8rem);align-items:center}
+@media(max-width:820px){.cols-owner{grid-template-columns:1fr}}
+.shot-owner{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.shot-owner img{aspect-ratio:310/580;object-fit:cover;width:100%}
+.pull{font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:500;
+font-size:clamp(1.15rem,1rem+.7vw,1.5rem);line-height:1.25;color:var(--brand);
+border-left:3px solid var(--brand);padding-left:1.2rem;margin:1.5rem 0;max-width:26ch}
+/* town outline */
+.townwrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.3rem,3vw,2.4rem);align-items:center}
+@media(max-width:820px){.townwrap{grid-template-columns:1fr}}
+.tmap{display:block;width:100%;height:auto}
+.tmap .nbr{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.45}
+.tmap .focus{fill:var(--sandtint);stroke:var(--brand);stroke-width:2}
+.tmap .vill{fill:var(--brand);stroke:var(--paper);stroke-width:2}
+.townnote{font-size:.78rem;color:var(--muted);margin-top:1.1rem;line-height:1.5}
+/* Numerals are read digit by digit, so they leave the display serif and get
+   tabular figures. Prices, phone numbers, lengths. */
+.num,.tel,.callbar,.priceband .amt,.btn{font-family:"Inter","Inter Fallback",system-ui,sans-serif;
+font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.callbar{display:none}
+@media(max-width:700px){
+.callbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;
+background:var(--brand);color:var(--brand-ink);text-align:center;text-decoration:none;
+font-weight:700;font-size:1rem;padding:.9rem 1rem;border-top:1px solid var(--accent-ink)}
+.callbar:hover{text-decoration:none}
+.hero .callrow{display:none}
+body{padding-bottom:3.6rem}
+}
+@media(max-width:500px){
+.formfoot{flex-direction:column;align-items:stretch;gap:.7rem}
+.formfoot .btn{width:100%;justify-content:center}
+.formnote{text-align:center}
+}
 .priceband{border:1px solid var(--brand);border-radius:16px;padding:1.2rem 1.4rem;margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;background:var(--sandtint)}
 .priceband .amt{font-family:"Fraunces",Georgia,serif;font-size:1.6rem;color:var(--brand);font-weight:600}
 .priceband p{margin:0;color:var(--ink);font-size:.95rem;max-width:52ch}
-.spots{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem;padding:0;list-style:none}
-.spots li{border:1px solid var(--line);border-radius:999px;padding:.42rem .95rem;font-size:.88rem;color:var(--ink)}
-.ownerband{background:var(--sandtint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.ownerband blockquote{margin:0;font-family:"Fraunces",Georgia,serif;font-size:clamp(1.25rem,2.4vw,1.7rem);color:var(--brand);line-height:1.3;max-width:30ch}
-.ownerband .attrib{margin-top:1rem;font-size:.92rem;color:var(--muted)}
 footer.lp{border-top:1px solid var(--line);padding:2rem 0;font-size:.9rem;color:var(--muted)}
 footer.lp a{color:var(--brand)}
 footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between}
@@ -211,10 +247,10 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <a class="skip" href="#quote">Skip to the quote form</a>
 <header class="lp">
 <div class="wrap inner">
-<a class="mark" href="https://www.mbdmarinecare.com/">
+<span class="mark">
 <img src="../../img/logo-mark.png" alt="MBD Marine Care" width="44" height="44">
 <span class="mkt"><span class="nm">MBD Marine Care</span><span class="sub">Mobile marine detailing</span></span>
-</a>
+</span>
 <a class="btn btn-primary" href="tel:+12032588281"><span class="lbl">Call </span>(203) 258-8281</a>
 </div>
 </header>
@@ -224,21 +260,17 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <div class="wrap herogrid">
 <div>
 <span class="eyebrow">Wash Plans &middot; Essex, CT</span>
-<h1>Recurring boat wash plans in Essex, Connecticut</h1>
-<p class="lead">Weekly, every two weeks, or monthly. We turn up, she stays clean, and the finish never gets far enough gone to need correcting. We come to the boat, wherever she is kept in Essex.</p>
-<ul class="trust">
-<li>Fully insured, and mobile since 2021</li>
-<li>Essex is about fifty-five minutes from us, upriver from Saybrook Point.</li>
-<li>Priced by the foot, so a 24 footer never subsidizes a 50 footer.</li>
-</ul>
+<h1>Recurring boat wash plans in Essex, CT.</h1>
+<p class="lead">Weekly, every two weeks, or monthly. We turn up, she stays clean, and the finish never gets far enough gone to need correcting.</p>
+<div class="lp-trust">
+<span>Owner operated</span><span>Fully insured</span><span>Serving Essex and nearby</span>
+</div>
 <div class="callrow">
-<a class="btn btn-ghost" href="#quote">Get a quote</a>
-<a class="tel" href="tel:+12032588281">(203) 258-8281</a>
+<a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
 </div>
 </div>
 <div class="formwrap" id="quote">
-<h2>Tell us about your boat.</h2>
-<p class="fsub">We usually come back the same day.</p>
+<h3>Request a free quote</h3>
 <form id="quoteForm" novalidate>
 <input type="hidden" name="town" value="Essex, CT">
 <input type="hidden" name="service" value="Weekly Wash Plan">
@@ -287,7 +319,7 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 </div>
 <div class="formfoot">
 <button class="btn btn-primary" type="submit" id="qf-submit">Get my quote</button>
-<p class="formnote">Or call <a href="tel:+12032588281">(203) 258-8281</a>. We never share your details.</p>
+<p class="formnote">Or call <a class="num" href="tel:+12032588281">(203) 258-8281</a></p>
 </div>
 <div class="formstatus" id="qf-status" role="status" aria-live="polite"></div>
 </form>
@@ -298,40 +330,86 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <section class="condition">
 <div class="wrap">
 <div>
-<p class="waters">the Connecticut River, Essex Harbor, and North Cove</p>
-<h2>What Essex water does to a finish.</h2>
-<p>A serious boatbuilding town with real yard capability, and more wooden and classic boats than anywhere else we work.</p>
-<p>This far up the river the water is much closer to fresh than salt, and that changes everything about the waterline. There is very little of the salt growth we deal with down on the Sound. Instead there is silt, tannin staining, and a distinct brown line that sets into gelcoat and needs proper correction rather than a wash.</p>
-<p><strong>Wash Plans in Essex:</strong> A boat washed regularly never gives tannin time to set into the gelcoat. Left alone for a season, the same boat needs compounding at the waterline instead.</p>
+<span class="eyebrow">How we do it</span>
+<h2>Recurring boat wash plans, done properly.</h2>
+<p>Weekly, every two weeks, or monthly. We turn up, she stays clean, and the finish never gets far enough gone to need correcting.</p>
+<p class="muted">Priced by the foot, so a 24 footer never subsidizes a 50 footer.</p>
+<div class="panel">
+<h3>What the job includes</h3>
+<ul class="checks"><li>Weekly at $8 per foot, biweekly at $9, monthly at $10, per visit</li><li>Full exterior wash every visit</li><li>We come to the boat, wherever she is kept</li><li>No contract, stop whenever you want</li></ul>
+</div>
 </div>
 <figure class="shot">
-<img src="../../img/services/wash-plans-pursuit-325-offshore.jpg" alt="A Pursuit 325 Offshore kept clean on a recurring wash plan" width="900" height="600" loading="lazy">
+<img src="../../img/services/wash-plans-pursuit-325-offshore.jpg" alt="A Pursuit 325 Offshore kept clean on a recurring wash plan" width="900" height="600" loading="lazy" decoding="async">
 <figcaption>Wash Plans, as we run it.</figcaption>
 </figure>
 </div>
 </section>
 
 <section>
-<div class="wrap">
-<h2>What recurring boat wash plans includes.</h2>
-<div class="inclgrid"><div class="incl"><span>Weekly at $8 per foot, biweekly at $9, monthly at $10, per visit</span></div><div class="incl"><span>Full exterior wash every visit</span></div><div class="incl"><span>We come to the boat, wherever she is kept</span></div><div class="incl"><span>No contract, stop whenever you want</span></div></div>
-<div class="priceband">
-<span class="amt">From $8 per foot, per visit</span>
-<p>Priced by the foot, so a 24 footer never subsidizes a 50 footer. Exposure in Essex means quiet river water, and owners who notice a finish, and we quote with that in mind.</p>
+<div class="wrap cols-owner">
+<figure class="shot-owner">
+<img src="../../img/owner-matt.jpg" srcset="../../img/owner-matt-sm.jpg 155w, ../../img/owner-matt.jpg 310w"
+sizes="(min-width: 820px) 26vw, 90vw" width="310" height="580" loading="lazy" decoding="async"
+alt="Matt Ludden, the owner of MBD Marine Care, standing outside on a gray day.">
+</figure>
+<div>
+<span class="eyebrow">Who you are calling</span>
+<h2>You get Matt, not a call center.</h2>
+<p>MBD Marine Care is owner operated. Matt quotes the boat, Matt turns up, and Matt does the work. When you call about a boat in Essex, you are talking to the person who will be standing on the dock next to her.</p>
+<p>He grew up in Milford, a street from the beach and around the corner from the Housatonic, and has detailed professionally for over half a decade. Most of the work comes from repeat owners, referrals, marinas, and brokers.</p>
+<p class="pull">I always admired the beauty these vessels can capture. Now I am the one making them glow.</p>
+<div class="callrow">
+<a class="btn btn-primary" href="tel:+12032588281">Call (203) 258-8281</a>
+<a class="btn btn-ghost" href="#quote">Get a free quote</a>
+</div>
 </div>
 </div>
 </section>
 
-<section><div class="wrap">
-<h2>Where we work in Essex.</h2>
-<p class="lead muted">We are mobile, so we come to the boat wherever she is. These are spots in Essex we already service.</p>
-<ul class="spots"><li>Safe Harbor Dauntless Shipyard</li><li>Essex Boat Works</li><li>Essex Island Marina</li><li>Essex Yacht Club</li></ul>
-</div></section>
+<section class="condition">
+<div class="wrap townwrap">
+<svg class="tmap" viewBox="0 0 620 436" role="img"
+     aria-label="Outline map showing the boundary of Essex, Connecticut"
+     xmlns="http://www.w3.org/2000/svg">
+      <g class="nbrs" aria-hidden="true">
+      <path class="nbr" d="M 200.8 -172.5 L 27.8 -142.8 L 10.3 -139.9 L -65.6 -129.7 L -118.9 -113.7 L -82.8 32.6 L -64.9 106.5 L -49.9 104.5 L -37.2 105.0 L 9.9 96.7 L 188.1 76.8 L 168.4 56.4 L 233.0 25.8 L 242.8 11.2 L 252.7 0.0 L 252.0 -8.2 L 265.5 -17.5 L 270.2 -15.5 L 293.2 -12.6 L 294.3 -16.0 L 295.0 -55.9 L 291.0 -73.8 L 279.0 -95.2 L 274.2 -107.9 L 264.0 -125.4 L 257.8 -136.5 L 249.8 -145.3 L 226.4 -160.8 L 200.8 -172.5 Z"/>
+      <path class="nbr" d="M -290.9 428.7 L -288.7 443.3 L -274.8 450.5 L -269.0 457.8 L -256.9 464.6 L -255.1 472.9 L -240.9 485.5 L -233.9 495.3 L -233.9 504.5 L -225.9 505.5 L -218.6 513.2 L -212.8 531.7 L -201.4 537.1 L -195.6 550.7 L -187.6 556.0 L -186.8 564.3 L -177.4 571.6 L -164.9 572.0 L -156.9 565.7 L -145.6 575.0 L -152.5 586.1 L -141.2 597.3 L -139.7 606.1 L -149.2 615.3 L -149.2 628.4 L -146.7 635.7 L -148.5 662.9 L -144.9 669.7 L -108.4 696.9 L -112.4 682.4 L -110.5 674.6 L -100.0 657.6 L -92.3 652.7 L -71.5 645.9 L -75.1 639.1 L -85.0 644.0 L -101.1 646.9 L -113.5 664.9 L -118.9 668.3 L -134.3 668.3 L -139.0 653.2 L -109.1 629.9 L -85.4 626.5 L -65.3 625.5 L -62.7 617.7 L -52.5 620.2 L -52.1 634.3 L -45.6 656.1 L -42.6 669.7 L -38.6 677.5 L -24.0 680.9 L -12.3 687.2 L -2.9 687.7 L -1.0 667.3 L 14.7 643.5 L 45.7 628.9 L 73.1 620.2 L 63.6 587.1 L 40.6 506.4 L 24.9 448.6 L -6.1 329.0 L -20.4 276.6 L -70.8 291.1 L -93.8 300.4 L -106.2 308.6 L -164.6 350.4 L -191.6 371.8 L -222.3 390.3 L -290.9 428.7 Z"/>
+      <path class="nbr" d="M 293.2 -12.6 L 270.2 -15.5 L 265.5 -17.5 L 252.0 -8.2 L 252.7 0.0 L 242.8 11.2 L 233.0 25.8 L 168.4 56.4 L 188.1 76.8 L 9.9 96.7 L -37.2 105.0 L -49.9 104.5 L -64.9 106.5 L -43.4 191.0 L -26.9 251.8 L 28.9 245.9 L 107.4 309.6 L 121.3 311.6 L 135.1 257.1 L 219.8 204.6 L 298.3 161.9 L 339.9 117.2 L 385.6 102.6 L 408.9 96.7 L 450.9 76.3 L 446.2 67.1 L 434.8 59.3 L 407.8 52.0 L 380.5 47.2 L 362.6 46.7 L 342.5 41.8 L 328.3 42.8 L 308.2 37.0 L 300.1 29.2 L 293.6 13.2 L 291.0 -3.4 L 293.2 -12.6 Z"/>
+      <path class="nbr" d="M 837.9 -205.1 L 802.1 -198.3 L 734.6 -167.6 L 732.0 -185.1 L 630.5 -169.6 L 545.8 -158.4 L 387.8 -136.0 L 376.1 -129.7 L 352.0 -132.2 L 286.3 -122.0 L 264.0 -125.4 L 274.2 -107.9 L 279.0 -95.2 L 291.0 -73.8 L 295.0 -55.9 L 294.3 -16.0 L 293.2 -12.6 L 291.0 -3.4 L 293.6 13.2 L 300.1 29.2 L 308.2 37.0 L 328.3 42.8 L 342.5 41.8 L 362.6 46.7 L 380.5 47.2 L 407.8 52.0 L 434.8 59.3 L 446.2 67.1 L 450.9 76.3 L 456.4 87.5 L 469.5 100.6 L 477.2 112.3 L 478.7 121.5 L 472.5 142.9 L 469.9 159.9 L 468.4 190.1 L 461.9 234.3 L 465.5 245.5 L 474.3 256.6 L 498.7 270.7 L 526.8 263.4 L 536.7 256.2 L 552.4 253.7 L 551.3 246.4 L 555.3 232.8 L 609.0 218.7 L 614.5 227.0 L 626.9 207.6 L 656.4 200.3 L 671.4 200.3 L 683.8 194.4 L 721.8 185.7 L 777.6 168.7 L 827.6 157.0 L 837.5 154.1 L 828.0 48.6 L 825.1 32.1 L 817.4 -36.9 L 825.5 -99.1 L 828.7 -114.7 L 828.7 -135.1 L 834.2 -171.0 L 837.9 -205.1 Z"/>
+      <path class="nbr" d="M -26.9 251.8 L -20.4 276.6 L -6.1 329.0 L 24.9 448.6 L 40.6 506.4 L 63.6 587.1 L 73.1 620.2 L 89.9 617.7 L 115.8 623.6 L 126.4 619.7 L 142.4 630.4 L 144.3 616.3 L 160.7 598.3 L 176.4 586.6 L 191.4 578.8 L 220.9 576.9 L 234.8 580.8 L 265.5 585.7 L 287.0 600.2 L 297.6 601.7 L 309.6 599.7 L 314.4 589.1 L 326.1 580.3 L 308.5 555.5 L 266.9 404.9 L 271.7 395.6 L 288.8 374.2 L 292.5 359.7 L 284.4 353.8 L 270.6 348.5 L 259.6 327.1 L 121.3 311.6 L 107.4 309.6 L 28.9 245.9 L -26.9 251.8 Z"/>
+      <path class="nbr" d="M 498.7 270.7 L 512.6 279.5 L 532.0 295.0 L 544.4 309.6 L 559.7 333.9 L 564.4 347.5 L 574.3 362.1 L 579.0 386.4 L 573.2 420.9 L 586.3 422.8 L 598.8 437.4 L 584.9 438.9 L 603.5 474.8 L 599.9 488.0 L 607.2 512.3 L 621.4 540.0 L 633.8 549.7 L 639.6 566.2 L 645.9 566.7 L 655.7 574.5 L 659.4 580.8 L 681.3 585.2 L 690.8 583.2 L 703.5 584.2 L 726.9 576.9 L 746.2 574.0 L 756.5 576.4 L 779.8 571.6 L 789.0 572.5 L 806.5 568.6 L 829.5 554.5 L 860.5 552.1 L 872.2 548.7 L 876.9 554.1 L 890.1 557.5 L 905.0 541.4 L 913.1 537.1 L 915.3 529.3 L 922.2 521.0 L 936.1 516.2 L 936.1 501.6 L 930.2 485.5 L 939.0 479.7 L 933.5 466.1 L 930.6 452.0 L 923.7 432.6 L 917.5 428.7 L 917.5 415.1 L 913.1 402.4 L 910.9 384.9 L 904.7 371.3 L 905.0 362.6 L 910.9 351.9 L 899.9 331.0 L 884.6 297.0 L 875.5 271.7 L 866.0 253.2 L 862.3 239.6 L 847.7 209.5 L 843.7 194.4 L 837.5 154.1 L 827.6 157.0 L 777.6 168.7 L 721.8 185.7 L 683.8 194.4 L 671.4 200.3 L 656.4 200.3 L 626.9 207.6 L 614.5 227.0 L 609.0 218.7 L 555.3 232.8 L 551.3 246.4 L 552.4 253.7 L 536.7 256.2 L 526.8 263.4 L 498.7 270.7 Z"/>
+      <path class="nbr" d="M 292.5 359.7 L 288.8 374.2 L 271.7 395.6 L 266.9 404.9 L 308.5 555.5 L 326.1 580.3 L 357.5 588.1 L 372.4 582.3 L 396.5 580.8 L 408.2 585.7 L 398.0 590.5 L 412.9 628.9 L 418.8 638.1 L 431.2 667.3 L 446.2 658.1 L 453.5 657.1 L 465.9 649.8 L 501.7 655.1 L 519.2 646.4 L 537.1 630.9 L 545.8 626.5 L 577.2 623.6 L 592.6 628.9 L 598.8 625.5 L 587.4 610.9 L 586.0 597.8 L 579.8 595.9 L 571.7 602.2 L 549.1 598.8 L 540.7 604.1 L 531.6 614.8 L 523.2 610.9 L 496.2 615.3 L 488.5 607.0 L 487.8 598.3 L 498.4 574.0 L 507.1 567.2 L 513.0 571.1 L 525.4 567.7 L 538.9 572.5 L 569.2 562.8 L 571.7 547.3 L 560.1 532.2 L 554.2 528.8 L 541.1 530.2 L 534.9 533.2 L 518.8 547.7 L 508.6 544.8 L 507.5 524.9 L 512.2 517.6 L 506.0 509.8 L 512.2 503.0 L 530.5 515.2 L 542.2 516.2 L 549.5 472.4 L 552.8 463.2 L 556.0 442.3 L 560.8 425.8 L 573.2 420.9 L 579.0 386.4 L 574.3 362.1 L 564.4 347.5 L 559.7 333.9 L 544.4 309.6 L 532.0 295.0 L 512.6 279.5 L 498.7 270.7 L 490.0 275.6 L 486.7 289.7 L 453.1 314.5 L 377.2 323.7 L 327.9 345.1 L 311.5 353.8 L 292.5 359.7 Z"/>
+      </g>
+      <path class="focus" d="M 450.9 76.3 L 408.9 96.7 L 385.6 102.6 L 339.9 117.2 L 298.3 161.9 L 219.8 204.6 L 135.1 257.1 L 121.3 311.6 L 259.6 327.1 L 270.6 348.5 L 284.4 353.8 L 292.5 359.7 L 311.5 353.8 L 327.9 345.1 L 377.2 323.7 L 453.1 314.5 L 486.7 289.7 L 490.0 275.6 L 498.7 270.7 L 474.3 256.6 L 465.5 245.5 L 461.9 234.3 L 468.4 190.1 L 469.9 159.9 L 472.5 142.9 L 478.7 121.5 L 477.2 112.3 L 469.5 100.6 L 456.4 87.5 L 450.9 76.3 Z"/>
+    <text x="333.8" y="234.2" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".12em" fill="none" stroke="var(--paper)" stroke-width="5" stroke-linejoin="round" opacity=".9">ESSEX</text><text x="333.8" y="234.2" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".12em" fill="var(--brand)">ESSEX</text></svg>
+<div>
+<span class="eyebrow">Service area</span>
+<h2>All of Essex, not just the easy berths.</h2>
+<p>Essex is about fifty-five minutes from us, upriver from Saybrook Point. We are mobile, so we bring water, power, and everything else to the boat rather than asking you to move her.</p>
+<p class="muted">Spots we already service in Essex: Safe Harbor Dauntless Shipyard, Essex Boat Works, Essex Island Marina and Essex Yacht Club.</p>
+<div class="callrow">
+<a class="btn btn-ghost" href="#quote">Get a free quote</a>
+</div>
+<p class="townnote">Town boundaries from Connecticut open data. Surrounding towns shown for orientation.</p>
+</div>
+</div>
+</section>
 
-<section class="ownerband">
+<section>
 <div class="wrap">
-<blockquote>I always admired the beauty these vessels can capture. Now I am the one making them glow.</blockquote>
-<p class="attrib">Matt Ludden, owner. Grew up in Milford, a street from the beach and around the corner from the Housatonic. Detailing professionally for over half a decade.</p>
+<div class="measure">
+<span class="eyebrow">Why Essex is like this</span>
+<h2>Local conditions, not a sales pitch.</h2>
+<p class="waters">the Connecticut River, Essex Harbor, and North Cove</p>
+<p class="lead">A serious boatbuilding town with real yard capability, and more wooden and classic boats than anywhere else we work.</p>
+<p>This far up the river the water is much closer to fresh than salt, and that changes everything about the waterline. There is very little of the salt growth we deal with down on the Sound. Instead there is silt, tannin staining, and a distinct brown line that sets into gelcoat and needs proper correction rather than a wash.</p>
+<p><strong>Wash Plans in Essex:</strong> A boat washed regularly never gives tannin time to set into the gelcoat. Left alone for a season, the same boat needs compounding at the waterline instead.</p>
+</div>
+<div class="priceband">
+<span class="amt num">From $8 per foot, per visit</span>
+<p>Exposure in Essex means quiet river water, and owners who notice a finish, and we quote with that in mind.</p>
+</div>
 </div>
 </section>
 
@@ -341,12 +419,13 @@ footer.lp .frow{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;
 <p class="lead muted" style="margin:0.8rem auto 1.4rem">Tell us the length and where she is kept, and we will come back with a number.</p>
 <div class="callrow" style="justify-content:center">
 <a class="btn btn-primary" href="#quote">Get my quote</a>
-<a class="tel" href="tel:+12032588281">(203) 258-8281</a>
+<a class="tel num" href="tel:+12032588281">(203) 258-8281</a>
 </div>
 </div>
 </section>
 </main>
 
+<a class="callbar" href="tel:+12032588281">Call (203) 258-8281 for a free quote</a>
 <footer class="lp">
 <div class="wrap frow">
 <span>MBD Marine Care, Milford CT. Fully insured mobile marine detailing.</span>
