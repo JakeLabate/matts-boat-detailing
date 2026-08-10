@@ -1,0 +1,17 @@
+200  /
+200  /services/
+200  /milford-boat-detailing/
+200  /robots.txt
+200  /sitemap.xml
+200  /lp/boat-teak-restoration-essex-ct/
+200  /lp/boat-ceramic-coating-stonington-ct/
+404  /img/owner-matt.jpg
+200  /img/logo-mark.png
+MAP_SVG: 0
+MAP_LABEL: 
+OWNER_IMG: 0
+CALLBAR: 0
+FORM_CARDLESS: 0
+TRUST_CHIPS: 0
+ROBOTS_META: content="noindex,follow"
+SITEMAP_LP: 0
