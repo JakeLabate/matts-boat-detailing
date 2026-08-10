@@ -84,7 +84,8 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .btn-ghost{color:var(--brand);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--brand)}
 .formwrap{border:1px solid var(--line);border-radius:18px;background:var(--mist);padding:clamp(1.4rem,3vw,2.2rem)}
-.fgrid{grid-template-columns:1fr}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:640px){.fgrid{grid-template-columns:1fr}}
 .field{display:flex;flex-direction:column;gap:.4rem}
 .field.wide{grid-column:1 / -1}
 .field label{font-size:.88rem;font-weight:600;color:var(--ink)}
@@ -106,6 +107,13 @@ section{padding:clamp(2.6rem,5.5vw,4.2rem) 0}
 .formstatus[data-state="err"]{display:block;background:var(--sandtint);color:var(--ink);border:1px solid var(--accent-ink)}
 .formstatus[data-state="busy"]{display:block;background:var(--paper);color:var(--muted);border:1px solid var(--line)}
 *{box-sizing:border-box}
+/* The base stylesheet zeroes all heading margins and lets each component set
+   its own. These pages need that rhythm restated rather than inherited. */
+h2{margin-bottom:.9rem}
+h3{margin-bottom:.6rem}
+.eyebrow{display:block}
+.eyebrow+h1,.eyebrow+h2{margin-top:0}
+.waters+.lead{margin-top:0}
 img{max-width:100%;height:auto;display:block}
 :focus-visible{outline:2px solid var(--brand);outline-offset:3px}
 .skip{position:absolute;left:-9999px}
