@@ -7,218 +7,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: probe every final url and the refinements
+      - name: probe every landing page and the refinements
         run: |
-          cat > paths.txt <<'EOF'
-/lp/boat-buff-and-shine-branford-ct/
-/lp/boat-buff-and-shine-bridgeport-ct/
-/lp/boat-buff-and-shine-clinton-ct/
-/lp/boat-buff-and-shine-darien-ct/
-/lp/boat-buff-and-shine-deep-river-ct/
-/lp/boat-buff-and-shine-east-haven-ct/
-/lp/boat-buff-and-shine-east-lyme-ct/
-/lp/boat-buff-and-shine-essex-ct/
-/lp/boat-buff-and-shine-fairfield-ct/
-/lp/boat-buff-and-shine-greenwich-ct/
-/lp/boat-buff-and-shine-groton-ct/
-/lp/boat-buff-and-shine-guilford-ct/
-/lp/boat-buff-and-shine-madison-ct/
-/lp/boat-buff-and-shine-milford-ct/
-/lp/boat-buff-and-shine-mystic-ct/
-/lp/boat-buff-and-shine-new-haven-ct/
-/lp/boat-buff-and-shine-new-london-ct/
-/lp/boat-buff-and-shine-norwalk-ct/
-/lp/boat-buff-and-shine-old-lyme-ct/
-/lp/boat-buff-and-shine-old-saybrook-ct/
-/lp/boat-buff-and-shine-stamford-ct/
-/lp/boat-buff-and-shine-stonington-ct/
-/lp/boat-buff-and-shine-stratford-ct/
-/lp/boat-buff-and-shine-waterford-ct/
-/lp/boat-buff-and-shine-west-haven-ct/
-/lp/boat-buff-and-shine-westbrook-ct/
-/lp/boat-buff-and-shine-westport-ct/
-/lp/boat-ceramic-coating-branford-ct/
-/lp/boat-ceramic-coating-bridgeport-ct/
-/lp/boat-ceramic-coating-clinton-ct/
-/lp/boat-ceramic-coating-darien-ct/
-/lp/boat-ceramic-coating-deep-river-ct/
-/lp/boat-ceramic-coating-east-haven-ct/
-/lp/boat-ceramic-coating-east-lyme-ct/
-/lp/boat-ceramic-coating-essex-ct/
-/lp/boat-ceramic-coating-fairfield-ct/
-/lp/boat-ceramic-coating-greenwich-ct/
-/lp/boat-ceramic-coating-groton-ct/
-/lp/boat-ceramic-coating-guilford-ct/
-/lp/boat-ceramic-coating-madison-ct/
-/lp/boat-ceramic-coating-milford-ct/
-/lp/boat-ceramic-coating-mystic-ct/
-/lp/boat-ceramic-coating-new-haven-ct/
-/lp/boat-ceramic-coating-new-london-ct/
-/lp/boat-ceramic-coating-norwalk-ct/
-/lp/boat-ceramic-coating-old-lyme-ct/
-/lp/boat-ceramic-coating-old-saybrook-ct/
-/lp/boat-ceramic-coating-stamford-ct/
-/lp/boat-ceramic-coating-stonington-ct/
-/lp/boat-ceramic-coating-stratford-ct/
-/lp/boat-ceramic-coating-waterford-ct/
-/lp/boat-ceramic-coating-west-haven-ct/
-/lp/boat-ceramic-coating-westbrook-ct/
-/lp/boat-ceramic-coating-westport-ct/
-/lp/boat-oxidation-removal-branford-ct/
-/lp/boat-oxidation-removal-bridgeport-ct/
-/lp/boat-oxidation-removal-clinton-ct/
-/lp/boat-oxidation-removal-darien-ct/
-/lp/boat-oxidation-removal-deep-river-ct/
-/lp/boat-oxidation-removal-east-haven-ct/
-/lp/boat-oxidation-removal-east-lyme-ct/
-/lp/boat-oxidation-removal-essex-ct/
-/lp/boat-oxidation-removal-fairfield-ct/
-/lp/boat-oxidation-removal-greenwich-ct/
-/lp/boat-oxidation-removal-groton-ct/
-/lp/boat-oxidation-removal-guilford-ct/
-/lp/boat-oxidation-removal-madison-ct/
-/lp/boat-oxidation-removal-milford-ct/
-/lp/boat-oxidation-removal-mystic-ct/
-/lp/boat-oxidation-removal-new-haven-ct/
-/lp/boat-oxidation-removal-new-london-ct/
-/lp/boat-oxidation-removal-norwalk-ct/
-/lp/boat-oxidation-removal-old-lyme-ct/
-/lp/boat-oxidation-removal-old-saybrook-ct/
-/lp/boat-oxidation-removal-stamford-ct/
-/lp/boat-oxidation-removal-stonington-ct/
-/lp/boat-oxidation-removal-stratford-ct/
-/lp/boat-oxidation-removal-waterford-ct/
-/lp/boat-oxidation-removal-west-haven-ct/
-/lp/boat-oxidation-removal-westbrook-ct/
-/lp/boat-oxidation-removal-westport-ct/
-/lp/boat-shrink-wrapping-branford-ct/
-/lp/boat-shrink-wrapping-bridgeport-ct/
-/lp/boat-shrink-wrapping-clinton-ct/
-/lp/boat-shrink-wrapping-darien-ct/
-/lp/boat-shrink-wrapping-deep-river-ct/
-/lp/boat-shrink-wrapping-east-haven-ct/
-/lp/boat-shrink-wrapping-east-lyme-ct/
-/lp/boat-shrink-wrapping-essex-ct/
-/lp/boat-shrink-wrapping-fairfield-ct/
-/lp/boat-shrink-wrapping-greenwich-ct/
-/lp/boat-shrink-wrapping-groton-ct/
-/lp/boat-shrink-wrapping-guilford-ct/
-/lp/boat-shrink-wrapping-madison-ct/
-/lp/boat-shrink-wrapping-milford-ct/
-/lp/boat-shrink-wrapping-mystic-ct/
-/lp/boat-shrink-wrapping-new-haven-ct/
-/lp/boat-shrink-wrapping-new-london-ct/
-/lp/boat-shrink-wrapping-norwalk-ct/
-/lp/boat-shrink-wrapping-old-lyme-ct/
-/lp/boat-shrink-wrapping-old-saybrook-ct/
-/lp/boat-shrink-wrapping-stamford-ct/
-/lp/boat-shrink-wrapping-stonington-ct/
-/lp/boat-shrink-wrapping-stratford-ct/
-/lp/boat-shrink-wrapping-waterford-ct/
-/lp/boat-shrink-wrapping-west-haven-ct/
-/lp/boat-shrink-wrapping-westbrook-ct/
-/lp/boat-shrink-wrapping-westport-ct/
-/lp/boat-teak-restoration-branford-ct/
-/lp/boat-teak-restoration-bridgeport-ct/
-/lp/boat-teak-restoration-clinton-ct/
-/lp/boat-teak-restoration-darien-ct/
-/lp/boat-teak-restoration-deep-river-ct/
-/lp/boat-teak-restoration-east-haven-ct/
-/lp/boat-teak-restoration-east-lyme-ct/
-/lp/boat-teak-restoration-essex-ct/
-/lp/boat-teak-restoration-fairfield-ct/
-/lp/boat-teak-restoration-greenwich-ct/
-/lp/boat-teak-restoration-groton-ct/
-/lp/boat-teak-restoration-guilford-ct/
-/lp/boat-teak-restoration-madison-ct/
-/lp/boat-teak-restoration-milford-ct/
-/lp/boat-teak-restoration-mystic-ct/
-/lp/boat-teak-restoration-new-haven-ct/
-/lp/boat-teak-restoration-new-london-ct/
-/lp/boat-teak-restoration-norwalk-ct/
-/lp/boat-teak-restoration-old-lyme-ct/
-/lp/boat-teak-restoration-old-saybrook-ct/
-/lp/boat-teak-restoration-stamford-ct/
-/lp/boat-teak-restoration-stonington-ct/
-/lp/boat-teak-restoration-stratford-ct/
-/lp/boat-teak-restoration-waterford-ct/
-/lp/boat-teak-restoration-west-haven-ct/
-/lp/boat-teak-restoration-westbrook-ct/
-/lp/boat-teak-restoration-westport-ct/
-/lp/boat-wash-and-wax-branford-ct/
-/lp/boat-wash-and-wax-bridgeport-ct/
-/lp/boat-wash-and-wax-clinton-ct/
-/lp/boat-wash-and-wax-darien-ct/
-/lp/boat-wash-and-wax-deep-river-ct/
-/lp/boat-wash-and-wax-east-haven-ct/
-/lp/boat-wash-and-wax-east-lyme-ct/
-/lp/boat-wash-and-wax-essex-ct/
-/lp/boat-wash-and-wax-fairfield-ct/
-/lp/boat-wash-and-wax-greenwich-ct/
-/lp/boat-wash-and-wax-groton-ct/
-/lp/boat-wash-and-wax-guilford-ct/
-/lp/boat-wash-and-wax-madison-ct/
-/lp/boat-wash-and-wax-milford-ct/
-/lp/boat-wash-and-wax-mystic-ct/
-/lp/boat-wash-and-wax-new-haven-ct/
-/lp/boat-wash-and-wax-new-london-ct/
-/lp/boat-wash-and-wax-norwalk-ct/
-/lp/boat-wash-and-wax-old-lyme-ct/
-/lp/boat-wash-and-wax-old-saybrook-ct/
-/lp/boat-wash-and-wax-stamford-ct/
-/lp/boat-wash-and-wax-stonington-ct/
-/lp/boat-wash-and-wax-stratford-ct/
-/lp/boat-wash-and-wax-waterford-ct/
-/lp/boat-wash-and-wax-west-haven-ct/
-/lp/boat-wash-and-wax-westbrook-ct/
-/lp/boat-wash-and-wax-westport-ct/
-/lp/boat-wash-plans-branford-ct/
-/lp/boat-wash-plans-bridgeport-ct/
-/lp/boat-wash-plans-clinton-ct/
-/lp/boat-wash-plans-darien-ct/
-/lp/boat-wash-plans-deep-river-ct/
-/lp/boat-wash-plans-east-haven-ct/
-/lp/boat-wash-plans-east-lyme-ct/
-/lp/boat-wash-plans-essex-ct/
-/lp/boat-wash-plans-fairfield-ct/
-/lp/boat-wash-plans-greenwich-ct/
-/lp/boat-wash-plans-groton-ct/
-/lp/boat-wash-plans-guilford-ct/
-/lp/boat-wash-plans-madison-ct/
-/lp/boat-wash-plans-milford-ct/
-/lp/boat-wash-plans-mystic-ct/
-/lp/boat-wash-plans-new-haven-ct/
-/lp/boat-wash-plans-new-london-ct/
-/lp/boat-wash-plans-norwalk-ct/
-/lp/boat-wash-plans-old-lyme-ct/
-/lp/boat-wash-plans-old-saybrook-ct/
-/lp/boat-wash-plans-stamford-ct/
-/lp/boat-wash-plans-stonington-ct/
-/lp/boat-wash-plans-stratford-ct/
-/lp/boat-wash-plans-waterford-ct/
-/lp/boat-wash-plans-west-haven-ct/
-/lp/boat-wash-plans-westbrook-ct/
-/lp/boat-wash-plans-westport-ct/
-EOF
           {
           bad=0; n=0
-          while read u; do
+          for d in lp/*/; do
+            u="/${d}"
             n=$((n+1))
             c=$(curl -s -o /dev/null -w '%{http_code}' "https://www.mbdmarinecare.com$u")
             if [ "$c" != "200" ]; then echo "BAD $c $u"; bad=$((bad+1)); fi
-          done < paths.txt
-          echo "FINAL_URLS_CHECKED: $n"
-          echo "FINAL_URLS_BAD: $bad"
+          done
+          echo "LP_URLS_CHECKED: $n"
+          echo "LP_URLS_BAD: $bad"
           P=$(curl -s https://www.mbdmarinecare.com/lp/boat-teak-restoration-essex-ct/)
-          echo "MAP_SVG: $(echo "$P" | grep -c 'class=\"tmap\"')"
-          echo "MAP_LABEL: $(echo "$P" | grep -oc 'ESSEX</text>')"
+          echo "MAP_SVG: $(echo "$P" | grep -c 'class="tmap"')"
+          echo "MAP_LABEL: $(echo "$P" | grep -c 'ESSEX</text>')"
           echo "OWNER_IMG: $(echo "$P" | grep -c 'owner-matt.jpg')"
-          echo "CALLBAR: $(echo "$P" | grep -c 'class=\"callbar\"')"
+          echo "CALLBAR: $(echo "$P" | grep -c 'class="callbar"')"
           echo "CARDLESS_FORM: $(echo "$P" | grep -c 'formwrap{background:none')"
           echo "TRUST_CHIPS: $(echo "$P" | grep -c 'lp-trust')"
+          echo "TABULAR_NUMS: $(echo "$P" | grep -c 'tabular-nums')"
           echo "OWNER_IMG_HTTP: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/owner-matt.jpg)"
           echo "HOME: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/)"
+          echo "TOWN_PAGE: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/milford-boat-detailing/)"
           echo "SITEMAP_LP: $(curl -s https://www.mbdmarinecare.com/sitemap.xml | grep -c '/lp/')"
+          echo "ROBOTS_DISALLOW: $(curl -s https://www.mbdmarinecare.com/robots.txt | grep -ci '^disallow')"
           } > verify_out.txt 2>&1
           cat verify_out.txt
       - run: |
