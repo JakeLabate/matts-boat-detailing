@@ -1,0 +1,12 @@
+200  /lp/demo-components/
+200  /img/demo/teak-before.jpg
+200  /img/demo/teak-after.jpg
+200  /
+ROBOTS: content="noindex,nofollow"
+CALC: 1
+PLANS: 1
+COMPARE: 1
+MARINAS: 1
+TRIAGE_QS: 3
+MAP: 1
+SITEMAP_DEMO: 0
