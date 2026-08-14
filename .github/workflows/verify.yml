@@ -1,0 +1,34 @@
+name: verify-cleanup
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: probe
+        run: |
+          {
+          bad=0; n=0
+          for d in lp/*/; do
+            n=$((n+1))
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://www.mbdmarinecare.com/$d")
+            [ "$c" != "200" ] && { echo "BAD $c /$d"; bad=$((bad+1)); }
+          done
+          echo "LP_PAGES: $n"
+          echo "LP_BAD: $bad"
+          echo "DEMO_PAGE_GONE_404: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/lp/demo-components/)"
+          echo "TEAK_BEFORE: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/teak/teak-before.jpg)"
+          echo "TEAK_AFTER: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/teak/teak-after.jpg)"
+          echo "OLD_DEMO_IMG_404: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/demo/teak-before.jpg)"
+          P=$(curl -s https://www.mbdmarinecare.com/lp/boat-teak-restoration-essex-ct/)
+          echo "TEAK_PAGE_USES_NEW_PATH: $(echo "$P" | grep -c 'img/teak/teak-')"
+          echo "TEAK_PAGE_OLD_REFS: $(echo "$P" | grep -c 'img/demo')"
+          echo "HOME: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/)"
+          echo "MILFORD: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/milford-boat-detailing/)"
+          } > verify_out.txt 2>&1
+          cat verify_out.txt
+      - run: |
+          git config user.name ci; git config user.email ci@local
+          git add verify_out.txt && git commit -m "temp: verify" && git push
