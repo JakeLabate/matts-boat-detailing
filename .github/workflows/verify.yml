@@ -1,0 +1,41 @@
+name: verify-components
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: probe
+        run: |
+          {
+          bad=0; n=0
+          for d in lp/*/; do
+            n=$((n+1))
+            c=$(curl -s -o /dev/null -w '%{http_code}' "https://www.mbdmarinecare.com/$d")
+            [ "$c" != "200" ] && { echo "BAD $c /$d"; bad=$((bad+1)); }
+          done
+          echo "PAGES_CHECKED: $n"
+          echo "PAGES_BAD: $bad"
+          calc=0; plan=0; cmp=0; chips=0
+          for d in lp/*/; do
+            P=$(curl -s "https://www.mbdmarinecare.com/$d")
+            echo "$P" | grep -q 'id="c-len"'   && calc=$((calc+1))
+            echo "$P" | grep -q 'id="w-len"'   && plan=$((plan+1))
+            echo "$P" | grep -q 'id="cmp"'     && cmp=$((cmp+1))
+            echo "$P" | grep -q 'id="m-chips"' && chips=$((chips+1))
+          done
+          echo "CALCULATOR: $calc"
+          echo "WASH_PLAN: $plan"
+          echo "COMPARE: $cmp"
+          echo "MARINA_CHIPS: $chips"
+          echo "TEAK_BEFORE_IMG: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/demo/teak-before.jpg)"
+          echo "TEAK_AFTER_IMG: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/img/demo/teak-after.jpg)"
+          echo "HOME: $(curl -s -o /dev/null -w '%{http_code}' https://www.mbdmarinecare.com/)"
+          echo "SITEMAP_LP: $(curl -s https://www.mbdmarinecare.com/sitemap.xml | grep -c '/lp/')"
+          } > verify_out.txt 2>&1
+          cat verify_out.txt
+      - run: |
+          git config user.name ci; git config user.email ci@local
+          git add verify_out.txt && git commit -m "temp: verify" && git push
