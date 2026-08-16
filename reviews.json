@@ -1,7 +1,7 @@
 {
   "_source_note": "Transcribed verbatim from screenshots of the Google Business Profile, captured 2026-08-16. Wording, punctuation and capitalisation are exactly as written by the reviewer, including typos and lowercase display names. All twenty are five stars.",
   "_date_note": "Google showed relative timestamps for reviews under a year old and absolute dates beyond that. Relative ones are converted against the 2026-08-16 capture date and are accurate to within a week. Absolute ones are exact.",
-  "_avatar_note": "No avatar image files were supplied, only the screenshots, so every card uses the initial fallback. That is consistent across all twenty and avoids cropping low-resolution thumbnails. Send the image files if you want real photos on the ones that have them: Wayne Marshall, Peter Geltman, Kent & Jacquelyn Seeley and Mike Cogs.",
+  "_avatar_note": "Four reviewer photos supplied and matched to their reviews by visual comparison against the profile screenshots: Peter Geltman, Wayne Marshall, Kent & Jacquelyn Seeley and Mike Cogs. The rest use the initial fallback, which is what their Google profiles show anyway.",
   "_todo": "profile_url is still needed for the read-every-review link. rating and count stay null until the true profile totals are known.",
   "profile_url": "",
   "profile_label": "Read every review on Google",
@@ -95,7 +95,7 @@
       "date": "2026-05-31",
       "date_precision": "approximate, shown as 11 weeks ago",
       "source": "Google",
-      "avatar": "",
+      "avatar": "/img/reviews/wayne-marshall.jpg",
       "text": "Matt and his team did a great job removing the oxidation from my 2016 Robalo R222 center console. Waxed and buffed the hull looks like new. I highly recommend Matt's Boat Detailing."
     },
     {
@@ -131,7 +131,7 @@
       "date": "2025-08-25",
       "date_precision": "approximate, shown as 51 weeks ago",
       "source": "Google",
-      "avatar": "",
+      "avatar": "/img/reviews/peter-geltman.jpg",
       "text": "Matt and his team did an excellent job bringing Schatzi back to life. He was very professional and respectful. The topsides look like a mirror. I would highly recommend him!"
     },
     {
@@ -155,8 +155,8 @@
       "rating": 5,
       "date": "2025-07-07",
       "source": "Google",
-      "avatar": "",
-      "text": "My Experience with Matt's details was truly top notch! First off I called him very late in the spring and he came up with a way to get my Hull done to follow up with the super structure once in the water. This year I opted to go with not only a compound and seal but also went down the ceramic coating route in hopes of getting an extra year out of the job. First off his pricing is very competitive compared to few others I checked. Matts work was amazing and the boat looks brand new! Lastly, his communication was spot on. As with any spring/early summer project in New England, we had plenty of weather related issues. He kept me posted every step of the way, touched base with any reschedules, let me know when he got there, and lastly when he left. I could not be more pleased with my decision to use Matts Detailing and will be a return customer for sure next year to \u201ctouch up\u201d. I highly recommend reaching out to Matt for any detailing work!"
+      "avatar": "/img/reviews/kent-jacquelyn-seeley.jpg",
+      "text": "My Experience with Matt's details was truly top notch! First off I called him very late in the spring and he came up with a way to get my Hull done to follow up with the super structure once in the water. This year I opted to go with not only a compound and seal but also went down the ceramic coating route in hopes of getting an extra year out of the job. First off his pricing is very competitive compared to few others I checked. Matts work was amazing and the boat looks brand new! Lastly, his communication was spot on. As with any spring/early summer project in New England, we had plenty of weather related issues. He kept me posted every step of the way, touched base with any reschedules, let me know when he got there, and lastly when he left. I could not be more pleased with my decision to use Matts Detailing and will be a return customer for sure next year to “touch up”. I highly recommend reaching out to Matt for any detailing work!"
     },
     {
       "author": "Gage Hogestyn",
@@ -179,7 +179,7 @@
       "rating": 5,
       "date": "2025-03-10",
       "source": "Google",
-      "avatar": "",
+      "avatar": "/img/reviews/mike-cogs.jpg",
       "text": "Great job very professional"
     }
   ]
