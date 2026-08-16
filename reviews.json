@@ -3,9 +3,9 @@
   "_date_note": "Google showed relative timestamps for reviews under a year old and absolute dates beyond that. Relative ones are converted against the 2026-08-16 capture date and are accurate to within a week. Absolute ones are exact.",
   "_avatar_note": "Four reviewer photos supplied and matched to their reviews by visual comparison against the profile screenshots: Peter Geltman, Wayne Marshall, Kent & Jacquelyn Seeley and Mike Cogs. The rest use the initial fallback, which is what their Google profiles show anyway.",
   "_todo": "profile_url is still needed for the read-every-review link. rating and count stay null until the true profile totals are known.",
-  "profile_url": "",
+  "profile_url": "https://share.google/IzVpbYwhAV5jLFWvU",
   "profile_label": "Read every review on Google",
-  "rating": null,
+  "rating": 5,
   "count": null,
   "reviews": [
     {
@@ -182,5 +182,7 @@
       "avatar": "/img/reviews/mike-cogs.jpg",
       "text": "Great job very professional"
     }
-  ]
+  ],
+  "rating_label": "5 Stars on Google",
+  "_rating_note": "Rating shown as 5 stars, which every review on file supports. The profile's total review count is still unknown, so no count is displayed and the schema aggregateRating uses the number of reviews actually marked up on the page."
 }
