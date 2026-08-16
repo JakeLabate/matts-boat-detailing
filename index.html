@@ -1214,16 +1214,11 @@ footer.site a{color:var(--ink)}
 .vidcard figcaption{font-size:.82rem;color:var(--muted);padding:.65rem .85rem}
 .track{display:grid;grid-template-columns:repeat(12,1fr);gap:.35rem;margin-bottom:1.6rem}
 .track button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--mist);
-  color:var(--muted);border-radius:10px;padding:.75rem .2rem .6rem;text-align:center;
+  color:var(--muted);border-radius:10px;padding:.9rem .2rem;text-align:center;min-height:46px;
   transition:border-color .15s ease,color .15s ease,background .15s ease}
 .track button .mo{display:block;font-size:.8rem;font-weight:600;letter-spacing:.06em}
-.track button .pip{display:block;height:4px;border-radius:99px;margin:.5rem .3rem 0;background:var(--line)}
-.track button[data-k=prep] .pip{background:color-mix(in srgb, var(--brand) 45%, transparent)}
-.track button[data-k=season] .pip{background:var(--brand)}
-.track button[data-k=haul] .pip{background:color-mix(in srgb, var(--brand) 65%, transparent)}
 .track button:hover{border-color:var(--brand);color:var(--ink)}
 .track button[aria-pressed=true]{border-color:var(--brand);background:var(--brand);color:var(--brand-ink)}
-.track button[aria-pressed=true] .pip{background:var(--brand-ink)}
 .track{grid-template-columns:repeat(6,1fr)}
 .seasonBox{display:grid;grid-template-columns:1fr auto;gap:1.6rem;align-items:start;
   border-top:1px solid var(--line);padding-top:1.6rem}
@@ -1232,10 +1227,6 @@ footer.site a{color:var(--ink)}
 .seasonBox p{margin:0;color:var(--ink);max-width:60ch}
 .seasonBox .mi-fade{transition:opacity .18s ease}
 .seasonBox.swap .mi-fade{opacity:0}
-.keyrow{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:1.4rem;font-size:.8rem;color:var(--muted)}
-.keyrow span{display:flex;align-items:center;gap:.45rem}
-.keyrow i{width:18px;height:4px;border-radius:99px;display:inline-block;background:var(--line)}
-
 .ctmap{display:block;width:100%;height:auto}
 .ctmap .base{pointer-events:none}
 .ctmap .town{fill:var(--paper);stroke:var(--line);stroke-width:.7;opacity:.5}
@@ -1914,18 +1905,18 @@ footer.site a{color:var(--ink)}
     </div>
     <div class="wrap">
       <div class="track" role="group" aria-label="Months of the boating year">
-        <button type="button" data-i="0" data-k="winter" aria-pressed="false"><span class="mo">Jan</span><span class="pip"></span></button>
-        <button type="button" data-i="1" data-k="winter" aria-pressed="false"><span class="mo">Feb</span><span class="pip"></span></button>
-        <button type="button" data-i="2" data-k="prep" aria-pressed="false"><span class="mo">Mar</span><span class="pip"></span></button>
-        <button type="button" data-i="3" data-k="prep" aria-pressed="true"><span class="mo">Apr</span><span class="pip"></span></button>
-        <button type="button" data-i="4" data-k="season" aria-pressed="false"><span class="mo">May</span><span class="pip"></span></button>
-        <button type="button" data-i="5" data-k="season" aria-pressed="false"><span class="mo">Jun</span><span class="pip"></span></button>
-        <button type="button" data-i="6" data-k="season" aria-pressed="false"><span class="mo">Jul</span><span class="pip"></span></button>
-        <button type="button" data-i="7" data-k="season" aria-pressed="false"><span class="mo">Aug</span><span class="pip"></span></button>
-        <button type="button" data-i="8" data-k="season" aria-pressed="false"><span class="mo">Sep</span><span class="pip"></span></button>
-        <button type="button" data-i="9" data-k="haul" aria-pressed="false"><span class="mo">Oct</span><span class="pip"></span></button>
-        <button type="button" data-i="10" data-k="haul" aria-pressed="false"><span class="mo">Nov</span><span class="pip"></span></button>
-        <button type="button" data-i="11" data-k="winter" aria-pressed="false"><span class="mo">Dec</span><span class="pip"></span></button>
+        <button type="button" data-i="0" data-k="winter" aria-pressed="false"><span class="mo">Jan</span></button>
+        <button type="button" data-i="1" data-k="winter" aria-pressed="false"><span class="mo">Feb</span></button>
+        <button type="button" data-i="2" data-k="prep" aria-pressed="false"><span class="mo">Mar</span></button>
+        <button type="button" data-i="3" data-k="prep" aria-pressed="true"><span class="mo">Apr</span></button>
+        <button type="button" data-i="4" data-k="season" aria-pressed="false"><span class="mo">May</span></button>
+        <button type="button" data-i="5" data-k="season" aria-pressed="false"><span class="mo">Jun</span></button>
+        <button type="button" data-i="6" data-k="season" aria-pressed="false"><span class="mo">Jul</span></button>
+        <button type="button" data-i="7" data-k="season" aria-pressed="false"><span class="mo">Aug</span></button>
+        <button type="button" data-i="8" data-k="season" aria-pressed="false"><span class="mo">Sep</span></button>
+        <button type="button" data-i="9" data-k="haul" aria-pressed="false"><span class="mo">Oct</span></button>
+        <button type="button" data-i="10" data-k="haul" aria-pressed="false"><span class="mo">Nov</span></button>
+        <button type="button" data-i="11" data-k="winter" aria-pressed="false"><span class="mo">Dec</span></button>
       </div>
       <div class="seasonBox" id="sbox">
         <div class="mi-fade">
@@ -1937,12 +1928,6 @@ footer.site a{color:var(--ink)}
           <span class="lblx">What we are doing</span>
           <p style="margin-top:.4rem"><a class="btn btn-primary" id="s-link" href="services/#buff-shine"><span id="s-s">Buff &amp; Shine</span></a></p>
         </div>
-      </div>
-      <div class="keyrow">
-        <span><i style="background:color-mix(in srgb, var(--brand) 45%, transparent)"></i> Spring prep</span>
-        <span><i style="background:var(--brand)"></i> In the water</span>
-        <span><i style="background:color-mix(in srgb, var(--brand) 65%, transparent)"></i> Haul-out</span>
-        <span><i></i> Ashore</span>
       </div>
       <p class="dnote">Marina opening and closing dates are the real ones from the towns we cover:
       Fairfield's town marinas open mid-April, Westport runs May to November, Greenwich runs
