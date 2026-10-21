@@ -248,6 +248,13 @@ font-weight:700;padding:.26rem .6rem;border-radius:999px;background:var(--scrim)
 .cmp .lab.l{left:.7rem}
 .cmp .lab.r{right:.7rem}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important}}
+
+/* lp intro video */
+.lp-vid{margin:0;justify-self:center;width:100%;max-width:300px}
+.lp-vid video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#000;
+  border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.lp-vid figcaption{font-size:.85rem;color:var(--muted);margin-top:.65rem;text-align:center}
+@media(max-width:820px){.cols-owner .lp-vid{order:2;max-width:320px}}
 </style>
 <script type="application/ld+json">
 {
@@ -398,10 +405,14 @@ font-weight:700;padding:.26rem .6rem;border-radius:999px;background:var(--scrim)
 
 <section>
 <div class="wrap cols-owner">
-<figure class="shot-owner">
-<img src="../../img/owner-matt.jpg" srcset="../../img/owner-matt-sm.jpg 155w, ../../img/owner-matt.jpg 310w"
-sizes="(min-width: 820px) 26vw, 90vw" width="310" height="580" loading="lazy" decoding="async"
-alt="Matt Ludden, the owner of MBD Marine Care, standing outside on a gray day.">
+<figure class="lp-vid">
+<video controls preload="none" playsinline
+       poster="../../img/video/mbd-marine-care-intro.jpg" width="720" height="1280"
+       aria-label="Meet MBD Marine Care: Matt Ludden on the job along the Connecticut shoreline">
+<source src="../../video/mbd-marine-care-intro.mp4" type="video/mp4">
+Your browser cannot play this video. <a href="../../video/mbd-marine-care-intro.mp4">Download the video</a> instead.
+</video>
+<figcaption>Meet Matt and the crew &middot; 36s</figcaption>
 </figure>
 <div>
 <span class="eyebrow">Who you are calling</span>
