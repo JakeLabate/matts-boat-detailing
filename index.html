@@ -1379,6 +1379,15 @@ footer.site a{color:var(--ink)}
 @media(max-width:760px){.why-split{grid-template-columns:1fr}.why-split .introvid{width:min(100%,320px);margin:0 auto}}
 .founder{display:grid;grid-template-columns:1fr minmax(240px,300px);gap:2.4rem 3.2rem;align-items:start}
 @media(max-width:820px){.founder{grid-template-columns:1fr}.founder .introvid{width:min(100%,320px);margin:.4rem auto 0}}
+/* desktop: intro video lives in the hero; below 980px it stays in the why section */
+.hero-vid{display:none}
+@media(min-width:980px){
+  .hero-grid{display:grid;grid-template-columns:1fr minmax(250px,290px);gap:3.5rem;align-items:center}
+  .hero-vid{display:block}
+  .why-vid{display:none}
+  .why-split{display:block}
+  .why-split .why{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -1406,17 +1415,31 @@ footer.site a{color:var(--ink)}
   <section class="hero" aria-labelledby="hero-h">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow on-dark">Mobile marine detailing &middot; Connecticut shoreline</span>
-      <h1 id="hero-h">Boats that glimmer across the water.</h1>
-      <p class="lead">MBD Marine Care is a fully insured mobile detailer based in Milford, CT. We bring professional-grade cleaning, polishing, and ceramic protection straight to your dock, from the waterline up.</p>
-      <div class="cta-row">
-        <a class="btn btn-accent" href="contact/">Get a free quote</a>
-        <a class="btn on-dark btn-ghost" href="services/">See services &amp; pricing</a>
-      </div>
-      <div class="hero-facts">
-        <div class="f"><b>5+ yrs</b><span>Detailing the shoreline</span></div>
-        <div class="f"><b>100s</b><span>Boats detailed each year</span></div>
-        <div class="f"><b>27 towns</b><span>We come to your slip</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+        <span class="eyebrow on-dark">Mobile marine detailing &middot; Connecticut shoreline</span>
+        <h1 id="hero-h">Boats that glimmer across the water.</h1>
+        <p class="lead">MBD Marine Care is a fully insured mobile detailer based in Milford, CT. We bring professional-grade cleaning, polishing, and ceramic protection straight to your dock, from the waterline up.</p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="contact/">Get a free quote</a>
+          <a class="btn on-dark btn-ghost" href="services/">See services &amp; pricing</a>
+        </div>
+        <div class="hero-facts">
+          <div class="f"><b>5+ yrs</b><span>Detailing the shoreline</span></div>
+          <div class="f"><b>100s</b><span>Boats detailed each year</span></div>
+          <div class="f"><b>27 towns</b><span>We come to your slip</span></div>
+        </div>
+        </div>
+        <figure class="introvid hero-vid">
+          <video controls preload="none" playsinline
+                 poster="img/video/mbd-marine-care-intro.jpg"
+                 width="720" height="1280"
+                 aria-label="Meet MBD Marine Care: Matt Ludden on the job along the Connecticut shoreline">
+            <source src="video/mbd-marine-care-intro.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="video/mbd-marine-care-intro.mp4">Download the video</a>.
+          </video>
+          <figcaption>Meet Matt and the crew &middot; 36s</figcaption>
+        </figure>
       </div>
     </div>
   </section>  <section class="mapsec">
@@ -1785,7 +1808,7 @@ footer.site a{color:var(--ink)}
         <h2>Do the job right. Every time.</h2>
       </div>
       <div class="why-split">
-        <figure class="introvid">
+        <figure class="introvid why-vid">
           <video controls preload="none" playsinline
                  poster="img/video/mbd-marine-care-intro.jpg"
                  width="720" height="1280"
