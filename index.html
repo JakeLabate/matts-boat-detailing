@@ -848,6 +848,20 @@
     },
     {
       "@type": "VideoObject",
+      "@id": "https://www.mbdmarinecare.com/#intro-video",
+      "name": "Meet MBD Marine Care",
+      "description": "Owner Matt Ludden on the job with MBD Marine Care, a mobile boat detailing company serving the Connecticut shoreline from Greenwich to Stonington.",
+      "thumbnailUrl": "https://www.mbdmarinecare.com/img/video/mbd-marine-care-intro.jpg",
+      "contentUrl": "https://www.mbdmarinecare.com/video/mbd-marine-care-intro.mp4",
+      "uploadDate": "2026-10-21",
+      "duration": "PT36S",
+      "publisher": {
+        "@id": "https://www.mbdmarinecare.com/#business"
+      },
+      "isFamilyFriendly": true
+    },
+    {
+      "@type": "VideoObject",
       "@id": "https://www.mbdmarinecare.com/#clip-1",
       "name": "MBD Marine Care detailing clip 1",
       "description": "Short clip of mobile marine detailing work on the Connecticut shoreline.",
@@ -1353,6 +1367,18 @@ footer.site a{color:var(--ink)}
   .rv-rail{gap:14px;padding-bottom:26px}
 }
 @media (prefers-reduced-motion:reduce){.rv-rail{scroll-behavior:auto}}
+
+/* intro video: homepage why section + about founder section */
+.introvid{margin:0}
+.introvid video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#000;
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.introvid figcaption{font-size:.85rem;color:var(--muted);margin-top:.65rem;text-align:center}
+.why-split{display:grid;grid-template-columns:minmax(240px,300px) 1fr;gap:2.4rem 3.2rem;align-items:center;margin-top:2.4rem}
+.why-split .why{margin-top:0;grid-template-columns:1fr}
+@media(min-width:1040px){.why-split .why{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.why-split{grid-template-columns:1fr}.why-split .introvid{width:min(100%,320px);margin:0 auto}}
+.founder{display:grid;grid-template-columns:1fr minmax(240px,300px);gap:2.4rem 3.2rem;align-items:start}
+@media(max-width:820px){.founder{grid-template-columns:1fr}.founder .introvid{width:min(100%,320px);margin:.4rem auto 0}}
 </style>
 </head>
 <body>
@@ -1758,11 +1784,23 @@ footer.site a{color:var(--ink)}
         <span class="eyebrow on-dark">Why owners choose us</span>
         <h2>Do the job right. Every time.</h2>
       </div>
-      <div class="why">
-        <div class="item"><span class="n" aria-hidden="true">01</span><div><h3>Reliable and communicative</h3><p>Scheduling you can count on and a team that shows up and follows through.</p></div></div>
-        <div class="item"><span class="n" aria-hidden="true">02</span><div><h3>Long-lasting protection</h3><p>Professional products and technique for durable results, not a shine that fades in weeks.</p></div></div>
-        <div class="item"><span class="n" aria-hidden="true">03</span><div><h3>Fully mobile</h3><p>We service your boat where it sits: your marina, private dock, or storage facility.</p></div></div>
-        <div class="item"><span class="n" aria-hidden="true">04</span><div><h3>Every surface, every detail</h3><p>Gelcoat, teak, metal, non-skid, and interiors, each cared for like it is our own boat.</p></div></div>
+      <div class="why-split">
+        <figure class="introvid">
+          <video controls preload="none" playsinline
+                 poster="img/video/mbd-marine-care-intro.jpg"
+                 width="720" height="1280"
+                 aria-label="Meet MBD Marine Care: Matt Ludden on the job along the Connecticut shoreline">
+            <source src="video/mbd-marine-care-intro.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="video/mbd-marine-care-intro.mp4">Download the video</a>.
+          </video>
+          <figcaption>Meet Matt and the crew &middot; 36s</figcaption>
+        </figure>
+        <div class="why">
+          <div class="item"><span class="n" aria-hidden="true">01</span><div><h3>Reliable and communicative</h3><p>Scheduling you can count on and a team that shows up and follows through.</p></div></div>
+          <div class="item"><span class="n" aria-hidden="true">02</span><div><h3>Long-lasting protection</h3><p>Professional products and technique for durable results, not a shine that fades in weeks.</p></div></div>
+          <div class="item"><span class="n" aria-hidden="true">03</span><div><h3>Fully mobile</h3><p>We service your boat where it sits: your marina, private dock, or storage facility.</p></div></div>
+          <div class="item"><span class="n" aria-hidden="true">04</span><div><h3>Every surface, every detail</h3><p>Gelcoat, teak, metal, non-skid, and interiors, each cared for like it is our own boat.</p></div></div>
+        </div>
       </div>
     </div>
   </section>

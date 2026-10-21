@@ -138,6 +138,20 @@
       ]
     },
     {
+      "@type": "VideoObject",
+      "@id": "https://www.mbdmarinecare.com/about/#intro-video",
+      "name": "Meet MBD Marine Care",
+      "description": "Owner Matt Ludden on the job with MBD Marine Care, a mobile boat detailing company serving the Connecticut shoreline from Greenwich to Stonington.",
+      "thumbnailUrl": "https://www.mbdmarinecare.com/img/video/mbd-marine-care-intro.jpg",
+      "contentUrl": "https://www.mbdmarinecare.com/video/mbd-marine-care-intro.mp4",
+      "uploadDate": "2026-10-21",
+      "duration": "PT36S",
+      "publisher": {
+        "@id": "https://www.mbdmarinecare.com/#business"
+      },
+      "isFamilyFriendly": true
+    },
+    {
       "@type": "AboutPage",
       "@id": "https://www.mbdmarinecare.com/about/#webpage",
       "url": "https://www.mbdmarinecare.com/about/",
@@ -500,6 +514,18 @@ footer.site a{color:var(--ink)}
   .rv-rail{gap:14px;padding-bottom:26px}
 }
 @media (prefers-reduced-motion:reduce){.rv-rail{scroll-behavior:auto}}
+
+/* intro video: homepage why section + about founder section */
+.introvid{margin:0}
+.introvid video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#000;
+  border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.introvid figcaption{font-size:.85rem;color:var(--muted);margin-top:.65rem;text-align:center}
+.why-split{display:grid;grid-template-columns:minmax(240px,300px) 1fr;gap:2.4rem 3.2rem;align-items:center;margin-top:2.4rem}
+.why-split .why{margin-top:0;grid-template-columns:1fr}
+@media(min-width:1040px){.why-split .why{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.why-split{grid-template-columns:1fr}.why-split .introvid{width:min(100%,320px);margin:0 auto}}
+.founder{display:grid;grid-template-columns:1fr minmax(240px,300px);gap:2.4rem 3.2rem;align-items:start}
+@media(max-width:820px){.founder{grid-template-columns:1fr}.founder .introvid{width:min(100%,320px);margin:.4rem auto 0}}
 </style>
 </head>
 <body>
@@ -533,12 +559,26 @@ footer.site a{color:var(--ink)}
   </div>
 
   <section>
-    <div class="wrap narrow">
-      <span class="eyebrow">Meet the founder</span>
-      <h2>Hello, my name is Matthew Ludden.</h2>
-      <p class="pullquote">I always admired the beauty these vessels can capture. Now I am the one <span class="hl">making them glow.</span></p>
-      <p>Welcome to MBD Marine Care. I have been detailing professionally for over half a decade, and before that, car detailing was a big hobby of mine. Ever since, I have been meeting wonderful people, learning new techniques, and perfecting my craft.</p>
-      <p>I am grateful to have learned from some great boat detailing mentors who gave me a chance to show how devoted and hard-working I am about learning all I can in this field. Growing up in Milford, CT, living down the street from the beach and around the corner from the Housatonic River most of my life, I would always see the various boats coming in and out and watch in awe as they glimmered across the water.</p>
+    <div class="wrap">
+      <div class="founder">
+        <div style="max-width:64ch">
+          <span class="eyebrow">Meet the founder</span>
+          <h2>Hello, my name is Matthew Ludden.</h2>
+          <p class="pullquote">I always admired the beauty these vessels can capture. Now I am the one <span class="hl">making them glow.</span></p>
+          <p>Welcome to MBD Marine Care. I have been detailing professionally for over half a decade, and before that, car detailing was a big hobby of mine. Ever since, I have been meeting wonderful people, learning new techniques, and perfecting my craft.</p>
+          <p>I am grateful to have learned from some great boat detailing mentors who gave me a chance to show how devoted and hard-working I am about learning all I can in this field. Growing up in Milford, CT, living down the street from the beach and around the corner from the Housatonic River most of my life, I would always see the various boats coming in and out and watch in awe as they glimmered across the water.</p>
+        </div>
+        <figure class="introvid">
+          <video controls preload="none" playsinline
+                 poster="../img/video/mbd-marine-care-intro.jpg"
+                 width="720" height="1280"
+                 aria-label="Meet MBD Marine Care: Matt Ludden on the job along the Connecticut shoreline">
+            <source src="../video/mbd-marine-care-intro.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="../video/mbd-marine-care-intro.mp4">Download the video</a>.
+          </video>
+          <figcaption>Matt on the job &middot; 36s</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
